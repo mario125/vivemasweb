@@ -540,6 +540,10 @@
       <Parameter Name="PROYECTO" Mode="In" Type="Int32" />
       <Parameter Name="LOTE" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_get_clientes" ReturnType="Collection(String)">
+      <Parameter Name="DATA" Mode="In" Type="String" />
+      <Parameter Name="TYPE" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="empresas">
     <Key>
@@ -2469,6 +2473,8 @@
     <Property Name="estadoevento_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="estadoevento_descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="eventos" Relationship="vivemas_dbModel.FK_eventos_estadosevento" FromRole="estadosevento" ToRole="eventos" />
+    <Property Name="estadoevento_color" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="estadoevento_detalle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="eventostipocontacto">
     <Key>

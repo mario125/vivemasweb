@@ -215,5 +215,18 @@ namespace proyecto_vivemas.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_evento_detallado_Result>("sp_evento_detallado", dOCUMENTOParameter, pROYECTOParameter, lOTEParameter);
         }
+    
+        public virtual ObjectResult<string> sp_get_clientes(string dATA, Nullable<int> tYPE)
+        {
+            var dATAParameter = dATA != null ?
+                new ObjectParameter("DATA", dATA) :
+                new ObjectParameter("DATA", typeof(string));
+    
+            var tYPEParameter = tYPE.HasValue ?
+                new ObjectParameter("TYPE", tYPE) :
+                new ObjectParameter("TYPE", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_get_clientes", dATAParameter, tYPEParameter);
+        }
     }
 }

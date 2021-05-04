@@ -1023,6 +1023,8 @@
     <EntitySetMapping Name="estadosevento">
       <EntityTypeMapping TypeName="vivemas_dbModel.estadosevento">
         <MappingFragment StoreEntitySet="estadosevento">
+          <ScalarProperty Name="estadoevento_detalle" ColumnName="estadoevento_detalle" />
+          <ScalarProperty Name="estadoevento_color" ColumnName="estadoevento_color" />
           <ScalarProperty Name="estadoevento_descripcion" ColumnName="estadoevento_descripcion" />
           <ScalarProperty Name="estadoevento_id" ColumnName="estadoevento_id" />
         </MappingFragment>
@@ -1269,5 +1271,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_clientes" FunctionName="vivemas_dbModel.Store.sp_get_clientes" />
   </EntityContainerMapping>
 </Mapping>

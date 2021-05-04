@@ -361,6 +361,8 @@
     </Key>
     <Property Name="estadoevento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="estadoevento_descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="estadoevento_color" Type="varchar" MaxLength="100" />
+    <Property Name="estadoevento_detalle" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="estadosinterescliente">
     <Key>
@@ -2067,6 +2069,10 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
     <Parameter Name="DOCUMENTO" Type="varchar" Mode="In" />
     <Parameter Name="PROYECTO" Type="int" Mode="In" />
     <Parameter Name="LOTE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_get_clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DATA" Type="varchar" Mode="In" />
+    <Parameter Name="TYPE" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_obtenerDatosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="transaccionId" Type="bigint" Mode="In" />

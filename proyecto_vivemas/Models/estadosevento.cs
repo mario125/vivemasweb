@@ -22,6 +22,8 @@ namespace proyecto_vivemas.Models
     
         public long estadoevento_id { get; set; }
         public string estadoevento_descripcion { get; set; }
+        public string estadoevento_color { get; set; }
+        public string estadoevento_detalle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<eventos> eventos { get; set; }
