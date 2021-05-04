@@ -1,0 +1,2579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vivemas_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="anexoscontratocotizacion">
+    <Key>
+      <PropertyRef Name="anexocontratocotizacion_id" />
+    </Key>
+    <Property Name="anexocontratocotizacion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="anexocontratocotizacion_contrato_id" Type="bigint" />
+    <Property Name="anexocontratocotizacion_cotizacion_id" Type="bigint" />
+    <Property Name="anexocontratocotizacion_fechapagoefectivo" Type="date" />
+    <Property Name="anexocontratocotizacion_montoefectivo" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="anexocontratocotizacion_montoefectivofinanciado" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="anexocontratocotizacion_montoefectivo_cuotas" Type="int" />
+    <Property Name="anexocontratocotizacion_montocuotasefectivo" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="anexocontratocotizacion_fechacreacion" Type="datetime" />
+    <Property Name="anexocontratocotizacion_usuariocreacion" Type="bigint" />
+    <Property Name="anexocontratocotizacion_fechamodificacion" Type="datetime" />
+    <Property Name="anexocontratocotizacion_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="anexoscontratoproforma">
+    <Key>
+      <PropertyRef Name="anexocontratoproforma_id" />
+    </Key>
+    <Property Name="anexocontratoproforma_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="anexocontratoproforma_contrato_id" Type="bigint" />
+    <Property Name="anexocontratoproforma_proformauif_id" Type="bigint" />
+    <Property Name="anexocontratoproforma_tipopropietario_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="bancos">
+    <Key>
+      <PropertyRef Name="banco_id" />
+    </Key>
+    <Property Name="banco_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="banco_idanterior" Type="varchar" MaxLength="50" />
+    <Property Name="banco_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="banco_descripcioncorta" Type="varchar" MaxLength="50" />
+    <Property Name="banco_estado" Type="bit" />
+    <Property Name="banco_usuariocreacion" Type="bigint" />
+    <Property Name="banco_fechacreacion" Type="datetime" />
+    <Property Name="banco_usuariomodificacion" Type="bigint" />
+    <Property Name="banco_fechamodificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="canalescontacto">
+    <Key>
+      <PropertyRef Name="canalcontacto_id" />
+    </Key>
+    <Property Name="canalcontacto_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="canalcontacto_mediocontacto_id" Type="bigint" />
+    <Property Name="canalcontacto_idanterior" Type="bigint" />
+    <Property Name="canalcontacto_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="canalcontacto_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="cliente_id" />
+    </Key>
+    <Property Name="cliente_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cliente_empresa_id" Type="bigint" />
+    <Property Name="cliente_tipopersona_id" Type="bigint" />
+    <Property Name="cliente_tipodocumentoidentidad_id" Type="bigint" />
+    <Property Name="cliente_estadocivil_id" Type="bigint" />
+    <Property Name="cliente_promotor_id" Type="bigint" />
+    <Property Name="cliente_departamento_id" Type="bigint" />
+    <Property Name="cliente_provincia_id" Type="bigint" />
+    <Property Name="cliente_distrito_id" Type="bigint" />
+    <Property Name="cliente_canalcontacto_id" Type="bigint" />
+    <Property Name="cliente_estadoproceso_id" Type="bigint" />
+    <Property Name="cliente_estadocaptacioncliente_id" Type="bigint" />
+    <Property Name="cliente_estadointerescliente_id" Type="bigint" />
+    <Property Name="cliente_codigoanterior" Type="bigint" />
+    <Property Name="cliente_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="cliente_razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="cliente_nombrecomercial" Type="varchar" MaxLength="150" />
+    <Property Name="cliente_direccion" Type="varchar" MaxLength="250" />
+    <Property Name="cliente_nrocontacto" Type="varchar" MaxLength="50" />
+    <Property Name="cliente_nrocontactoauxiliar" Type="varchar" MaxLength="50" />
+    <Property Name="cliente_email" Type="varchar" MaxLength="150" />
+    <Property Name="cliente_usuariocreacion" Type="bigint" />
+    <Property Name="cliente_fechacreacion" Type="datetime" />
+    <Property Name="cliente_usuariomodificacion" Type="bigint" />
+    <Property Name="cliente_fechamodificacion" Type="datetime" />
+    <Property Name="cliente_escasuarinas" Type="bit" />
+  </EntityType>
+  <EntityType Name="configuraciones">
+    <Key>
+      <PropertyRef Name="configuracion_id" />
+    </Key>
+    <Property Name="configuracion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="configuracion_empresa_id" Type="bigint" />
+    <Property Name="configuracion_tipocambiointerno" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="configuracion_rutafactura" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_rutaboleta" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_rutanotacredito" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_rutacdrfactura" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_rutacdrboleta" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_rutacdrnotacredito" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_rutafirmadigital" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_passfirmadigital" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_credencialfirmadigital" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_passcredencialfirmadigital" Type="varchar" MaxLength="250" />
+    <Property Name="configuracion_usuarioemisor" Type="varchar" MaxLength="50" />
+    <Property Name="configuracion_passemisor" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="contratos">
+    <Key>
+      <PropertyRef Name="contrato_id" />
+    </Key>
+    <Property Name="contrato_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contrato_estadocontrato_id" Type="bigint" />
+    <Property Name="contrato_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="contrato_fechacreacion" Type="datetime" />
+    <Property Name="contrato_usuariocreacion" Type="bigint" />
+    <Property Name="contrato_fechamodificacion" Type="datetime" />
+    <Property Name="contrato_usuariomodificacion" Type="bigint" />
+    <Property Name="contrato_idanterior" Type="bigint" />
+    <Property Name="contrato_fecharesolucion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="coordenadaslotes">
+    <Key>
+      <PropertyRef Name="coordenadaslote_id" />
+    </Key>
+    <Property Name="coordenadaslote_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="coordenadaslote_lote_id" Type="bigint" />
+    <Property Name="coordenadaslote_coordenada" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cotizaciones">
+    <Key>
+      <PropertyRef Name="cotizacion_id" />
+    </Key>
+    <Property Name="cotizacion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cotizacion_proyecto_id" Type="bigint" />
+    <Property Name="cotizacion_tipocambio_id" Type="bigint" />
+    <Property Name="cotizacion_cliente_id" Type="bigint" />
+    <Property Name="cotizacion_lote_id" Type="bigint" />
+    <Property Name="cotizacion_promotor_id" Type="bigint" />
+    <Property Name="cotizacion_moneda_id" Type="bigint" />
+    <Property Name="cotizacion_proyecto_nombre" Type="varchar" MaxLength="150" />
+    <Property Name="cotizacion_promotor_nombre" Type="varchar" MaxLength="200" />
+    <Property Name="cotizacion_tipocambio_precioventa" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="cotizacion_tipocambio_fecha" Type="date" />
+    <Property Name="cotizacion_cliente_razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="cotizacion_cliente_referenciadomicilio" Type="varchar" MaxLength="150" />
+    <Property Name="cotizacion_lote_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="cotizacion_lote_areatotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="cotizacion_lote_preciometro" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="cotizacion_preciototal" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cotizacion_porcentajeinicial" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cotizacion_montoinicial" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cotizacion_porcentajefinanciado" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cotizacion_montofinanciado" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cotizacion_cantidadcuotas" Type="int" />
+    <Property Name="cotizacion_montocuotas" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cotizacion_fechainiciopagos" Type="date" />
+    <Property Name="cotizacion_idanterior" Type="bigint" />
+    <Property Name="cotizacion_fechacreacion" Type="datetime" />
+    <Property Name="cotizacion_usuariocreacion" Type="bigint" />
+    <Property Name="cotizacion_fechamodificacion" Type="datetime" />
+    <Property Name="cotizacion_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="cuentasbanco">
+    <Key>
+      <PropertyRef Name="cuentabanco_id" />
+    </Key>
+    <Property Name="cuentabanco_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cuentabanco_banco_id" Type="bigint" />
+    <Property Name="cuentabanco_moneda_id" Type="bigint" />
+    <Property Name="cuentabanco_idanterior" Type="bigint" />
+    <Property Name="cuentabanco_cuenta" Type="varchar" MaxLength="50" />
+    <Property Name="cuentabanco_estado" Type="bit" />
+    <Property Name="cuentabanco_usuariocreacion" Type="bigint" />
+    <Property Name="cuentabanco_fechacreacion" Type="datetime" />
+    <Property Name="cuentabanco_usuariomodificacion" Type="bigint" />
+    <Property Name="cuentabanco_fechamodificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="cuotas">
+    <Key>
+      <PropertyRef Name="cuota_id" />
+    </Key>
+    <Property Name="cuota_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cuota_anexocontratocotizacion_id" Type="bigint" />
+    <Property Name="cuota_idanterior" Type="bigint" />
+    <Property Name="cuota_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="cuota_fechavencimiento" Type="date" />
+    <Property Name="cuota_monto" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cuota_montopagado" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="cuota_estado" Type="bit" />
+    <Property Name="cuota_fechacreacion" Type="datetime" />
+    <Property Name="cuota_usuariocreacion" Type="bigint" />
+    <Property Name="cuota_fechamodificacion" Type="datetime" />
+    <Property Name="cuota_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="datosencuesta">
+    <Key>
+      <PropertyRef Name="datoencuesta_id" />
+    </Key>
+    <Property Name="datoencuesta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datoencuesta_tipoencuesta_id" Type="bigint" />
+    <Property Name="datoencuesta_cliente_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="datoencuesta_fecha" Type="date" />
+    <Property Name="datoencuesta_observaciones" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="datosusuarios">
+    <Key>
+      <PropertyRef Name="datosusuario_id" />
+    </Key>
+    <Property Name="datosusuario_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="datosusuario_razonsocial" Type="varchar" MaxLength="200" />
+    <Property Name="datosusuario_nrodocumento" Type="varchar" MaxLength="20" />
+    <Property Name="datosusuario_direccion" Type="varchar" MaxLength="150" />
+    <Property Name="datosusuario_fechacreacion" Type="datetime" />
+    <Property Name="datosusuario_fechamodificacion" Type="datetime" />
+    <Property Name="datosusuario_idanterior" Type="bigint" />
+  </EntityType>
+  <EntityType Name="departamentos">
+    <Key>
+      <PropertyRef Name="departamento_id" />
+    </Key>
+    <Property Name="departamento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="departamento_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="departamento_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="distritos">
+    <Key>
+      <PropertyRef Name="distrito_id" />
+    </Key>
+    <Property Name="distrito_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="distrito_provincia_id" Type="bigint" />
+    <Property Name="distrito_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="distrito_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="documentosventa">
+    <Key>
+      <PropertyRef Name="documentoventa_id" />
+    </Key>
+    <Property Name="documentoventa_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentoventa_empresa_id" Type="bigint" />
+    <Property Name="documentoventa_tipodocumentoventa_id" Type="bigint" />
+    <Property Name="documentoventa_estadodocumento_id" Type="bigint" />
+    <Property Name="documentoventa_transaccion_id" Type="bigint" />
+    <Property Name="documentoventa_tipometodopago_id" Type="bigint" />
+    <Property Name="documentoventa_moneda_id" Type="bigint" />
+    <Property Name="documentoventa_tipoemision" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_fechaemision" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_horaemision" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_fechavencimiento" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_empresa_razonsocial" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_empresa_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_empresa_tipodocumentoidentidad_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_empresa_ubigeo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_empresa_direccion" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_empresa_zona" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_empresa_distrito" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_empresa_provincia" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_empresa_departamento" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_empresa_codigopais" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_tipodocumentoventa_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_serie_serie" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_serie_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_cliente_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_cliente_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_cliente_tipodocumentoidentidad_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_moneda_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_subtotal" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventa_igv" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventa_total" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventa_condicioncodigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_totalletras" Type="varchar" MaxLength="500" />
+    <Property Name="documentoventa_fechacreacion" Type="datetime" />
+    <Property Name="documentoventa_usuariocreacion" Type="bigint" />
+    <Property Name="documentoventa_fechamodificacion" Type="datetime" />
+    <Property Name="documentoventa_usuariomodificacion" Type="bigint" />
+    <Property Name="documentoventa_estadosunat" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_digestvalue" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_banco_nombre" Type="varchar" MaxLength="150" />
+    <Property Name="documentoventa_cuenta_cuenta" Type="varchar" MaxLength="150" />
+    <Property Name="documentoventa_fechadeposito" Type="date" />
+    <Property Name="documentoventa_nrooperacion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="documentosventadetalle">
+    <Key>
+      <PropertyRef Name="documentoventadetalle_id" />
+    </Key>
+    <Property Name="documentoventadetalle_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="documentoventadetalle_documentoventa_id" Type="bigint" />
+    <Property Name="documentoventadetalle_descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="documentoventadetalle_unidadmedida_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventadetalle_cantidad" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventadetalle_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventadetalle_tipoventasunat" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventadetalle_tipoafectacion" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventadetalle_subtotal" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventadetalle_igv" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventadetalle_total" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventadetalle_fechacreacion" Type="datetime" />
+    <Property Name="documentoventadetalle_usuariocreacion" Type="bigint" />
+    <Property Name="documentoventadetalle_fechamodificacion" Type="datetime" />
+    <Property Name="documentoventadetalle_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="empresas">
+    <Key>
+      <PropertyRef Name="empresa_id" />
+    </Key>
+    <Property Name="empresa_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="empresa_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="empresa_nombrecomercial" Type="varchar" MaxLength="250" />
+    <Property Name="empresa_documento" Type="varchar" MaxLength="50" />
+    <Property Name="empresa_tipodocumentoidentidad_id" Type="bigint" />
+    <Property Name="empresa_ubigeo" Type="varchar" MaxLength="50" />
+    <Property Name="empresa_direccion" Type="varchar" MaxLength="250" />
+    <Property Name="empresa_zona" Type="varchar" MaxLength="250" />
+    <Property Name="empresa_distrito" Type="varchar" MaxLength="50" />
+    <Property Name="empresa_provincia" Type="varchar" MaxLength="50" />
+    <Property Name="empresa_departamento" Type="varchar" MaxLength="50" />
+    <Property Name="empresa_codigopais" Type="varchar" MaxLength="50" />
+    <Property Name="empresa_nombrecarpeta" Type="varchar" MaxLength="150" />
+    <Property Name="empresa_correo" Type="varchar" MaxLength="150" />
+    <Property Name="empresa_nrocontacto" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="encuestas">
+    <Key>
+      <PropertyRef Name="encuesta_id" />
+    </Key>
+    <Property Name="encuesta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="encuesta_datoencuesta_id" Type="bigint" />
+    <Property Name="encuesta_pregunta_id" Type="bigint" />
+    <Property Name="encuesta_respuesta_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="estadoscaptacioncliente">
+    <Key>
+      <PropertyRef Name="estadocaptacioncliente_id" />
+    </Key>
+    <Property Name="estadocaptacioncliente_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadocaptacioncliente_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="estadocaptacioncliente_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="estadoscivil">
+    <Key>
+      <PropertyRef Name="estadocivil_id" />
+    </Key>
+    <Property Name="estadocivil_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadocivil_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="estadocivil_codigo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="estadoscontrato">
+    <Key>
+      <PropertyRef Name="estadocontrato_id" />
+    </Key>
+    <Property Name="estadocontrato_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadocontrato_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="estadosdocumento">
+    <Key>
+      <PropertyRef Name="estadodocumento_id" />
+    </Key>
+    <Property Name="estadodocumento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadodocumento_descripcion" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="estadosevento">
+    <Key>
+      <PropertyRef Name="estadoevento_id" />
+    </Key>
+    <Property Name="estadoevento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadoevento_descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="estadosinterescliente">
+    <Key>
+      <PropertyRef Name="estadointerescliente_id" />
+    </Key>
+    <Property Name="estadointerescliente_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadointerescliente_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="estadoslote">
+    <Key>
+      <PropertyRef Name="estadoslote_id" />
+    </Key>
+    <Property Name="estadoslote_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadoslote_descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="estadosproceso">
+    <Key>
+      <PropertyRef Name="estadoproceso_id" />
+    </Key>
+    <Property Name="estadoproceso_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadoproceso_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="estadoproceso_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="estadosseparacion">
+    <Key>
+      <PropertyRef Name="estadoseparacion_id" />
+    </Key>
+    <Property Name="estadoseparacion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadoseparacion_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="estadostransaccion">
+    <Key>
+      <PropertyRef Name="estadotransaccion_id" />
+    </Key>
+    <Property Name="estadotransaccion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadotransaccion_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="estadosuif">
+    <Key>
+      <PropertyRef Name="estadouif_id" />
+    </Key>
+    <Property Name="estadouif_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estadouif_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="eventos">
+    <Key>
+      <PropertyRef Name="evento_id" />
+    </Key>
+    <Property Name="evento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="evento_usuario_id" Type="bigint" />
+    <Property Name="evento_estadoevento_id" Type="bigint" />
+    <Property Name="evento_contrato_id" Type="bigint" />
+    <Property Name="evento_descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="evento_fechacreacion" Type="datetime" Nullable="false" />
+    <Property Name="evento_fechapropuesta" Type="datetime" Nullable="false" />
+    <Property Name="evento_estado" Type="bit" />
+    <Property Name="evento_montopropuesto" Type="decimal" Precision="16" Scale="2" />
+  </EntityType>
+  <EntityType Name="eventostipocontacto">
+    <Key>
+      <PropertyRef Name="eventotipocontacto_id" />
+    </Key>
+    <Property Name="eventotipocontacto_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eventotipocontacto_evento_id" Type="bigint" />
+    <Property Name="eventotipocontacto_tipocontacto_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="interesesclienteproyecto">
+    <Key>
+      <PropertyRef Name="interesclienteproyecto_id" />
+    </Key>
+    <Property Name="interesclienteproyecto_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="interesclienteproyecto_cliente_id" Type="bigint" />
+    <Property Name="interesclienteproyecto_proyecto_id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="lotes">
+    <Key>
+      <PropertyRef Name="lote_id" />
+    </Key>
+    <Property Name="lote_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lote_proyecto_id" Type="bigint" />
+    <Property Name="lote_estadolote_id" Type="bigint" />
+    <Property Name="lote_forma" Type="varchar" MaxLength="50" />
+    <Property Name="lote_manzana" Type="varchar" MaxLength="10" />
+    <Property Name="lote_numero" Type="varchar" MaxLength="10" />
+    <Property Name="lote_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="lote_areatotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_perimetro" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_preciometro" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_precio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_linderofrente" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_linderoderecha" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_linderoizquierda" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_linderoatras" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="lote_comercial" Type="bit" />
+    <Property Name="lote_usuariocreacion" Type="bigint" />
+    <Property Name="lote_fechacreacion" Type="datetime" />
+    <Property Name="lote_usuariomodificacion" Type="bigint" />
+    <Property Name="lote_fechamodificacion" Type="datetime" />
+    <Property Name="lote_idanterior" Type="bigint" />
+  </EntityType>
+  <EntityType Name="medioscontacto">
+    <Key>
+      <PropertyRef Name="mediocontacto_id" />
+    </Key>
+    <Property Name="mediocontacto_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mediocontacto_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="mediocontacto_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="mediocontacto_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="monedas">
+    <Key>
+      <PropertyRef Name="moneda_id" />
+    </Key>
+    <Property Name="moneda_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="moneda_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="moneda_descripcioncorta" Type="varchar" MaxLength="50" />
+    <Property Name="moneda_caracter" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="notascredito">
+    <Key>
+      <PropertyRef Name="notacredito_id" />
+    </Key>
+    <Property Name="notacredito_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="notacredito_empresa_id" Type="bigint" />
+    <Property Name="notacredito_tipodocumentoventa_id" Type="bigint" />
+    <Property Name="notacredito_estadodocumento_id" Type="bigint" />
+    <Property Name="notacredito_documentoventa_id" Type="bigint" />
+    <Property Name="notacredito_moneda_id" Type="bigint" />
+    <Property Name="notacredito_tiponotacredito_id" Type="bigint" />
+    <Property Name="notacredito_tipoemision" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_fechaemision" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_horaemision" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_empresa_razonsocial" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_empresa_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_empresa_tipodocumentoideintidad_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_empresa_ubigeo" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_empresa_direccion" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_empresa_zona" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_empresa_distrito" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_empresa_provincia" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_empresa_departamento" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_empresa_codigopais" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_tipodocumentoventa_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_serie_serie" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_serie_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_cliente_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_cliente_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_cliente_tipodocumentoidentidad_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_moneda_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_subtotal" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="notacredito_igv" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="notacredito_total" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="notacredito_seriereferencia" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_numeracionreferencia" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_tipodocumentoventa_codigoreferencia" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_tiponotacredito_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_descripcionnota" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_totalletras" Type="varchar" MaxLength="250" />
+    <Property Name="notacredito_estadosunat" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_digestvalue" Type="varchar" MaxLength="50" />
+    <Property Name="notacredito_usuariocreacion" Type="bigint" />
+    <Property Name="notacredito_fechacreacion" Type="datetime" />
+    <Property Name="notacredito_usuariomodificacion" Type="bigint" />
+    <Property Name="notacredito_fechamodificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="notascreditodetalle">
+    <Key>
+      <PropertyRef Name="notacreditodetalle_id" />
+    </Key>
+    <Property Name="notacreditodetalle_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="notacreditodetalle_notadecredito_id" Type="bigint" />
+    <Property Name="notacreditodetalle_descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="notacreditodetalle_unidadmedida_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacreditodetalle_cantidad" Type="varchar" MaxLength="50" />
+    <Property Name="notacreditodetalle_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="notacreditodetalle_tipoventasunat" Type="varchar" MaxLength="50" />
+    <Property Name="notacreditodetalle_tipoafectacion" Type="varchar" MaxLength="50" />
+    <Property Name="notacreditodetalle_subtotal" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="notacreditodetalle_igv" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="notacreditodetalle_total" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="notacreditodetalle_usuariocreacion" Type="bigint" />
+    <Property Name="notacreditodetalle_fechacreacion" Type="datetime" />
+    <Property Name="notacreditodetalle_usuariomodificacion" Type="bigint" />
+    <Property Name="notaccrediodetalle_fechamodificacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="pagos">
+    <Key>
+      <PropertyRef Name="pago_id" />
+    </Key>
+    <Property Name="pago_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pago_transaccion_id" Type="bigint" />
+    <Property Name="pago_cuota_id" Type="bigint" />
+    <Property Name="pago_cuota_monto" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="pago_montodescuento" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="pago_montonetopago" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="pago_usuariomodificacion" Type="bigint" />
+    <Property Name="pago_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="pago_fechacreacion" Type="datetime" />
+    <Property Name="pago_usuariocreacion" Type="bigint" />
+    <Property Name="pago_fechamodificacion" Type="datetime" />
+    <Property Name="pago_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="preguntas">
+    <Key>
+      <PropertyRef Name="pregunta_id" />
+    </Key>
+    <Property Name="pregunta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pregunta_tipoencuesta_id" Type="bigint" />
+    <Property Name="pregunta_descripcion" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="proformascontrato">
+    <Key>
+      <PropertyRef Name="proformacontrato_id" />
+    </Key>
+    <Property Name="proformacontrato_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proformacontrato_contrato_id" Type="bigint" />
+    <Property Name="proformacontrato_proformauif_id" Type="bigint" />
+    <Property Name="proformacontrato_tipopropetario_id" Type="bigint" />
+    <Property Name="proformacontrato_fechacreacion" Type="datetime" />
+    <Property Name="proformacontrato_usuariocreacion" Type="bigint" />
+    <Property Name="proformacontrato_fechamodificacion" Type="datetime" />
+    <Property Name="proformacontrato_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="proformasuif">
+    <Key>
+      <PropertyRef Name="proformauif_id" />
+    </Key>
+    <Property Name="proformauif_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proformauif_estadouif_id" Type="bigint" />
+    <Property Name="proformauif_cliente_id" Type="bigint" />
+    <Property Name="proformauif_transaccion_id" Type="bigint" />
+    <Property Name="proformauif_tipodocumentoidentidad_id" Type="bigint" />
+    <Property Name="proformauif_estadocivil_id" Type="bigint" />
+    <Property Name="proformauif_lote_id" Type="bigint" />
+    <Property Name="proformauif_empresa_id" Type="bigint" />
+    <Property Name="proformauif_tiposociedad_id" Type="bigint" />
+    <Property Name="proformauif_idanterior" Type="bigint" />
+    <Property Name="proformauif_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="proformauif_tipodocumentoidentidad_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_cliente_nrodocumento" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_cliente_razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_estadocivil_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_cliente_direccion" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_cliente_referenciadomicilio" Type="varchar" MaxLength="250" />
+    <Property Name="proformauif_cliente_nrocontacto" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_fechanacimiento" Type="date" />
+    <Property Name="proformauif_nacionalidad" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_empresa_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="proformauif_empresa_documento" Type="varchar" MaxLength="50" />
+    <Property Name="proformauif_empresa_direccion" Type="varchar" MaxLength="250" />
+    <Property Name="proformauif_representante_estadocivil_id" Type="bigint" />
+    <Property Name="proformauif_representante_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="proformauif_representante_razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_representante_nrocontacto" Type="varchar" MaxLength="50" />
+    <Property Name="proformauif_representante_estadocivil_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_fechacreacion" Type="datetime" />
+    <Property Name="proformauif_usuariocreacion" Type="bigint" />
+    <Property Name="proformauif_fechamodificacion" Type="datetime" />
+    <Property Name="proformauif_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="provincias">
+    <Key>
+      <PropertyRef Name="provincia_id" />
+    </Key>
+    <Property Name="provincia_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="provincia_departamento_id" Type="bigint" />
+    <Property Name="provincia_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="provincia_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="proyectos">
+    <Key>
+      <PropertyRef Name="proyecto_id" />
+    </Key>
+    <Property Name="proyecto_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proyecto_empresa_id" Type="bigint" />
+    <Property Name="proyecto_codigoanterior" Type="bigint" />
+    <Property Name="proyecto_nombre" Type="varchar" MaxLength="150" />
+    <Property Name="proyecto_nombrecorto" Type="varchar" MaxLength="50" />
+    <Property Name="proyecto_imagemuestra" Type="varchar" MaxLength="150" />
+    <Property Name="proyecto_totallotes" Type="int" />
+    <Property Name="proyecto_precioprom" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="proyecto_zona_id" Type="int" />
+    <Property Name="proyecto_fechaentrega" Type="datetime" />
+    <Property Name="proyecto_ubicontrato" Type="varchar" MaxLength="100" />
+    <Property Name="proyecto_abreviatura" Type="varchar" MaxLength="4" />
+    <Property Name="proyecto_anexo" Type="int" />
+    <Property Name="proyecto_moneda_id" Type="varchar" MaxLength="3" />
+    <Property Name="proyecto_fechacreacion" Type="datetime" />
+    <Property Name="proyecto_usuariocreacion" Type="bigint" />
+    <Property Name="proyecto_fechamodificacion" Type="datetime" />
+    <Property Name="proyecto_usuariomodificacion" Type="bigint" />
+    <Property Name="proyecto_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="respuestas">
+    <Key>
+      <PropertyRef Name="respuesta_id" />
+    </Key>
+    <Property Name="respuesta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="respuesta_pregunta_id" Type="bigint" />
+    <Property Name="respuesta_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="rol_id" />
+    </Key>
+    <Property Name="rol_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rol_empresa_id" Type="bigint" />
+    <Property Name="rol_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="rol_estado" Type="bit" />
+    <Property Name="rol_idanterior" Type="bigint" />
+  </EntityType>
+  <EntityType Name="separaciones">
+    <Key>
+      <PropertyRef Name="separacion_id" />
+    </Key>
+    <Property Name="separacion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="separacion_cliente_id" Type="bigint" />
+    <Property Name="separacion_lote_id" Type="bigint" />
+    <Property Name="separacion_estadoseparacion_id" Type="bigint" />
+    <Property Name="separacion_numeroseparacion" Type="varchar" MaxLength="50" />
+    <Property Name="separacion_fechainicio" Type="date" />
+    <Property Name="separacion_fechafin" Type="date" />
+    <Property Name="separacion_monto" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="separacion_fechacreacion" Type="datetime" />
+    <Property Name="separacion_usuariocreacion" Type="bigint" />
+    <Property Name="separacion_fechamodificacion" Type="datetime" />
+    <Property Name="separacion_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="series">
+    <Key>
+      <PropertyRef Name="serie_id" />
+    </Key>
+    <Property Name="serie_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="serie_empresa_id" Type="bigint" />
+    <Property Name="serie_tipodocumentoventa_id" Type="bigint" />
+    <Property Name="serie_serie" Type="varchar" MaxLength="50" />
+    <Property Name="serie_numeracion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tiposcambio">
+    <Key>
+      <PropertyRef Name="tipocambio_id" />
+    </Key>
+    <Property Name="tipocambio_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipocambio_fecha" Type="date" />
+    <Property Name="tipocambio_compra" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="tipocambio_venta" Type="decimal" Precision="15" Scale="3" />
+  </EntityType>
+  <EntityType Name="tiposcontacto">
+    <Key>
+      <PropertyRef Name="tipocontacto_id" />
+    </Key>
+    <Property Name="tipocontacto_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipocontacto_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tiposdocumentoidentidad">
+    <Key>
+      <PropertyRef Name="tipodocumentoidentidad_id" />
+    </Key>
+    <Property Name="tipodocumentoidentidad_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipodocumentoidentidad_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="tipodocumentoidentidad_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="tipodocumentoidentidad_nombrecorto" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tiposdocumentoventa">
+    <Key>
+      <PropertyRef Name="tipodocumentoventa_id" />
+    </Key>
+    <Property Name="tipodocumentoventa_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipodocumentoventa_codigosunat" Type="varchar" MaxLength="50" />
+    <Property Name="tipodocumentoventa_descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="tipodocumentoventa_tipo" Type="bigint" />
+    <Property Name="tipodocumentoventa_tipocompra" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tiposencuesta">
+    <Key>
+      <PropertyRef Name="tipoencuesta_id" />
+    </Key>
+    <Property Name="tipoencuesta_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoencuesta_empresa_id" Type="bigint" />
+    <Property Name="tipoencuesta_nombre" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tiposmetodopago">
+    <Key>
+      <PropertyRef Name="tipometodopago_id" />
+    </Key>
+    <Property Name="tipometodopago_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipometodopago_idanterior" Type="varchar" MaxLength="50" />
+    <Property Name="tipometodopago_descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="tipometodopago_estado" Type="bit" />
+  </EntityType>
+  <EntityType Name="tiposmoneda">
+    <Key>
+      <PropertyRef Name="tipomoneda_id" />
+    </Key>
+    <Property Name="tipomoneda_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipomoneda_idanterior" Type="varchar" MaxLength="50" />
+    <Property Name="tipomoneda_descripcioncorta" Type="varchar" MaxLength="50" />
+    <Property Name="tipomoneda_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tiposmovimiento">
+    <Key>
+      <PropertyRef Name="tipomovimiento_id" />
+    </Key>
+    <Property Name="tipomovimiento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipomovimiento_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tiposnotacredito">
+    <Key>
+      <PropertyRef Name="tiponotacredito_id" />
+    </Key>
+    <Property Name="tiponotacredito_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tiponotacredito_descripcion" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="tiponotacredito_codigo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tipospersona">
+    <Key>
+      <PropertyRef Name="tipopersona_id" />
+    </Key>
+    <Property Name="tipopersona_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipopersona_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tipospropietario">
+    <Key>
+      <PropertyRef Name="tipopropietario_id" />
+    </Key>
+    <Property Name="tipopropietario_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipopropietario_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tipossociedad">
+    <Key>
+      <PropertyRef Name="tiposociedad_id" />
+    </Key>
+    <Property Name="tiposociedad_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tiposociedad_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tipostransaccion">
+    <Key>
+      <PropertyRef Name="tipotransaccion_id" />
+    </Key>
+    <Property Name="tipotransaccion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipotransaccion_descripcion" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="titulares">
+    <Key>
+      <PropertyRef Name="titular_id" />
+    </Key>
+    <Property Name="titular_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titular_empresa_id" Type="bigint" />
+    <Property Name="titular_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="titular_nrodocumento" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="transacciones">
+    <Key>
+      <PropertyRef Name="transaccion_id" />
+    </Key>
+    <Property Name="transaccion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transaccion_empresa_id" Type="bigint" />
+    <Property Name="transaccion_tipotransaccion_id" Type="bigint" />
+    <Property Name="transaccion_tipomovimiento_id" Type="bigint" />
+    <Property Name="transaccion_estadotransaccion_id" Type="bigint" />
+    <Property Name="transaccion_tipometodopago_id" Type="bigint" />
+    <Property Name="transaccion_banco_id" Type="bigint" />
+    <Property Name="transaccion_cuentabanco_id" Type="bigint" />
+    <Property Name="transaccion_moneda_id" Type="bigint" />
+    <Property Name="transaccion_tipocambio_id" Type="bigint" />
+    <Property Name="transaccion_evento_id" Type="bigint" />
+    <Property Name="transaccion_codigotransaccion_id" Type="bigint" />
+    <Property Name="transaccion_codigoinicial_id" Type="bigint" />
+    <Property Name="transaccion_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="transaccion_codigodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="transaccion_nrooperacion" Type="varchar" MaxLength="50" />
+    <Property Name="transaccion_bancoorigen" Type="varchar" MaxLength="50" />
+    <Property Name="transaccion_monto" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="transaccion_montototaldescuento" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="transaccion_montonetototal" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="transaccion_porcentajedescuento" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="transaccion_fecha" Type="datetime" />
+    <Property Name="transaccion_fechadeposito" Type="date" />
+    <Property Name="transaccion_tipocambio_fecha" Type="date" />
+    <Property Name="transaccion_tipocambio_venta" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="transaccion_fechacreacion" Type="datetime" />
+    <Property Name="transaccion_usuariocreacion" Type="bigint" />
+    <Property Name="transaccion_fechamodificacion" Type="datetime" />
+    <Property Name="transaccion_usuariomodificacion" Type="bigint" />
+    <Property Name="transaccion_idproformacomodin" Type="bigint" />
+    <Property Name="transaccion_estadoemision" Type="bit" />
+    <Property Name="transaccion_observaciones" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="transaccionesseparacion">
+    <Key>
+      <PropertyRef Name="transaccionseparacion_id" />
+    </Key>
+    <Property Name="transaccionseparacion_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transaccionseparacion_separacion_id" Type="bigint" />
+    <Property Name="transaccionseparacion_transaccion_id" Type="bigint" />
+    <Property Name="transaccionseparacion_descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="transaccionseparacion_fechacreacion" Type="datetime" />
+    <Property Name="transaccionseparacion_usuariocreacion" Type="bigint" />
+    <Property Name="transaccionseparacion_fechamodificacion" Type="datetime" />
+    <Property Name="transaccionseparacion_usuariomodificacion" Type="bigint" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="usuario_id" />
+    </Key>
+    <Property Name="usuario_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario_rol_id" Type="bigint" />
+    <Property Name="usuario_datosusuario_id" Type="bigint" />
+    <Property Name="usuario_usuario" Type="varchar" MaxLength="50" />
+    <Property Name="usuario_pass" Type="varchar" MaxLength="100" />
+    <Property Name="usuario_fechacreacion" Type="datetime" />
+    <Property Name="usuario_fechamodificacion" Type="datetime" />
+    <Property Name="usuario_estado" Type="bit" />
+    <Property Name="usuario_idanterior" Type="bigint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_busquedaContratosAutocomplete' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_busquedaContratosAutocomplete">
+    <Key>
+      <PropertyRef Name="contrato_id" />
+    </Key>
+    <Property Name="contrato_id" Type="bigint" Nullable="false" />
+    <Property Name="contrato_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="cliente_nrodocumento" Type="varchar" MaxLength="150" />
+    <Property Name="cliente_razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="lote_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="lote_proyecto_id" Type="bigint" />
+    <Property Name="proyecto_nombrecorto" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_cargarClientesContrato' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_cargarClientesContrato">
+    <Key>
+      <PropertyRef Name="contrato_id" />
+    </Key>
+    <Property Name="contrato_id" Type="bigint" Nullable="false" />
+    <Property Name="contrato_numeracion" Type="varchar" MaxLength="50" />
+    <Property Name="cliente_nrodocumento" Type="varchar" MaxLength="150" />
+    <Property Name="cliente_razonsocial" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_cargarEventos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_cargarEventos">
+    <Key>
+      <PropertyRef Name="evento_id" />
+      <PropertyRef Name="title" />
+    </Key>
+    <Property Name="evento_id" Type="bigint" Nullable="false" />
+    <Property Name="start" Type="varchar" MaxLength="30" />
+    <Property Name="evento_estadoevento_id" Type="bigint" />
+    <Property Name="title" Type="varchar" MaxLength="97" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteeventos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_reporteeventos">
+    <Key>
+      <PropertyRef Name="evento_id" />
+    </Key>
+    <Property Name="evento_contrato_id" Type="bigint" />
+    <Property Name="evento_id" Type="bigint" Nullable="false" />
+    <Property Name="proformauif_cliente_nrodocumento" Type="varchar" MaxLength="150" />
+    <Property Name="proformauif_cliente_razonsocial" Type="varchar" MaxLength="150" />
+    <Property Name="proyecto_nombrecorto" Type="varchar" MaxLength="50" />
+    <Property Name="proyecto_id" Type="bigint" />
+    <Property Name="cotizacion_lote_nombre" Type="varchar" MaxLength="50" />
+    <Property Name="llamada" Type="int" />
+    <Property Name="whatsapp" Type="int" />
+    <Property Name="correo" Type="int" />
+    <Property Name="entrevista" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="vw_reporteVentas">
+    <Key>
+      <PropertyRef Name="documentoventa_id" />
+    </Key>
+    <Property Name="documentoventa_id" Type="bigint" Nullable="false" />
+    <Property Name="documentoventa_transaccion_id" Type="bigint" />
+    <Property Name="anexocontratocotizacion_contrato_id" Type="bigint" />
+    <Property Name="documentoEmision" Type="varchar" MaxLength="101" />
+    <Property Name="notacreditoanulacion" Type="varchar" MaxLength="101" />
+    <Property Name="notacredito_fechaemision" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_cliente_nrodocumento" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_cliente_nombre" Type="varchar" MaxLength="250" />
+    <Property Name="documentoventa_total" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="documentoventa_moneda_codigo" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_fechaemision" Type="varchar" MaxLength="50" />
+    <Property Name="documentoventa_fechacreacion" Type="datetime" />
+    <Property Name="cotizacion_proyecto_id" Type="bigint" />
+  </EntityType>
+  <Association Name="FK_anexoscontratocotizacion_contratos">
+    <End Role="contratos" Type="Self.contratos" Multiplicity="0..1" />
+    <End Role="anexoscontratocotizacion" Type="Self.anexoscontratocotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contratos">
+        <PropertyRef Name="contrato_id" />
+      </Principal>
+      <Dependent Role="anexoscontratocotizacion">
+        <PropertyRef Name="anexocontratocotizacion_contrato_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_anexoscontratocotizacion_cotizaciones">
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="0..1" />
+    <End Role="anexoscontratocotizacion" Type="Self.anexoscontratocotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cotizaciones">
+        <PropertyRef Name="cotizacion_id" />
+      </Principal>
+      <Dependent Role="anexoscontratocotizacion">
+        <PropertyRef Name="anexocontratocotizacion_cotizacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_anexoscontratoproforma_contratos">
+    <End Role="contratos" Type="Self.contratos" Multiplicity="0..1" />
+    <End Role="anexoscontratoproforma" Type="Self.anexoscontratoproforma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contratos">
+        <PropertyRef Name="contrato_id" />
+      </Principal>
+      <Dependent Role="anexoscontratoproforma">
+        <PropertyRef Name="anexocontratoproforma_contrato_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_anexoscontratoproforma_proformasuif">
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="0..1" />
+    <End Role="anexoscontratoproforma" Type="Self.anexoscontratoproforma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proformasuif">
+        <PropertyRef Name="proformauif_id" />
+      </Principal>
+      <Dependent Role="anexoscontratoproforma">
+        <PropertyRef Name="anexocontratoproforma_proformauif_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_anexoscontratoproforma_tipospropietario">
+    <End Role="tipospropietario" Type="Self.tipospropietario" Multiplicity="0..1" />
+    <End Role="anexoscontratoproforma" Type="Self.anexoscontratoproforma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipospropietario">
+        <PropertyRef Name="tipopropietario_id" />
+      </Principal>
+      <Dependent Role="anexoscontratoproforma">
+        <PropertyRef Name="anexocontratoproforma_tipopropietario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_canalescontacto_medioscontacto">
+    <End Role="medioscontacto" Type="Self.medioscontacto" Multiplicity="0..1" />
+    <End Role="canalescontacto" Type="Self.canalescontacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medioscontacto">
+        <PropertyRef Name="mediocontacto_id" />
+      </Principal>
+      <Dependent Role="canalescontacto">
+        <PropertyRef Name="canalcontacto_mediocontacto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_canalescontacto">
+    <End Role="canalescontacto" Type="Self.canalescontacto" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="canalescontacto">
+        <PropertyRef Name="canalcontacto_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_canalcontacto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_distritos">
+    <End Role="distritos" Type="Self.distritos" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="distritos">
+        <PropertyRef Name="distrito_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_distrito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_estadoscaptacioncliente">
+    <End Role="estadoscaptacioncliente" Type="Self.estadoscaptacioncliente" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoscaptacioncliente">
+        <PropertyRef Name="estadocaptacioncliente_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_estadocaptacioncliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_estadoscivil">
+    <End Role="estadoscivil" Type="Self.estadoscivil" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoscivil">
+        <PropertyRef Name="estadocivil_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_estadocivil_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_estadosinterescliente">
+    <End Role="estadosinterescliente" Type="Self.estadosinterescliente" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosinterescliente">
+        <PropertyRef Name="estadointerescliente_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_estadointerescliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_estadosproceso">
+    <End Role="estadosproceso" Type="Self.estadosproceso" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosproceso">
+        <PropertyRef Name="estadoproceso_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_estadoproceso_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_tiposdocumentoidentidad">
+    <End Role="tiposdocumentoidentidad" Type="Self.tiposdocumentoidentidad" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposdocumentoidentidad">
+        <PropertyRef Name="tipodocumentoidentidad_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_tipodocumentoidentidad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_tipospersona">
+    <End Role="tipospersona" Type="Self.tipospersona" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipospersona">
+        <PropertyRef Name="tipopersona_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_tipopersona_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_clientes_usuariospromotor">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="cliente_promotor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_configuraciones_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="configuraciones" Type="Self.configuraciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="configuraciones">
+        <PropertyRef Name="configuracion_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_contratos_estadoscontrato">
+    <End Role="estadoscontrato" Type="Self.estadoscontrato" Multiplicity="0..1" />
+    <End Role="contratos" Type="Self.contratos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoscontrato">
+        <PropertyRef Name="estadocontrato_id" />
+      </Principal>
+      <Dependent Role="contratos">
+        <PropertyRef Name="contrato_estadocontrato_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_coordenadaslotes_lotes">
+    <End Role="lotes" Type="Self.lotes" Multiplicity="0..1" />
+    <End Role="coordenadaslotes" Type="Self.coordenadaslotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lotes">
+        <PropertyRef Name="lote_id" />
+      </Principal>
+      <Dependent Role="coordenadaslotes">
+        <PropertyRef Name="coordenadaslote_lote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizaciones_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="cliente_id" />
+      </Principal>
+      <Dependent Role="cotizaciones">
+        <PropertyRef Name="cotizacion_cliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizaciones_lotes">
+    <End Role="lotes" Type="Self.lotes" Multiplicity="0..1" />
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lotes">
+        <PropertyRef Name="lote_id" />
+      </Principal>
+      <Dependent Role="cotizaciones">
+        <PropertyRef Name="cotizacion_lote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizaciones_monedas">
+    <End Role="monedas" Type="Self.monedas" Multiplicity="0..1" />
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monedas">
+        <PropertyRef Name="moneda_id" />
+      </Principal>
+      <Dependent Role="cotizaciones">
+        <PropertyRef Name="cotizacion_moneda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizaciones_promotores">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="cotizaciones">
+        <PropertyRef Name="cotizacion_promotor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizaciones_proyectos">
+    <End Role="proyectos" Type="Self.proyectos" Multiplicity="0..1" />
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proyectos">
+        <PropertyRef Name="proyecto_id" />
+      </Principal>
+      <Dependent Role="cotizaciones">
+        <PropertyRef Name="cotizacion_proyecto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizaciones_tiposcambio">
+    <End Role="tiposcambio" Type="Self.tiposcambio" Multiplicity="0..1" />
+    <End Role="cotizaciones" Type="Self.cotizaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposcambio">
+        <PropertyRef Name="tipocambio_id" />
+      </Principal>
+      <Dependent Role="cotizaciones">
+        <PropertyRef Name="cotizacion_tipocambio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cuentasbanco_bancos">
+    <End Role="bancos" Type="Self.bancos" Multiplicity="0..1" />
+    <End Role="cuentasbanco" Type="Self.cuentasbanco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bancos">
+        <PropertyRef Name="banco_id" />
+      </Principal>
+      <Dependent Role="cuentasbanco">
+        <PropertyRef Name="cuentabanco_banco_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cuentasbanco_monedas">
+    <End Role="monedas" Type="Self.monedas" Multiplicity="0..1" />
+    <End Role="cuentasbanco" Type="Self.cuentasbanco" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monedas">
+        <PropertyRef Name="moneda_id" />
+      </Principal>
+      <Dependent Role="cuentasbanco">
+        <PropertyRef Name="cuentabanco_moneda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cuotas_anexoscontratocotizacion">
+    <End Role="anexoscontratocotizacion" Type="Self.anexoscontratocotizacion" Multiplicity="0..1" />
+    <End Role="cuotas" Type="Self.cuotas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="anexoscontratocotizacion">
+        <PropertyRef Name="anexocontratocotizacion_id" />
+      </Principal>
+      <Dependent Role="cuotas">
+        <PropertyRef Name="cuota_anexocontratocotizacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_datosencuesta_tiposencuesta">
+    <End Role="tiposencuesta" Type="Self.tiposencuesta" Multiplicity="0..1" />
+    <End Role="datosencuesta" Type="Self.datosencuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposencuesta">
+        <PropertyRef Name="tipoencuesta_id" />
+      </Principal>
+      <Dependent Role="datosencuesta">
+        <PropertyRef Name="datoencuesta_tipoencuesta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventa_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="documentosventa">
+        <PropertyRef Name="documentoventa_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventa_estadosdocumento">
+    <End Role="estadosdocumento" Type="Self.estadosdocumento" Multiplicity="0..1" />
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosdocumento">
+        <PropertyRef Name="estadodocumento_id" />
+      </Principal>
+      <Dependent Role="documentosventa">
+        <PropertyRef Name="documentoventa_estadodocumento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventa_monedas">
+    <End Role="monedas" Type="Self.monedas" Multiplicity="0..1" />
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monedas">
+        <PropertyRef Name="moneda_id" />
+      </Principal>
+      <Dependent Role="documentosventa">
+        <PropertyRef Name="documentoventa_moneda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventa_tiposdocumentoventa">
+    <End Role="tiposdocumentoventa" Type="Self.tiposdocumentoventa" Multiplicity="0..1" />
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposdocumentoventa">
+        <PropertyRef Name="tipodocumentoventa_id" />
+      </Principal>
+      <Dependent Role="documentosventa">
+        <PropertyRef Name="documentoventa_tipodocumentoventa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventa_tiposmetodopago">
+    <End Role="tiposmetodopago" Type="Self.tiposmetodopago" Multiplicity="0..1" />
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposmetodopago">
+        <PropertyRef Name="tipometodopago_id" />
+      </Principal>
+      <Dependent Role="documentosventa">
+        <PropertyRef Name="documentoventa_tipometodopago_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventa_transacciones">
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="0..1" />
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transacciones">
+        <PropertyRef Name="transaccion_id" />
+      </Principal>
+      <Dependent Role="documentosventa">
+        <PropertyRef Name="documentoventa_transaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentosventadetalle_documentosventa">
+    <End Role="documentosventa" Type="Self.documentosventa" Multiplicity="0..1" />
+    <End Role="documentosventadetalle" Type="Self.documentosventadetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentosventa">
+        <PropertyRef Name="documentoventa_id" />
+      </Principal>
+      <Dependent Role="documentosventadetalle">
+        <PropertyRef Name="documentoventadetalle_documentoventa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empresas_tiposdocumentoidentidad">
+    <End Role="tiposdocumentoidentidad" Type="Self.tiposdocumentoidentidad" Multiplicity="0..1" />
+    <End Role="empresas" Type="Self.empresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposdocumentoidentidad">
+        <PropertyRef Name="tipodocumentoidentidad_id" />
+      </Principal>
+      <Dependent Role="empresas">
+        <PropertyRef Name="empresa_tipodocumentoidentidad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encuestas_datosencuesta">
+    <End Role="datosencuesta" Type="Self.datosencuesta" Multiplicity="0..1" />
+    <End Role="encuestas" Type="Self.encuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="datosencuesta">
+        <PropertyRef Name="datoencuesta_id" />
+      </Principal>
+      <Dependent Role="encuestas">
+        <PropertyRef Name="encuesta_datoencuesta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encuestas_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="tiposencuesta" Type="Self.tiposencuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="tiposencuesta">
+        <PropertyRef Name="tipoencuesta_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encuestas_preguntas">
+    <End Role="preguntas" Type="Self.preguntas" Multiplicity="0..1" />
+    <End Role="encuestas" Type="Self.encuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="preguntas">
+        <PropertyRef Name="pregunta_id" />
+      </Principal>
+      <Dependent Role="encuestas">
+        <PropertyRef Name="encuesta_pregunta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_encuestas_respuestas">
+    <End Role="respuestas" Type="Self.respuestas" Multiplicity="0..1" />
+    <End Role="encuestas" Type="Self.encuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="respuestas">
+        <PropertyRef Name="respuesta_id" />
+      </Principal>
+      <Dependent Role="encuestas">
+        <PropertyRef Name="encuesta_respuesta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eventos_contratos">
+    <End Role="contratos" Type="Self.contratos" Multiplicity="0..1" />
+    <End Role="eventos" Type="Self.eventos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contratos">
+        <PropertyRef Name="contrato_id" />
+      </Principal>
+      <Dependent Role="eventos">
+        <PropertyRef Name="evento_contrato_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eventos_estadosevento">
+    <End Role="estadosevento" Type="Self.estadosevento" Multiplicity="0..1" />
+    <End Role="eventos" Type="Self.eventos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosevento">
+        <PropertyRef Name="estadoevento_id" />
+      </Principal>
+      <Dependent Role="eventos">
+        <PropertyRef Name="evento_estadoevento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eventos_usuarios">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+    <End Role="eventos" Type="Self.eventos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="usuario_id" />
+      </Principal>
+      <Dependent Role="eventos">
+        <PropertyRef Name="evento_usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eventostipocontacto_eventos">
+    <End Role="eventos" Type="Self.eventos" Multiplicity="0..1" />
+    <End Role="eventostipocontacto" Type="Self.eventostipocontacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="eventos">
+        <PropertyRef Name="evento_id" />
+      </Principal>
+      <Dependent Role="eventostipocontacto">
+        <PropertyRef Name="eventotipocontacto_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_eventostipocontacto_tiposcontacto">
+    <End Role="tiposcontacto" Type="Self.tiposcontacto" Multiplicity="0..1" />
+    <End Role="eventostipocontacto" Type="Self.eventostipocontacto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposcontacto">
+        <PropertyRef Name="tipocontacto_id" />
+      </Principal>
+      <Dependent Role="eventostipocontacto">
+        <PropertyRef Name="eventotipocontacto_tipocontacto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_interesesclienteproyecto_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+    <End Role="interesesclienteproyecto" Type="Self.interesesclienteproyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="cliente_id" />
+      </Principal>
+      <Dependent Role="interesesclienteproyecto">
+        <PropertyRef Name="interesclienteproyecto_cliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_interesesclienteproyecto_proyectos">
+    <End Role="proyectos" Type="Self.proyectos" Multiplicity="0..1" />
+    <End Role="interesesclienteproyecto" Type="Self.interesesclienteproyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proyectos">
+        <PropertyRef Name="proyecto_id" />
+      </Principal>
+      <Dependent Role="interesesclienteproyecto">
+        <PropertyRef Name="interesclienteproyecto_proyecto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lotes_estadoslote">
+    <End Role="estadoslote" Type="Self.estadoslote" Multiplicity="0..1" />
+    <End Role="lotes" Type="Self.lotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoslote">
+        <PropertyRef Name="estadoslote_id" />
+      </Principal>
+      <Dependent Role="lotes">
+        <PropertyRef Name="lote_estadolote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_lotes_proyectos">
+    <End Role="proyectos" Type="Self.proyectos" Multiplicity="0..1" />
+    <End Role="lotes" Type="Self.lotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proyectos">
+        <PropertyRef Name="proyecto_id" />
+      </Principal>
+      <Dependent Role="lotes">
+        <PropertyRef Name="lote_proyecto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notascredito_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="notascredito" Type="Self.notascredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="notascredito">
+        <PropertyRef Name="notacredito_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notascredito_estadosdocumento">
+    <End Role="estadosdocumento" Type="Self.estadosdocumento" Multiplicity="0..1" />
+    <End Role="notascredito" Type="Self.notascredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosdocumento">
+        <PropertyRef Name="estadodocumento_id" />
+      </Principal>
+      <Dependent Role="notascredito">
+        <PropertyRef Name="notacredito_estadodocumento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notascredito_monedas">
+    <End Role="monedas" Type="Self.monedas" Multiplicity="0..1" />
+    <End Role="notascredito" Type="Self.notascredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monedas">
+        <PropertyRef Name="moneda_id" />
+      </Principal>
+      <Dependent Role="notascredito">
+        <PropertyRef Name="notacredito_moneda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notascredito_tiposdocumentoventa">
+    <End Role="tiposdocumentoventa" Type="Self.tiposdocumentoventa" Multiplicity="0..1" />
+    <End Role="notascredito" Type="Self.notascredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposdocumentoventa">
+        <PropertyRef Name="tipodocumentoventa_id" />
+      </Principal>
+      <Dependent Role="notascredito">
+        <PropertyRef Name="notacredito_tipodocumentoventa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notascredito_tiposnotacredito">
+    <End Role="tiposnotacredito" Type="Self.tiposnotacredito" Multiplicity="0..1" />
+    <End Role="notascredito" Type="Self.notascredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposnotacredito">
+        <PropertyRef Name="tiponotacredito_id" />
+      </Principal>
+      <Dependent Role="notascredito">
+        <PropertyRef Name="notacredito_tiponotacredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_notascreditodetalle_notascredito">
+    <End Role="notascredito" Type="Self.notascredito" Multiplicity="0..1" />
+    <End Role="notascreditodetalle" Type="Self.notascreditodetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notascredito">
+        <PropertyRef Name="notacredito_id" />
+      </Principal>
+      <Dependent Role="notascreditodetalle">
+        <PropertyRef Name="notacreditodetalle_notadecredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pagos_cuotas">
+    <End Role="cuotas" Type="Self.cuotas" Multiplicity="0..1" />
+    <End Role="pagos" Type="Self.pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cuotas">
+        <PropertyRef Name="cuota_id" />
+      </Principal>
+      <Dependent Role="pagos">
+        <PropertyRef Name="pago_cuota_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pagos_transacciones">
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="0..1" />
+    <End Role="pagos" Type="Self.pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transacciones">
+        <PropertyRef Name="transaccion_id" />
+      </Principal>
+      <Dependent Role="pagos">
+        <PropertyRef Name="pago_transaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_preguntas_encuestas">
+    <End Role="tiposencuesta" Type="Self.tiposencuesta" Multiplicity="0..1" />
+    <End Role="preguntas" Type="Self.preguntas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposencuesta">
+        <PropertyRef Name="tipoencuesta_id" />
+      </Principal>
+      <Dependent Role="preguntas">
+        <PropertyRef Name="pregunta_tipoencuesta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="cliente_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_cliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_estadoscivil">
+    <End Role="estadoscivil" Type="Self.estadoscivil" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoscivil">
+        <PropertyRef Name="estadocivil_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_estadocivil_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_estadosuif">
+    <End Role="estadosuif" Type="Self.estadosuif" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosuif">
+        <PropertyRef Name="estadouif_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_estadouif_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_lotes">
+    <End Role="lotes" Type="Self.lotes" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lotes">
+        <PropertyRef Name="lote_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_lote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_tiposdocumentoidentidad">
+    <End Role="tiposdocumentoidentidad" Type="Self.tiposdocumentoidentidad" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposdocumentoidentidad">
+        <PropertyRef Name="tipodocumentoidentidad_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_tipodocumentoidentidad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_tipossociedad">
+    <End Role="tipossociedad" Type="Self.tipossociedad" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipossociedad">
+        <PropertyRef Name="tiposociedad_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_tiposociedad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proformasuif_transacciones">
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="0..1" />
+    <End Role="proformasuif" Type="Self.proformasuif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transacciones">
+        <PropertyRef Name="transaccion_id" />
+      </Principal>
+      <Dependent Role="proformasuif">
+        <PropertyRef Name="proformauif_transaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_provincias_departamentos">
+    <End Role="departamentos" Type="Self.departamentos" Multiplicity="0..1" />
+    <End Role="provincias" Type="Self.provincias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departamentos">
+        <PropertyRef Name="departamento_id" />
+      </Principal>
+      <Dependent Role="provincias">
+        <PropertyRef Name="provincia_departamento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_proyectos_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="proyectos" Type="Self.proyectos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="proyectos">
+        <PropertyRef Name="proyecto_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_respuestas_preguntas">
+    <End Role="preguntas" Type="Self.preguntas" Multiplicity="0..1" />
+    <End Role="respuestas" Type="Self.respuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="preguntas">
+        <PropertyRef Name="pregunta_id" />
+      </Principal>
+      <Dependent Role="respuestas">
+        <PropertyRef Name="respuesta_pregunta_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_roles_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="roles" Type="Self.roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="roles">
+        <PropertyRef Name="rol_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_separaciones_clientes">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="0..1" />
+    <End Role="separaciones" Type="Self.separaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="cliente_id" />
+      </Principal>
+      <Dependent Role="separaciones">
+        <PropertyRef Name="separacion_cliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_separaciones_estadosseparacion">
+    <End Role="estadosseparacion" Type="Self.estadosseparacion" Multiplicity="0..1" />
+    <End Role="separaciones" Type="Self.separaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadosseparacion">
+        <PropertyRef Name="estadoseparacion_id" />
+      </Principal>
+      <Dependent Role="separaciones">
+        <PropertyRef Name="separacion_estadoseparacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_separaciones_lotes">
+    <End Role="lotes" Type="Self.lotes" Multiplicity="0..1" />
+    <End Role="separaciones" Type="Self.separaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lotes">
+        <PropertyRef Name="lote_id" />
+      </Principal>
+      <Dependent Role="separaciones">
+        <PropertyRef Name="separacion_lote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_series_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="series" Type="Self.series" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="series">
+        <PropertyRef Name="serie_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_series_tiposdocumentoventa">
+    <End Role="tiposdocumentoventa" Type="Self.tiposdocumentoventa" Multiplicity="0..1" />
+    <End Role="series" Type="Self.series" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposdocumentoventa">
+        <PropertyRef Name="tipodocumentoventa_id" />
+      </Principal>
+      <Dependent Role="series">
+        <PropertyRef Name="serie_tipodocumentoventa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_titulares_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="titulares" Type="Self.titulares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="titulares">
+        <PropertyRef Name="titular_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_cuentasbanco">
+    <End Role="cuentasbanco" Type="Self.cuentasbanco" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cuentasbanco">
+        <PropertyRef Name="cuentabanco_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_cuentabanco_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_empresas">
+    <End Role="empresas" Type="Self.empresas" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresas">
+        <PropertyRef Name="empresa_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_estadostransaccion">
+    <End Role="estadostransaccion" Type="Self.estadostransaccion" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadostransaccion">
+        <PropertyRef Name="estadotransaccion_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_estadotransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_eventos">
+    <End Role="eventos" Type="Self.eventos" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="eventos">
+        <PropertyRef Name="evento_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_monedas">
+    <End Role="monedas" Type="Self.monedas" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monedas">
+        <PropertyRef Name="moneda_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_moneda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_tiposcambio">
+    <End Role="tiposcambio" Type="Self.tiposcambio" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposcambio">
+        <PropertyRef Name="tipocambio_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_tipocambio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_tiposmetodopago">
+    <End Role="tiposmetodopago" Type="Self.tiposmetodopago" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposmetodopago">
+        <PropertyRef Name="tipometodopago_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_tipometodopago_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_tiposmovimiento">
+    <End Role="tiposmovimiento" Type="Self.tiposmovimiento" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tiposmovimiento">
+        <PropertyRef Name="tipomovimiento_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_tipomovimiento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transacciones_tipostransaccion">
+    <End Role="tipostransaccion" Type="Self.tipostransaccion" Multiplicity="0..1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipostransaccion">
+        <PropertyRef Name="tipotransaccion_id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="transaccion_tipotransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transaccionesseparacion_separaciones">
+    <End Role="separaciones" Type="Self.separaciones" Multiplicity="0..1" />
+    <End Role="transaccionesseparacion" Type="Self.transaccionesseparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="separaciones">
+        <PropertyRef Name="separacion_id" />
+      </Principal>
+      <Dependent Role="transaccionesseparacion">
+        <PropertyRef Name="transaccionseparacion_separacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transaccionesseparacion_transacciones">
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="0..1" />
+    <End Role="transaccionesseparacion" Type="Self.transaccionesseparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transacciones">
+        <PropertyRef Name="transaccion_id" />
+      </Principal>
+      <Dependent Role="transaccionesseparacion">
+        <PropertyRef Name="transaccionseparacion_transaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_DATOSUSUARIO">
+    <End Role="datosusuarios" Type="Self.datosusuarios" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="datosusuarios">
+        <PropertyRef Name="datosusuario_id" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="usuario_datosusuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_ROLES">
+    <End Role="roles" Type="Self.roles" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="rol_id" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="usuario_rol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="f_eventos_detalles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="varchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="evento_id" Type="bigint" Nullable="false" />
+          <Property Name="evento_fechacreacion" Type="nvarchar" MaxLength="30" />
+          <Property Name="evento_fechapropuesta" Type="nvarchar" MaxLength="30" />
+          <Property Name="evento_descripcion" Type="varchar" MaxLength="250" />
+          <Property Name="evento_montopropuesto" Type="decimal" Precision="16" Scale="2" />
+          <Property Name="evento_estadoevento_id" Type="bigint" />
+          <Property Name="proformauif_cliente_nrodocumento" Type="varchar" MaxLength="150" />
+          <Property Name="proformauif_cliente_razonsocial" Type="varchar" MaxLength="150" />
+          <Property Name="proyecto_nombrecorto" Type="varchar" MaxLength="50" />
+          <Property Name="proyecto_id" Type="bigint" />
+          <Property Name="cotizacion_proyecto_nombre" Type="varchar" MaxLength="150" />
+          <Property Name="cotizacion_lote_nombre" Type="varchar" MaxLength="50" />
+          <Property Name="llamada" Type="int" />
+          <Property Name="whatsapp" Type="int" />
+          <Property Name="correo" Type="int" />
+          <Property Name="entrevista" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="sp_cargarContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_cargarCuotas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="contratoId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_cargarDataTransaccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="transaccionId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_evento_detallado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCUMENTO" Type="varchar" Mode="In" />
+    <Parameter Name="PROYECTO" Type="int" Mode="In" />
+    <Parameter Name="LOTE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerDatosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="transaccionId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerDireccionCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="transaccionId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerReporteEstadoCobranza" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="proyectoId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerReportePagosClienteCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="contratoId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerReportePagosClienteDetalle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="contratoId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerReportePagosClienteDetalle_v2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="contratoId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerReportePagosClienteDetalle_v3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cuotaId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_obtenerReporteTransacciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="vivemas_dbModelStoreContainer">
+    <EntitySet Name="anexoscontratocotizacion" EntityType="Self.anexoscontratocotizacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="anexoscontratoproforma" EntityType="Self.anexoscontratoproforma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bancos" EntityType="Self.bancos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="canalescontacto" EntityType="Self.canalescontacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="configuraciones" EntityType="Self.configuraciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contratos" EntityType="Self.contratos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="coordenadaslotes" EntityType="Self.coordenadaslotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cotizaciones" EntityType="Self.cotizaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cuentasbanco" EntityType="Self.cuentasbanco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cuotas" EntityType="Self.cuotas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datosencuesta" EntityType="Self.datosencuesta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="datosusuarios" EntityType="Self.datosusuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="departamentos" EntityType="Self.departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="distritos" EntityType="Self.distritos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="documentosventa" EntityType="Self.documentosventa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="documentosventadetalle" EntityType="Self.documentosventadetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empresas" EntityType="Self.empresas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="encuestas" EntityType="Self.encuestas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadoscaptacioncliente" EntityType="Self.estadoscaptacioncliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadoscivil" EntityType="Self.estadoscivil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadoscontrato" EntityType="Self.estadoscontrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadosdocumento" EntityType="Self.estadosdocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadosevento" EntityType="Self.estadosevento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadosinterescliente" EntityType="Self.estadosinterescliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadoslote" EntityType="Self.estadoslote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadosproceso" EntityType="Self.estadosproceso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadosseparacion" EntityType="Self.estadosseparacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadostransaccion" EntityType="Self.estadostransaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadosuif" EntityType="Self.estadosuif" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="eventos" EntityType="Self.eventos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="eventostipocontacto" EntityType="Self.eventostipocontacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="interesesclienteproyecto" EntityType="Self.interesesclienteproyecto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lotes" EntityType="Self.lotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="medioscontacto" EntityType="Self.medioscontacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="monedas" EntityType="Self.monedas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notascredito" EntityType="Self.notascredito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notascreditodetalle" EntityType="Self.notascreditodetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pagos" EntityType="Self.pagos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="preguntas" EntityType="Self.preguntas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proformascontrato" EntityType="Self.proformascontrato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proformasuif" EntityType="Self.proformasuif" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="provincias" EntityType="Self.provincias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proyectos" EntityType="Self.proyectos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="respuestas" EntityType="Self.respuestas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="separaciones" EntityType="Self.separaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="series" EntityType="Self.series" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposcambio" EntityType="Self.tiposcambio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposcontacto" EntityType="Self.tiposcontacto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposdocumentoidentidad" EntityType="Self.tiposdocumentoidentidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposdocumentoventa" EntityType="Self.tiposdocumentoventa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposencuesta" EntityType="Self.tiposencuesta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposmetodopago" EntityType="Self.tiposmetodopago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposmoneda" EntityType="Self.tiposmoneda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposmovimiento" EntityType="Self.tiposmovimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tiposnotacredito" EntityType="Self.tiposnotacredito" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipospersona" EntityType="Self.tipospersona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipospropietario" EntityType="Self.tipospropietario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipossociedad" EntityType="Self.tipossociedad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipostransaccion" EntityType="Self.tipostransaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="titulares" EntityType="Self.titulares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transacciones" EntityType="Self.transacciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaccionesseparacion" EntityType="Self.transaccionesseparacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_busquedaContratosAutocomplete" EntityType="Self.vw_busquedaContratosAutocomplete" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_busquedaContratosAutocomplete].[contrato_id] AS [contrato_id], 
+    [vw_busquedaContratosAutocomplete].[contrato_numeracion] AS [contrato_numeracion], 
+    [vw_busquedaContratosAutocomplete].[cliente_nrodocumento] AS [cliente_nrodocumento], 
+    [vw_busquedaContratosAutocomplete].[cliente_razonsocial] AS [cliente_razonsocial], 
+    [vw_busquedaContratosAutocomplete].[lote_nombre] AS [lote_nombre], 
+    [vw_busquedaContratosAutocomplete].[lote_proyecto_id] AS [lote_proyecto_id], 
+    [vw_busquedaContratosAutocomplete].[proyecto_nombrecorto] AS [proyecto_nombrecorto]
+    FROM [dbo].[vw_busquedaContratosAutocomplete] AS [vw_busquedaContratosAutocomplete]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_cargarClientesContrato" EntityType="Self.vw_cargarClientesContrato" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_cargarClientesContrato].[contrato_id] AS [contrato_id], 
+    [vw_cargarClientesContrato].[contrato_numeracion] AS [contrato_numeracion], 
+    [vw_cargarClientesContrato].[cliente_nrodocumento] AS [cliente_nrodocumento], 
+    [vw_cargarClientesContrato].[cliente_razonsocial] AS [cliente_razonsocial]
+    FROM [dbo].[vw_cargarClientesContrato] AS [vw_cargarClientesContrato]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_cargarEventos" EntityType="Self.vw_cargarEventos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_cargarEventos].[evento_id] AS [evento_id], 
+    [vw_cargarEventos].[start] AS [start], 
+    [vw_cargarEventos].[evento_estadoevento_id] AS [evento_estadoevento_id], 
+    [vw_cargarEventos].[title] AS [title]
+    FROM [dbo].[vw_cargarEventos] AS [vw_cargarEventos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_reporteeventos" EntityType="Self.vw_reporteeventos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_reporteeventos].[evento_contrato_id] AS [evento_contrato_id], 
+    [vw_reporteeventos].[evento_id] AS [evento_id], 
+    [vw_reporteeventos].[proformauif_cliente_nrodocumento] AS [proformauif_cliente_nrodocumento], 
+    [vw_reporteeventos].[proformauif_cliente_razonsocial] AS [proformauif_cliente_razonsocial], 
+    [vw_reporteeventos].[proyecto_nombrecorto] AS [proyecto_nombrecorto], 
+    [vw_reporteeventos].[proyecto_id] AS [proyecto_id], 
+    [vw_reporteeventos].[cotizacion_lote_nombre] AS [cotizacion_lote_nombre], 
+    [vw_reporteeventos].[llamada] AS [llamada], 
+    [vw_reporteeventos].[whatsapp] AS [whatsapp], 
+    [vw_reporteeventos].[correo] AS [correo], 
+    [vw_reporteeventos].[entrevista] AS [entrevista]
+    FROM [dbo].[vw_reporteeventos] AS [vw_reporteeventos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_reporteVentas" EntityType="Self.vw_reporteVentas" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_reporteVentas].[documentoventa_id] AS [documentoventa_id], 
+    [vw_reporteVentas].[documentoventa_transaccion_id] AS [documentoventa_transaccion_id], 
+    [vw_reporteVentas].[anexocontratocotizacion_contrato_id] AS [anexocontratocotizacion_contrato_id], 
+    [vw_reporteVentas].[documentoEmision] AS [documentoEmision], 
+    [vw_reporteVentas].[notacreditoanulacion] AS [notacreditoanulacion], 
+    [vw_reporteVentas].[notacredito_fechaemision] AS [notacredito_fechaemision], 
+    [vw_reporteVentas].[documentoventa_cliente_nrodocumento] AS [documentoventa_cliente_nrodocumento], 
+    [vw_reporteVentas].[documentoventa_cliente_nombre] AS [documentoventa_cliente_nombre], 
+    [vw_reporteVentas].[documentoventa_total] AS [documentoventa_total], 
+    [vw_reporteVentas].[documentoventa_moneda_codigo] AS [documentoventa_moneda_codigo], 
+    [vw_reporteVentas].[documentoventa_fechaemision] AS [documentoventa_fechaemision], 
+    [vw_reporteVentas].[documentoventa_fechacreacion] AS [documentoventa_fechacreacion], 
+    [vw_reporteVentas].[cotizacion_proyecto_id] AS [cotizacion_proyecto_id]
+    FROM [dbo].[vw_reporteVentas] AS [vw_reporteVentas]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_anexoscontratocotizacion_contratos" Association="Self.FK_anexoscontratocotizacion_contratos">
+      <End Role="contratos" EntitySet="contratos" />
+      <End Role="anexoscontratocotizacion" EntitySet="anexoscontratocotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_anexoscontratocotizacion_cotizaciones" Association="Self.FK_anexoscontratocotizacion_cotizaciones">
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+      <End Role="anexoscontratocotizacion" EntitySet="anexoscontratocotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_anexoscontratoproforma_contratos" Association="Self.FK_anexoscontratoproforma_contratos">
+      <End Role="contratos" EntitySet="contratos" />
+      <End Role="anexoscontratoproforma" EntitySet="anexoscontratoproforma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_anexoscontratoproforma_proformasuif" Association="Self.FK_anexoscontratoproforma_proformasuif">
+      <End Role="proformasuif" EntitySet="proformasuif" />
+      <End Role="anexoscontratoproforma" EntitySet="anexoscontratoproforma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_anexoscontratoproforma_tipospropietario" Association="Self.FK_anexoscontratoproforma_tipospropietario">
+      <End Role="tipospropietario" EntitySet="tipospropietario" />
+      <End Role="anexoscontratoproforma" EntitySet="anexoscontratoproforma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_canalescontacto_medioscontacto" Association="Self.FK_canalescontacto_medioscontacto">
+      <End Role="medioscontacto" EntitySet="medioscontacto" />
+      <End Role="canalescontacto" EntitySet="canalescontacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_canalescontacto" Association="Self.FK_clientes_canalescontacto">
+      <End Role="canalescontacto" EntitySet="canalescontacto" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_distritos" Association="Self.FK_clientes_distritos">
+      <End Role="distritos" EntitySet="distritos" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_empresas" Association="Self.FK_clientes_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_estadoscaptacioncliente" Association="Self.FK_clientes_estadoscaptacioncliente">
+      <End Role="estadoscaptacioncliente" EntitySet="estadoscaptacioncliente" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_estadoscivil" Association="Self.FK_clientes_estadoscivil">
+      <End Role="estadoscivil" EntitySet="estadoscivil" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_estadosinterescliente" Association="Self.FK_clientes_estadosinterescliente">
+      <End Role="estadosinterescliente" EntitySet="estadosinterescliente" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_estadosproceso" Association="Self.FK_clientes_estadosproceso">
+      <End Role="estadosproceso" EntitySet="estadosproceso" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_tiposdocumentoidentidad" Association="Self.FK_clientes_tiposdocumentoidentidad">
+      <End Role="tiposdocumentoidentidad" EntitySet="tiposdocumentoidentidad" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_tipospersona" Association="Self.FK_clientes_tipospersona">
+      <End Role="tipospersona" EntitySet="tipospersona" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_clientes_usuariospromotor" Association="Self.FK_clientes_usuariospromotor">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_configuraciones_empresas" Association="Self.FK_configuraciones_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="configuraciones" EntitySet="configuraciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_contratos_estadoscontrato" Association="Self.FK_contratos_estadoscontrato">
+      <End Role="estadoscontrato" EntitySet="estadoscontrato" />
+      <End Role="contratos" EntitySet="contratos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_coordenadaslotes_lotes" Association="Self.FK_coordenadaslotes_lotes">
+      <End Role="lotes" EntitySet="lotes" />
+      <End Role="coordenadaslotes" EntitySet="coordenadaslotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizaciones_clientes" Association="Self.FK_cotizaciones_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizaciones_lotes" Association="Self.FK_cotizaciones_lotes">
+      <End Role="lotes" EntitySet="lotes" />
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizaciones_monedas" Association="Self.FK_cotizaciones_monedas">
+      <End Role="monedas" EntitySet="monedas" />
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizaciones_promotores" Association="Self.FK_cotizaciones_promotores">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizaciones_proyectos" Association="Self.FK_cotizaciones_proyectos">
+      <End Role="proyectos" EntitySet="proyectos" />
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizaciones_tiposcambio" Association="Self.FK_cotizaciones_tiposcambio">
+      <End Role="tiposcambio" EntitySet="tiposcambio" />
+      <End Role="cotizaciones" EntitySet="cotizaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cuentasbanco_bancos" Association="Self.FK_cuentasbanco_bancos">
+      <End Role="bancos" EntitySet="bancos" />
+      <End Role="cuentasbanco" EntitySet="cuentasbanco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cuentasbanco_monedas" Association="Self.FK_cuentasbanco_monedas">
+      <End Role="monedas" EntitySet="monedas" />
+      <End Role="cuentasbanco" EntitySet="cuentasbanco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cuotas_anexoscontratocotizacion" Association="Self.FK_cuotas_anexoscontratocotizacion">
+      <End Role="anexoscontratocotizacion" EntitySet="anexoscontratocotizacion" />
+      <End Role="cuotas" EntitySet="cuotas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_datosencuesta_tiposencuesta" Association="Self.FK_datosencuesta_tiposencuesta">
+      <End Role="tiposencuesta" EntitySet="tiposencuesta" />
+      <End Role="datosencuesta" EntitySet="datosencuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventa_empresas" Association="Self.FK_documentosventa_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="documentosventa" EntitySet="documentosventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventa_estadosdocumento" Association="Self.FK_documentosventa_estadosdocumento">
+      <End Role="estadosdocumento" EntitySet="estadosdocumento" />
+      <End Role="documentosventa" EntitySet="documentosventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventa_monedas" Association="Self.FK_documentosventa_monedas">
+      <End Role="monedas" EntitySet="monedas" />
+      <End Role="documentosventa" EntitySet="documentosventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventa_tiposdocumentoventa" Association="Self.FK_documentosventa_tiposdocumentoventa">
+      <End Role="tiposdocumentoventa" EntitySet="tiposdocumentoventa" />
+      <End Role="documentosventa" EntitySet="documentosventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventa_tiposmetodopago" Association="Self.FK_documentosventa_tiposmetodopago">
+      <End Role="tiposmetodopago" EntitySet="tiposmetodopago" />
+      <End Role="documentosventa" EntitySet="documentosventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventa_transacciones" Association="Self.FK_documentosventa_transacciones">
+      <End Role="transacciones" EntitySet="transacciones" />
+      <End Role="documentosventa" EntitySet="documentosventa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentosventadetalle_documentosventa" Association="Self.FK_documentosventadetalle_documentosventa">
+      <End Role="documentosventa" EntitySet="documentosventa" />
+      <End Role="documentosventadetalle" EntitySet="documentosventadetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empresas_tiposdocumentoidentidad" Association="Self.FK_empresas_tiposdocumentoidentidad">
+      <End Role="tiposdocumentoidentidad" EntitySet="tiposdocumentoidentidad" />
+      <End Role="empresas" EntitySet="empresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encuestas_datosencuesta" Association="Self.FK_encuestas_datosencuesta">
+      <End Role="datosencuesta" EntitySet="datosencuesta" />
+      <End Role="encuestas" EntitySet="encuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encuestas_empresas" Association="Self.FK_encuestas_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="tiposencuesta" EntitySet="tiposencuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encuestas_preguntas" Association="Self.FK_encuestas_preguntas">
+      <End Role="preguntas" EntitySet="preguntas" />
+      <End Role="encuestas" EntitySet="encuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_encuestas_respuestas" Association="Self.FK_encuestas_respuestas">
+      <End Role="respuestas" EntitySet="respuestas" />
+      <End Role="encuestas" EntitySet="encuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eventos_contratos" Association="Self.FK_eventos_contratos">
+      <End Role="contratos" EntitySet="contratos" />
+      <End Role="eventos" EntitySet="eventos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eventos_estadosevento" Association="Self.FK_eventos_estadosevento">
+      <End Role="estadosevento" EntitySet="estadosevento" />
+      <End Role="eventos" EntitySet="eventos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eventos_usuarios" Association="Self.FK_eventos_usuarios">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="eventos" EntitySet="eventos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eventostipocontacto_eventos" Association="Self.FK_eventostipocontacto_eventos">
+      <End Role="eventos" EntitySet="eventos" />
+      <End Role="eventostipocontacto" EntitySet="eventostipocontacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_eventostipocontacto_tiposcontacto" Association="Self.FK_eventostipocontacto_tiposcontacto">
+      <End Role="tiposcontacto" EntitySet="tiposcontacto" />
+      <End Role="eventostipocontacto" EntitySet="eventostipocontacto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_interesesclienteproyecto_clientes" Association="Self.FK_interesesclienteproyecto_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="interesesclienteproyecto" EntitySet="interesesclienteproyecto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_interesesclienteproyecto_proyectos" Association="Self.FK_interesesclienteproyecto_proyectos">
+      <End Role="proyectos" EntitySet="proyectos" />
+      <End Role="interesesclienteproyecto" EntitySet="interesesclienteproyecto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lotes_estadoslote" Association="Self.FK_lotes_estadoslote">
+      <End Role="estadoslote" EntitySet="estadoslote" />
+      <End Role="lotes" EntitySet="lotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_lotes_proyectos" Association="Self.FK_lotes_proyectos">
+      <End Role="proyectos" EntitySet="proyectos" />
+      <End Role="lotes" EntitySet="lotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notascredito_empresas" Association="Self.FK_notascredito_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="notascredito" EntitySet="notascredito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notascredito_estadosdocumento" Association="Self.FK_notascredito_estadosdocumento">
+      <End Role="estadosdocumento" EntitySet="estadosdocumento" />
+      <End Role="notascredito" EntitySet="notascredito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notascredito_monedas" Association="Self.FK_notascredito_monedas">
+      <End Role="monedas" EntitySet="monedas" />
+      <End Role="notascredito" EntitySet="notascredito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notascredito_tiposdocumentoventa" Association="Self.FK_notascredito_tiposdocumentoventa">
+      <End Role="tiposdocumentoventa" EntitySet="tiposdocumentoventa" />
+      <End Role="notascredito" EntitySet="notascredito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notascredito_tiposnotacredito" Association="Self.FK_notascredito_tiposnotacredito">
+      <End Role="tiposnotacredito" EntitySet="tiposnotacredito" />
+      <End Role="notascredito" EntitySet="notascredito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_notascreditodetalle_notascredito" Association="Self.FK_notascreditodetalle_notascredito">
+      <End Role="notascredito" EntitySet="notascredito" />
+      <End Role="notascreditodetalle" EntitySet="notascreditodetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pagos_cuotas" Association="Self.FK_pagos_cuotas">
+      <End Role="cuotas" EntitySet="cuotas" />
+      <End Role="pagos" EntitySet="pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pagos_transacciones" Association="Self.FK_pagos_transacciones">
+      <End Role="transacciones" EntitySet="transacciones" />
+      <End Role="pagos" EntitySet="pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_preguntas_encuestas" Association="Self.FK_preguntas_encuestas">
+      <End Role="tiposencuesta" EntitySet="tiposencuesta" />
+      <End Role="preguntas" EntitySet="preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_clientes" Association="Self.FK_proformasuif_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_empresas" Association="Self.FK_proformasuif_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_estadoscivil" Association="Self.FK_proformasuif_estadoscivil">
+      <End Role="estadoscivil" EntitySet="estadoscivil" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_estadosuif" Association="Self.FK_proformasuif_estadosuif">
+      <End Role="estadosuif" EntitySet="estadosuif" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_lotes" Association="Self.FK_proformasuif_lotes">
+      <End Role="lotes" EntitySet="lotes" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_tiposdocumentoidentidad" Association="Self.FK_proformasuif_tiposdocumentoidentidad">
+      <End Role="tiposdocumentoidentidad" EntitySet="tiposdocumentoidentidad" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_tipossociedad" Association="Self.FK_proformasuif_tipossociedad">
+      <End Role="tipossociedad" EntitySet="tipossociedad" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proformasuif_transacciones" Association="Self.FK_proformasuif_transacciones">
+      <End Role="transacciones" EntitySet="transacciones" />
+      <End Role="proformasuif" EntitySet="proformasuif" />
+    </AssociationSet>
+    <AssociationSet Name="FK_provincias_departamentos" Association="Self.FK_provincias_departamentos">
+      <End Role="departamentos" EntitySet="departamentos" />
+      <End Role="provincias" EntitySet="provincias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proyectos_empresas" Association="Self.FK_proyectos_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="proyectos" EntitySet="proyectos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respuestas_preguntas" Association="Self.FK_respuestas_preguntas">
+      <End Role="preguntas" EntitySet="preguntas" />
+      <End Role="respuestas" EntitySet="respuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_roles_empresas" Association="Self.FK_roles_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="roles" EntitySet="roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_separaciones_clientes" Association="Self.FK_separaciones_clientes">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="separaciones" EntitySet="separaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_separaciones_estadosseparacion" Association="Self.FK_separaciones_estadosseparacion">
+      <End Role="estadosseparacion" EntitySet="estadosseparacion" />
+      <End Role="separaciones" EntitySet="separaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_separaciones_lotes" Association="Self.FK_separaciones_lotes">
+      <End Role="lotes" EntitySet="lotes" />
+      <End Role="separaciones" EntitySet="separaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_series_empresas" Association="Self.FK_series_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="series" EntitySet="series" />
+    </AssociationSet>
+    <AssociationSet Name="FK_series_tiposdocumentoventa" Association="Self.FK_series_tiposdocumentoventa">
+      <End Role="tiposdocumentoventa" EntitySet="tiposdocumentoventa" />
+      <End Role="series" EntitySet="series" />
+    </AssociationSet>
+    <AssociationSet Name="FK_titulares_empresas" Association="Self.FK_titulares_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="titulares" EntitySet="titulares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_cuentasbanco" Association="Self.FK_transacciones_cuentasbanco">
+      <End Role="cuentasbanco" EntitySet="cuentasbanco" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_empresas" Association="Self.FK_transacciones_empresas">
+      <End Role="empresas" EntitySet="empresas" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_estadostransaccion" Association="Self.FK_transacciones_estadostransaccion">
+      <End Role="estadostransaccion" EntitySet="estadostransaccion" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_eventos" Association="Self.FK_transacciones_eventos">
+      <End Role="eventos" EntitySet="eventos" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_monedas" Association="Self.FK_transacciones_monedas">
+      <End Role="monedas" EntitySet="monedas" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_tiposcambio" Association="Self.FK_transacciones_tiposcambio">
+      <End Role="tiposcambio" EntitySet="tiposcambio" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_tiposmetodopago" Association="Self.FK_transacciones_tiposmetodopago">
+      <End Role="tiposmetodopago" EntitySet="tiposmetodopago" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_tiposmovimiento" Association="Self.FK_transacciones_tiposmovimiento">
+      <End Role="tiposmovimiento" EntitySet="tiposmovimiento" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transacciones_tipostransaccion" Association="Self.FK_transacciones_tipostransaccion">
+      <End Role="tipostransaccion" EntitySet="tipostransaccion" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transaccionesseparacion_separaciones" Association="Self.FK_transaccionesseparacion_separaciones">
+      <End Role="separaciones" EntitySet="separaciones" />
+      <End Role="transaccionesseparacion" EntitySet="transaccionesseparacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transaccionesseparacion_transacciones" Association="Self.FK_transaccionesseparacion_transacciones">
+      <End Role="transacciones" EntitySet="transacciones" />
+      <End Role="transaccionesseparacion" EntitySet="transaccionesseparacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_DATOSUSUARIO" Association="Self.FK_USUARIOS_DATOSUSUARIO">
+      <End Role="datosusuarios" EntitySet="datosusuarios" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_ROLES" Association="Self.FK_USUARIOS_ROLES">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

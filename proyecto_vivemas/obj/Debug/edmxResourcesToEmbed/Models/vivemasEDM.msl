@@ -1,0 +1,1273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vivemas_dbModelStoreContainer" CdmEntityContainer="vivemas_dbEntities">
+    <EntitySetMapping Name="datosusuarios">
+      <EntityTypeMapping TypeName="vivemas_dbModel.datosusuarios">
+        <MappingFragment StoreEntitySet="datosusuarios">
+          <ScalarProperty Name="datosusuario_idanterior" ColumnName="datosusuario_idanterior" />
+          <ScalarProperty Name="datosusuario_id" ColumnName="datosusuario_id" />
+          <ScalarProperty Name="datosusuario_razonsocial" ColumnName="datosusuario_razonsocial" />
+          <ScalarProperty Name="datosusuario_nrodocumento" ColumnName="datosusuario_nrodocumento" />
+          <ScalarProperty Name="datosusuario_direccion" ColumnName="datosusuario_direccion" />
+          <ScalarProperty Name="datosusuario_fechacreacion" ColumnName="datosusuario_fechacreacion" />
+          <ScalarProperty Name="datosusuario_fechamodificacion" ColumnName="datosusuario_fechamodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="vivemas_dbModel.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="rol_idanterior" ColumnName="rol_idanterior" />
+          <ScalarProperty Name="rol_empresa_id" ColumnName="rol_empresa_id" />
+          <ScalarProperty Name="rol_id" ColumnName="rol_id" />
+          <ScalarProperty Name="rol_nombre" ColumnName="rol_nombre" />
+          <ScalarProperty Name="rol_estado" ColumnName="rol_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="vivemas_dbModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="usuario_idanterior" ColumnName="usuario_idanterior" />
+          <ScalarProperty Name="usuario_estado" ColumnName="usuario_estado" />
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="usuario_rol_id" ColumnName="usuario_rol_id" />
+          <ScalarProperty Name="usuario_datosusuario_id" ColumnName="usuario_datosusuario_id" />
+          <ScalarProperty Name="usuario_usuario" ColumnName="usuario_usuario" />
+          <ScalarProperty Name="usuario_pass" ColumnName="usuario_pass" />
+          <ScalarProperty Name="usuario_fechacreacion" ColumnName="usuario_fechacreacion" />
+          <ScalarProperty Name="usuario_fechamodificacion" ColumnName="usuario_fechamodificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.empresas">
+        <MappingFragment StoreEntitySet="empresas">
+          <ScalarProperty Name="empresa_nrocontacto" ColumnName="empresa_nrocontacto" />
+          <ScalarProperty Name="empresa_correo" ColumnName="empresa_correo" />
+          <ScalarProperty Name="empresa_nombrecarpeta" ColumnName="empresa_nombrecarpeta" />
+          <ScalarProperty Name="empresa_codigopais" ColumnName="empresa_codigopais" />
+          <ScalarProperty Name="empresa_departamento" ColumnName="empresa_departamento" />
+          <ScalarProperty Name="empresa_provincia" ColumnName="empresa_provincia" />
+          <ScalarProperty Name="empresa_distrito" ColumnName="empresa_distrito" />
+          <ScalarProperty Name="empresa_zona" ColumnName="empresa_zona" />
+          <ScalarProperty Name="empresa_direccion" ColumnName="empresa_direccion" />
+          <ScalarProperty Name="empresa_ubigeo" ColumnName="empresa_ubigeo" />
+          <ScalarProperty Name="empresa_tipodocumentoidentidad_id" ColumnName="empresa_tipodocumentoidentidad_id" />
+          <ScalarProperty Name="empresa_documento" ColumnName="empresa_documento" />
+          <ScalarProperty Name="empresa_nombrecomercial" ColumnName="empresa_nombrecomercial" />
+          <ScalarProperty Name="empresa_nombre" ColumnName="empresa_nombre" />
+          <ScalarProperty Name="empresa_id" ColumnName="empresa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lotes">
+      <EntityTypeMapping TypeName="vivemas_dbModel.lotes">
+        <MappingFragment StoreEntitySet="lotes">
+          <ScalarProperty Name="lote_idanterior" ColumnName="lote_idanterior" />
+          <ScalarProperty Name="lote_comercial" ColumnName="lote_comercial" />
+          <ScalarProperty Name="lote_linderoatras" ColumnName="lote_linderoatras" />
+          <ScalarProperty Name="lote_linderoizquierda" ColumnName="lote_linderoizquierda" />
+          <ScalarProperty Name="lote_linderoderecha" ColumnName="lote_linderoderecha" />
+          <ScalarProperty Name="lote_linderofrente" ColumnName="lote_linderofrente" />
+          <ScalarProperty Name="lote_precio" ColumnName="lote_precio" />
+          <ScalarProperty Name="lote_preciometro" ColumnName="lote_preciometro" />
+          <ScalarProperty Name="lote_perimetro" ColumnName="lote_perimetro" />
+          <ScalarProperty Name="lote_areatotal" ColumnName="lote_areatotal" />
+          <ScalarProperty Name="lote_estadolote_id" ColumnName="lote_estadolote_id" />
+          <ScalarProperty Name="lote_fechamodificacion" ColumnName="lote_fechamodificacion" />
+          <ScalarProperty Name="lote_usuariomodificacion" ColumnName="lote_usuariomodificacion" />
+          <ScalarProperty Name="lote_fechacreacion" ColumnName="lote_fechacreacion" />
+          <ScalarProperty Name="lote_usuariocreacion" ColumnName="lote_usuariocreacion" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="lote_numero" ColumnName="lote_numero" />
+          <ScalarProperty Name="lote_manzana" ColumnName="lote_manzana" />
+          <ScalarProperty Name="lote_forma" ColumnName="lote_forma" />
+          <ScalarProperty Name="lote_proyecto_id" ColumnName="lote_proyecto_id" />
+          <ScalarProperty Name="lote_id" ColumnName="lote_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proyectos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.proyectos">
+        <MappingFragment StoreEntitySet="proyectos">
+          <ScalarProperty Name="proyecto_moneda_id" ColumnName="proyecto_moneda_id" />
+          <ScalarProperty Name="proyecto_anexo" ColumnName="proyecto_anexo" />
+          <ScalarProperty Name="proyecto_abreviatura" ColumnName="proyecto_abreviatura" />
+          <ScalarProperty Name="proyecto_ubicontrato" ColumnName="proyecto_ubicontrato" />
+          <ScalarProperty Name="proyecto_fechaentrega" ColumnName="proyecto_fechaentrega" />
+          <ScalarProperty Name="proyecto_zona_id" ColumnName="proyecto_zona_id" />
+          <ScalarProperty Name="proyecto_precioprom" ColumnName="proyecto_precioprom" />
+          <ScalarProperty Name="proyecto_totallotes" ColumnName="proyecto_totallotes" />
+          <ScalarProperty Name="proyecto_codigoanterior" ColumnName="proyecto_codigoanterior" />
+          <ScalarProperty Name="proyecto_estado" ColumnName="proyecto_estado" />
+          <ScalarProperty Name="proyecto_usuariomodificacion" ColumnName="proyecto_usuariomodificacion" />
+          <ScalarProperty Name="proyecto_fechamodificacion" ColumnName="proyecto_fechamodificacion" />
+          <ScalarProperty Name="proyecto_usuariocreacion" ColumnName="proyecto_usuariocreacion" />
+          <ScalarProperty Name="proyecto_fechacreacion" ColumnName="proyecto_fechacreacion" />
+          <ScalarProperty Name="proyecto_imagemuestra" ColumnName="proyecto_imagemuestra" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="proyecto_nombre" ColumnName="proyecto_nombre" />
+          <ScalarProperty Name="proyecto_empresa_id" ColumnName="proyecto_empresa_id" />
+          <ScalarProperty Name="proyecto_id" ColumnName="proyecto_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposdocumentoidentidad">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposdocumentoidentidad">
+        <MappingFragment StoreEntitySet="tiposdocumentoidentidad">
+          <ScalarProperty Name="tipodocumentoidentidad_nombrecorto" ColumnName="tipodocumentoidentidad_nombrecorto" />
+          <ScalarProperty Name="tipodocumentoidentidad_descripcion" ColumnName="tipodocumentoidentidad_descripcion" />
+          <ScalarProperty Name="tipodocumentoidentidad_codigo" ColumnName="tipodocumentoidentidad_codigo" />
+          <ScalarProperty Name="tipodocumentoidentidad_id" ColumnName="tipodocumentoidentidad_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coordenadaslotes">
+      <EntityTypeMapping TypeName="vivemas_dbModel.coordenadaslotes">
+        <MappingFragment StoreEntitySet="coordenadaslotes">
+          <ScalarProperty Name="coordenadaslote_coordenada" ColumnName="coordenadaslote_coordenada" />
+          <ScalarProperty Name="coordenadaslote_lote_id" ColumnName="coordenadaslote_lote_id" />
+          <ScalarProperty Name="coordenadaslote_id" ColumnName="coordenadaslote_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="canalescontacto">
+      <EntityTypeMapping TypeName="vivemas_dbModel.canalescontacto">
+        <MappingFragment StoreEntitySet="canalescontacto">
+          <ScalarProperty Name="canalcontacto_estado" ColumnName="canalcontacto_estado" />
+          <ScalarProperty Name="canalcontacto_descripcion" ColumnName="canalcontacto_descripcion" />
+          <ScalarProperty Name="canalcontacto_idanterior" ColumnName="canalcontacto_idanterior" />
+          <ScalarProperty Name="canalcontacto_mediocontacto_id" ColumnName="canalcontacto_mediocontacto_id" />
+          <ScalarProperty Name="canalcontacto_id" ColumnName="canalcontacto_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamentos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.departamentos">
+        <MappingFragment StoreEntitySet="departamentos">
+          <ScalarProperty Name="departamento_descripcion" ColumnName="departamento_descripcion" />
+          <ScalarProperty Name="departamento_codigo" ColumnName="departamento_codigo" />
+          <ScalarProperty Name="departamento_id" ColumnName="departamento_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="distritos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.distritos">
+        <MappingFragment StoreEntitySet="distritos">
+          <ScalarProperty Name="distrito_descripcion" ColumnName="distrito_descripcion" />
+          <ScalarProperty Name="distrito_codigo" ColumnName="distrito_codigo" />
+          <ScalarProperty Name="distrito_provincia_id" ColumnName="distrito_provincia_id" />
+          <ScalarProperty Name="distrito_id" ColumnName="distrito_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadoscaptacioncliente">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadoscaptacioncliente">
+        <MappingFragment StoreEntitySet="estadoscaptacioncliente">
+          <ScalarProperty Name="estadocaptacioncliente_descripcion" ColumnName="estadocaptacioncliente_descripcion" />
+          <ScalarProperty Name="estadocaptacioncliente_codigo" ColumnName="estadocaptacioncliente_codigo" />
+          <ScalarProperty Name="estadocaptacioncliente_id" ColumnName="estadocaptacioncliente_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadoscivil">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadoscivil">
+        <MappingFragment StoreEntitySet="estadoscivil">
+          <ScalarProperty Name="estadocivil_codigo" ColumnName="estadocivil_codigo" />
+          <ScalarProperty Name="estadocivil_descripcion" ColumnName="estadocivil_descripcion" />
+          <ScalarProperty Name="estadocivil_id" ColumnName="estadocivil_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosproceso">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadosproceso">
+        <MappingFragment StoreEntitySet="estadosproceso">
+          <ScalarProperty Name="estadoproceso_descripcion" ColumnName="estadoproceso_descripcion" />
+          <ScalarProperty Name="estadoproceso_codigo" ColumnName="estadoproceso_codigo" />
+          <ScalarProperty Name="estadoproceso_id" ColumnName="estadoproceso_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="interesesclienteproyecto">
+      <EntityTypeMapping TypeName="vivemas_dbModel.interesesclienteproyecto">
+        <MappingFragment StoreEntitySet="interesesclienteproyecto">
+          <ScalarProperty Name="interesclienteproyecto_proyecto_id" ColumnName="interesclienteproyecto_proyecto_id" />
+          <ScalarProperty Name="interesclienteproyecto_cliente_id" ColumnName="interesclienteproyecto_cliente_id" />
+          <ScalarProperty Name="interesclienteproyecto_id" ColumnName="interesclienteproyecto_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medioscontacto">
+      <EntityTypeMapping TypeName="vivemas_dbModel.medioscontacto">
+        <MappingFragment StoreEntitySet="medioscontacto">
+          <ScalarProperty Name="mediocontacto_estado" ColumnName="mediocontacto_estado" />
+          <ScalarProperty Name="mediocontacto_descripcion" ColumnName="mediocontacto_descripcion" />
+          <ScalarProperty Name="mediocontacto_codigo" ColumnName="mediocontacto_codigo" />
+          <ScalarProperty Name="mediocontacto_id" ColumnName="mediocontacto_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monedas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.monedas">
+        <MappingFragment StoreEntitySet="monedas">
+          <ScalarProperty Name="moneda_caracter" ColumnName="moneda_caracter" />
+          <ScalarProperty Name="moneda_descripcioncorta" ColumnName="moneda_descripcioncorta" />
+          <ScalarProperty Name="moneda_descripcion" ColumnName="moneda_descripcion" />
+          <ScalarProperty Name="moneda_id" ColumnName="moneda_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provincias">
+      <EntityTypeMapping TypeName="vivemas_dbModel.provincias">
+        <MappingFragment StoreEntitySet="provincias">
+          <ScalarProperty Name="provincia_descripcion" ColumnName="provincia_descripcion" />
+          <ScalarProperty Name="provincia_codigo" ColumnName="provincia_codigo" />
+          <ScalarProperty Name="provincia_departamento_id" ColumnName="provincia_departamento_id" />
+          <ScalarProperty Name="provincia_id" ColumnName="provincia_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipospersona">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tipospersona">
+        <MappingFragment StoreEntitySet="tipospersona">
+          <ScalarProperty Name="tipopersona_descripcion" ColumnName="tipopersona_descripcion" />
+          <ScalarProperty Name="tipopersona_id" ColumnName="tipopersona_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="titulares">
+      <EntityTypeMapping TypeName="vivemas_dbModel.titulares">
+        <MappingFragment StoreEntitySet="titulares">
+          <ScalarProperty Name="titular_nrodocumento" ColumnName="titular_nrodocumento" />
+          <ScalarProperty Name="titular_nombre" ColumnName="titular_nombre" />
+          <ScalarProperty Name="titular_empresa_id" ColumnName="titular_empresa_id" />
+          <ScalarProperty Name="titular_id" ColumnName="titular_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosseparacion">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadosseparacion">
+        <MappingFragment StoreEntitySet="estadosseparacion">
+          <ScalarProperty Name="estadoseparacion_descripcion" ColumnName="estadoseparacion_descripcion" />
+          <ScalarProperty Name="estadoseparacion_id" ColumnName="estadoseparacion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bancos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.bancos">
+        <MappingFragment StoreEntitySet="bancos">
+          <ScalarProperty Name="banco_fechamodificacion" ColumnName="banco_fechamodificacion" />
+          <ScalarProperty Name="banco_usuariomodificacion" ColumnName="banco_usuariomodificacion" />
+          <ScalarProperty Name="banco_fechacreacion" ColumnName="banco_fechacreacion" />
+          <ScalarProperty Name="banco_usuariocreacion" ColumnName="banco_usuariocreacion" />
+          <ScalarProperty Name="banco_estado" ColumnName="banco_estado" />
+          <ScalarProperty Name="banco_descripcioncorta" ColumnName="banco_descripcioncorta" />
+          <ScalarProperty Name="banco_descripcion" ColumnName="banco_descripcion" />
+          <ScalarProperty Name="banco_idanterior" ColumnName="banco_idanterior" />
+          <ScalarProperty Name="banco_id" ColumnName="banco_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuentasbanco">
+      <EntityTypeMapping TypeName="vivemas_dbModel.cuentasbanco">
+        <MappingFragment StoreEntitySet="cuentasbanco">
+          <ScalarProperty Name="cuentabanco_fechamodificacion" ColumnName="cuentabanco_fechamodificacion" />
+          <ScalarProperty Name="cuentabanco_usuariomodificacion" ColumnName="cuentabanco_usuariomodificacion" />
+          <ScalarProperty Name="cuentabanco_fechacreacion" ColumnName="cuentabanco_fechacreacion" />
+          <ScalarProperty Name="cuentabanco_usuariocreacion" ColumnName="cuentabanco_usuariocreacion" />
+          <ScalarProperty Name="cuentabanco_estado" ColumnName="cuentabanco_estado" />
+          <ScalarProperty Name="cuentabanco_cuenta" ColumnName="cuentabanco_cuenta" />
+          <ScalarProperty Name="cuentabanco_idanterior" ColumnName="cuentabanco_idanterior" />
+          <ScalarProperty Name="cuentabanco_moneda_id" ColumnName="cuentabanco_moneda_id" />
+          <ScalarProperty Name="cuentabanco_banco_id" ColumnName="cuentabanco_banco_id" />
+          <ScalarProperty Name="cuentabanco_id" ColumnName="cuentabanco_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadoslote">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadoslote">
+        <MappingFragment StoreEntitySet="estadoslote">
+          <ScalarProperty Name="estadoslote_descripcion" ColumnName="estadoslote_descripcion" />
+          <ScalarProperty Name="estadoslote_id" ColumnName="estadoslote_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposcambio">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposcambio">
+        <MappingFragment StoreEntitySet="tiposcambio">
+          <ScalarProperty Name="tipocambio_venta" ColumnName="tipocambio_venta" />
+          <ScalarProperty Name="tipocambio_compra" ColumnName="tipocambio_compra" />
+          <ScalarProperty Name="tipocambio_fecha" ColumnName="tipocambio_fecha" />
+          <ScalarProperty Name="tipocambio_id" ColumnName="tipocambio_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposmetodopago">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposmetodopago">
+        <MappingFragment StoreEntitySet="tiposmetodopago">
+          <ScalarProperty Name="tipometodopago_estado" ColumnName="tipometodopago_estado" />
+          <ScalarProperty Name="tipometodopago_descripcion" ColumnName="tipometodopago_descripcion" />
+          <ScalarProperty Name="tipometodopago_idanterior" ColumnName="tipometodopago_idanterior" />
+          <ScalarProperty Name="tipometodopago_id" ColumnName="tipometodopago_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposmoneda">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposmoneda">
+        <MappingFragment StoreEntitySet="tiposmoneda">
+          <ScalarProperty Name="tipomoneda_descripcion" ColumnName="tipomoneda_descripcion" />
+          <ScalarProperty Name="tipomoneda_descripcioncorta" ColumnName="tipomoneda_descripcioncorta" />
+          <ScalarProperty Name="tipomoneda_idanterior" ColumnName="tipomoneda_idanterior" />
+          <ScalarProperty Name="tipomoneda_id" ColumnName="tipomoneda_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="vivemas_dbModel.clientes">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="cliente_escasuarinas" ColumnName="cliente_escasuarinas" />
+          <ScalarProperty Name="cliente_fechamodificacion" ColumnName="cliente_fechamodificacion" />
+          <ScalarProperty Name="cliente_usuariomodificacion" ColumnName="cliente_usuariomodificacion" />
+          <ScalarProperty Name="cliente_fechacreacion" ColumnName="cliente_fechacreacion" />
+          <ScalarProperty Name="cliente_usuariocreacion" ColumnName="cliente_usuariocreacion" />
+          <ScalarProperty Name="cliente_email" ColumnName="cliente_email" />
+          <ScalarProperty Name="cliente_nrocontactoauxiliar" ColumnName="cliente_nrocontactoauxiliar" />
+          <ScalarProperty Name="cliente_nrocontacto" ColumnName="cliente_nrocontacto" />
+          <ScalarProperty Name="cliente_direccion" ColumnName="cliente_direccion" />
+          <ScalarProperty Name="cliente_nombrecomercial" ColumnName="cliente_nombrecomercial" />
+          <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="cliente_codigoanterior" ColumnName="cliente_codigoanterior" />
+          <ScalarProperty Name="cliente_estadointerescliente_id" ColumnName="cliente_estadointerescliente_id" />
+          <ScalarProperty Name="cliente_estadocaptacioncliente_id" ColumnName="cliente_estadocaptacioncliente_id" />
+          <ScalarProperty Name="cliente_estadoproceso_id" ColumnName="cliente_estadoproceso_id" />
+          <ScalarProperty Name="cliente_canalcontacto_id" ColumnName="cliente_canalcontacto_id" />
+          <ScalarProperty Name="cliente_distrito_id" ColumnName="cliente_distrito_id" />
+          <ScalarProperty Name="cliente_provincia_id" ColumnName="cliente_provincia_id" />
+          <ScalarProperty Name="cliente_departamento_id" ColumnName="cliente_departamento_id" />
+          <ScalarProperty Name="cliente_promotor_id" ColumnName="cliente_promotor_id" />
+          <ScalarProperty Name="cliente_estadocivil_id" ColumnName="cliente_estadocivil_id" />
+          <ScalarProperty Name="cliente_tipodocumentoidentidad_id" ColumnName="cliente_tipodocumentoidentidad_id" />
+          <ScalarProperty Name="cliente_tipopersona_id" ColumnName="cliente_tipopersona_id" />
+          <ScalarProperty Name="cliente_empresa_id" ColumnName="cliente_empresa_id" />
+          <ScalarProperty Name="cliente_id" ColumnName="cliente_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosinterescliente">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadosinterescliente">
+        <MappingFragment StoreEntitySet="estadosinterescliente">
+          <ScalarProperty Name="estadointerescliente_descripcion" ColumnName="estadointerescliente_descripcion" />
+          <ScalarProperty Name="estadointerescliente_id" ColumnName="estadointerescliente_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadostransaccion">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadostransaccion">
+        <MappingFragment StoreEntitySet="estadostransaccion">
+          <ScalarProperty Name="estadotransaccion_descripcion" ColumnName="estadotransaccion_descripcion" />
+          <ScalarProperty Name="estadotransaccion_id" ColumnName="estadotransaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposmovimiento">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposmovimiento">
+        <MappingFragment StoreEntitySet="tiposmovimiento">
+          <ScalarProperty Name="tipomovimiento_descripcion" ColumnName="tipomovimiento_descripcion" />
+          <ScalarProperty Name="tipomovimiento_id" ColumnName="tipomovimiento_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipostransaccion">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tipostransaccion">
+        <MappingFragment StoreEntitySet="tipostransaccion">
+          <ScalarProperty Name="tipotransaccion_descripcion" ColumnName="tipotransaccion_descripcion" />
+          <ScalarProperty Name="tipotransaccion_id" ColumnName="tipotransaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transacciones">
+      <EntityTypeMapping TypeName="vivemas_dbModel.transacciones">
+        <MappingFragment StoreEntitySet="transacciones">
+          <ScalarProperty Name="transaccion_observaciones" ColumnName="transaccion_observaciones" />
+          <ScalarProperty Name="transaccion_evento_id" ColumnName="transaccion_evento_id" />
+          <ScalarProperty Name="transaccion_estadoemision" ColumnName="transaccion_estadoemision" />
+          <ScalarProperty Name="transaccion_porcentajedescuento" ColumnName="transaccion_porcentajedescuento" />
+          <ScalarProperty Name="transaccion_montonetototal" ColumnName="transaccion_montonetototal" />
+          <ScalarProperty Name="transaccion_montototaldescuento" ColumnName="transaccion_montototaldescuento" />
+          <ScalarProperty Name="transaccion_numeracion" ColumnName="transaccion_numeracion" />
+          <ScalarProperty Name="transaccion_fechadeposito" ColumnName="transaccion_fechadeposito" />
+          <ScalarProperty Name="transaccion_idproformacomodin" ColumnName="transaccion_idproformacomodin" />
+          <ScalarProperty Name="transaccion_tipocambio_venta" ColumnName="transaccion_tipocambio_venta" />
+          <ScalarProperty Name="transaccion_fecha" ColumnName="transaccion_fecha" />
+          <ScalarProperty Name="transaccion_codigoinicial_id" ColumnName="transaccion_codigoinicial_id" />
+          <ScalarProperty Name="transaccion_codigotransaccion_id" ColumnName="transaccion_codigotransaccion_id" />
+          <ScalarProperty Name="transaccion_tipocambio_fecha" ColumnName="transaccion_tipocambio_fecha" />
+          <ScalarProperty Name="transaccion_tipocambio_id" ColumnName="transaccion_tipocambio_id" />
+          <ScalarProperty Name="transaccion_moneda_id" ColumnName="transaccion_moneda_id" />
+          <ScalarProperty Name="transaccion_usuariomodificacion" ColumnName="transaccion_usuariomodificacion" />
+          <ScalarProperty Name="transaccion_fechamodificacion" ColumnName="transaccion_fechamodificacion" />
+          <ScalarProperty Name="transaccion_usuariocreacion" ColumnName="transaccion_usuariocreacion" />
+          <ScalarProperty Name="transaccion_fechacreacion" ColumnName="transaccion_fechacreacion" />
+          <ScalarProperty Name="transaccion_monto" ColumnName="transaccion_monto" />
+          <ScalarProperty Name="transaccion_bancoorigen" ColumnName="transaccion_bancoorigen" />
+          <ScalarProperty Name="transaccion_nrooperacion" ColumnName="transaccion_nrooperacion" />
+          <ScalarProperty Name="transaccion_codigodocumento" ColumnName="transaccion_codigodocumento" />
+          <ScalarProperty Name="transaccion_cuentabanco_id" ColumnName="transaccion_cuentabanco_id" />
+          <ScalarProperty Name="transaccion_banco_id" ColumnName="transaccion_banco_id" />
+          <ScalarProperty Name="transaccion_tipometodopago_id" ColumnName="transaccion_tipometodopago_id" />
+          <ScalarProperty Name="transaccion_estadotransaccion_id" ColumnName="transaccion_estadotransaccion_id" />
+          <ScalarProperty Name="transaccion_tipomovimiento_id" ColumnName="transaccion_tipomovimiento_id" />
+          <ScalarProperty Name="transaccion_tipotransaccion_id" ColumnName="transaccion_tipotransaccion_id" />
+          <ScalarProperty Name="transaccion_empresa_id" ColumnName="transaccion_empresa_id" />
+          <ScalarProperty Name="transaccion_id" ColumnName="transaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="anexoscontratocotizacion">
+      <EntityTypeMapping TypeName="vivemas_dbModel.anexoscontratocotizacion">
+        <MappingFragment StoreEntitySet="anexoscontratocotizacion">
+          <ScalarProperty Name="anexocontratocotizacion_usuariomodificacion" ColumnName="anexocontratocotizacion_usuariomodificacion" />
+          <ScalarProperty Name="anexocontratocotizacion_fechamodificacion" ColumnName="anexocontratocotizacion_fechamodificacion" />
+          <ScalarProperty Name="anexocontratocotizacion_usuariocreacion" ColumnName="anexocontratocotizacion_usuariocreacion" />
+          <ScalarProperty Name="anexocontratocotizacion_fechacreacion" ColumnName="anexocontratocotizacion_fechacreacion" />
+          <ScalarProperty Name="anexocontratocotizacion_montocuotasefectivo" ColumnName="anexocontratocotizacion_montocuotasefectivo" />
+          <ScalarProperty Name="anexocontratocotizacion_montoefectivo_cuotas" ColumnName="anexocontratocotizacion_montoefectivo_cuotas" />
+          <ScalarProperty Name="anexocontratocotizacion_montoefectivofinanciado" ColumnName="anexocontratocotizacion_montoefectivofinanciado" />
+          <ScalarProperty Name="anexocontratocotizacion_montoefectivo" ColumnName="anexocontratocotizacion_montoefectivo" />
+          <ScalarProperty Name="anexocontratocotizacion_fechapagoefectivo" ColumnName="anexocontratocotizacion_fechapagoefectivo" />
+          <ScalarProperty Name="anexocontratocotizacion_cotizacion_id" ColumnName="anexocontratocotizacion_cotizacion_id" />
+          <ScalarProperty Name="anexocontratocotizacion_contrato_id" ColumnName="anexocontratocotizacion_contrato_id" />
+          <ScalarProperty Name="anexocontratocotizacion_id" ColumnName="anexocontratocotizacion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="anexoscontratoproforma">
+      <EntityTypeMapping TypeName="vivemas_dbModel.anexoscontratoproforma">
+        <MappingFragment StoreEntitySet="anexoscontratoproforma">
+          <ScalarProperty Name="anexocontratoproforma_tipopropietario_id" ColumnName="anexocontratoproforma_tipopropietario_id" />
+          <ScalarProperty Name="anexocontratoproforma_proformauif_id" ColumnName="anexocontratoproforma_proformauif_id" />
+          <ScalarProperty Name="anexocontratoproforma_contrato_id" ColumnName="anexocontratoproforma_contrato_id" />
+          <ScalarProperty Name="anexocontratoproforma_id" ColumnName="anexocontratoproforma_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cotizaciones">
+      <EntityTypeMapping TypeName="vivemas_dbModel.cotizaciones">
+        <MappingFragment StoreEntitySet="cotizaciones">
+          <ScalarProperty Name="cotizacion_usuariomodificacion" ColumnName="cotizacion_usuariomodificacion" />
+          <ScalarProperty Name="cotizacion_fechamodificacion" ColumnName="cotizacion_fechamodificacion" />
+          <ScalarProperty Name="cotizacion_usuariocreacion" ColumnName="cotizacion_usuariocreacion" />
+          <ScalarProperty Name="cotizacion_fechacreacion" ColumnName="cotizacion_fechacreacion" />
+          <ScalarProperty Name="cotizacion_idanterior" ColumnName="cotizacion_idanterior" />
+          <ScalarProperty Name="cotizacion_fechainiciopagos" ColumnName="cotizacion_fechainiciopagos" />
+          <ScalarProperty Name="cotizacion_montocuotas" ColumnName="cotizacion_montocuotas" />
+          <ScalarProperty Name="cotizacion_cantidadcuotas" ColumnName="cotizacion_cantidadcuotas" />
+          <ScalarProperty Name="cotizacion_montofinanciado" ColumnName="cotizacion_montofinanciado" />
+          <ScalarProperty Name="cotizacion_porcentajefinanciado" ColumnName="cotizacion_porcentajefinanciado" />
+          <ScalarProperty Name="cotizacion_montoinicial" ColumnName="cotizacion_montoinicial" />
+          <ScalarProperty Name="cotizacion_porcentajeinicial" ColumnName="cotizacion_porcentajeinicial" />
+          <ScalarProperty Name="cotizacion_preciototal" ColumnName="cotizacion_preciototal" />
+          <ScalarProperty Name="cotizacion_lote_preciometro" ColumnName="cotizacion_lote_preciometro" />
+          <ScalarProperty Name="cotizacion_lote_areatotal" ColumnName="cotizacion_lote_areatotal" />
+          <ScalarProperty Name="cotizacion_lote_nombre" ColumnName="cotizacion_lote_nombre" />
+          <ScalarProperty Name="cotizacion_cliente_referenciadomicilio" ColumnName="cotizacion_cliente_referenciadomicilio" />
+          <ScalarProperty Name="cotizacion_cliente_razonsocial" ColumnName="cotizacion_cliente_razonsocial" />
+          <ScalarProperty Name="cotizacion_tipocambio_fecha" ColumnName="cotizacion_tipocambio_fecha" />
+          <ScalarProperty Name="cotizacion_tipocambio_precioventa" ColumnName="cotizacion_tipocambio_precioventa" />
+          <ScalarProperty Name="cotizacion_promotor_nombre" ColumnName="cotizacion_promotor_nombre" />
+          <ScalarProperty Name="cotizacion_proyecto_nombre" ColumnName="cotizacion_proyecto_nombre" />
+          <ScalarProperty Name="cotizacion_moneda_id" ColumnName="cotizacion_moneda_id" />
+          <ScalarProperty Name="cotizacion_promotor_id" ColumnName="cotizacion_promotor_id" />
+          <ScalarProperty Name="cotizacion_lote_id" ColumnName="cotizacion_lote_id" />
+          <ScalarProperty Name="cotizacion_cliente_id" ColumnName="cotizacion_cliente_id" />
+          <ScalarProperty Name="cotizacion_tipocambio_id" ColumnName="cotizacion_tipocambio_id" />
+          <ScalarProperty Name="cotizacion_proyecto_id" ColumnName="cotizacion_proyecto_id" />
+          <ScalarProperty Name="cotizacion_id" ColumnName="cotizacion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuotas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.cuotas">
+        <MappingFragment StoreEntitySet="cuotas">
+          <ScalarProperty Name="cuota_usuariomodificacion" ColumnName="cuota_usuariomodificacion" />
+          <ScalarProperty Name="cuota_fechamodificacion" ColumnName="cuota_fechamodificacion" />
+          <ScalarProperty Name="cuota_usuariocreacion" ColumnName="cuota_usuariocreacion" />
+          <ScalarProperty Name="cuota_fechacreacion" ColumnName="cuota_fechacreacion" />
+          <ScalarProperty Name="cuota_estado" ColumnName="cuota_estado" />
+          <ScalarProperty Name="cuota_montopagado" ColumnName="cuota_montopagado" />
+          <ScalarProperty Name="cuota_monto" ColumnName="cuota_monto" />
+          <ScalarProperty Name="cuota_fechavencimiento" ColumnName="cuota_fechavencimiento" />
+          <ScalarProperty Name="cuota_numeracion" ColumnName="cuota_numeracion" />
+          <ScalarProperty Name="cuota_idanterior" ColumnName="cuota_idanterior" />
+          <ScalarProperty Name="cuota_anexocontratocotizacion_id" ColumnName="cuota_anexocontratocotizacion_id" />
+          <ScalarProperty Name="cuota_id" ColumnName="cuota_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadoscontrato">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadoscontrato">
+        <MappingFragment StoreEntitySet="estadoscontrato">
+          <ScalarProperty Name="estadocontrato_descripcion" ColumnName="estadocontrato_descripcion" />
+          <ScalarProperty Name="estadocontrato_id" ColumnName="estadocontrato_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosuif">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadosuif">
+        <MappingFragment StoreEntitySet="estadosuif">
+          <ScalarProperty Name="estadouif_descripcion" ColumnName="estadouif_descripcion" />
+          <ScalarProperty Name="estadouif_id" ColumnName="estadouif_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pagos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.pagos">
+        <MappingFragment StoreEntitySet="pagos">
+          <ScalarProperty Name="pago_estado" ColumnName="pago_estado" />
+          <ScalarProperty Name="pago_montonetopago" ColumnName="pago_montonetopago" />
+          <ScalarProperty Name="pago_montodescuento" ColumnName="pago_montodescuento" />
+          <ScalarProperty Name="pago_descripcion" ColumnName="pago_descripcion" />
+          <ScalarProperty Name="pago_usuariomodificacion" ColumnName="pago_usuariomodificacion" />
+          <ScalarProperty Name="pago_fechamodificacion" ColumnName="pago_fechamodificacion" />
+          <ScalarProperty Name="pago_usuariocreacion" ColumnName="pago_usuariocreacion" />
+          <ScalarProperty Name="pago_fechacreacion" ColumnName="pago_fechacreacion" />
+          <ScalarProperty Name="pago_cuota_monto" ColumnName="pago_cuota_monto" />
+          <ScalarProperty Name="pago_cuota_id" ColumnName="pago_cuota_id" />
+          <ScalarProperty Name="pago_transaccion_id" ColumnName="pago_transaccion_id" />
+          <ScalarProperty Name="pago_id" ColumnName="pago_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proformascontrato">
+      <EntityTypeMapping TypeName="vivemas_dbModel.proformascontrato">
+        <MappingFragment StoreEntitySet="proformascontrato">
+          <ScalarProperty Name="proformacontrato_usuariomodificacion" ColumnName="proformacontrato_usuariomodificacion" />
+          <ScalarProperty Name="proformacontrato_fechamodificacion" ColumnName="proformacontrato_fechamodificacion" />
+          <ScalarProperty Name="proformacontrato_usuariocreacion" ColumnName="proformacontrato_usuariocreacion" />
+          <ScalarProperty Name="proformacontrato_fechacreacion" ColumnName="proformacontrato_fechacreacion" />
+          <ScalarProperty Name="proformacontrato_tipopropetario_id" ColumnName="proformacontrato_tipopropetario_id" />
+          <ScalarProperty Name="proformacontrato_proformauif_id" ColumnName="proformacontrato_proformauif_id" />
+          <ScalarProperty Name="proformacontrato_contrato_id" ColumnName="proformacontrato_contrato_id" />
+          <ScalarProperty Name="proformacontrato_id" ColumnName="proformacontrato_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipospropietario">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tipospropietario">
+        <MappingFragment StoreEntitySet="tipospropietario">
+          <ScalarProperty Name="tipopropietario_descripcion" ColumnName="tipopropietario_descripcion" />
+          <ScalarProperty Name="tipopropietario_id" ColumnName="tipopropietario_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipossociedad">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tipossociedad">
+        <MappingFragment StoreEntitySet="tipossociedad">
+          <ScalarProperty Name="tiposociedad_descripcion" ColumnName="tiposociedad_descripcion" />
+          <ScalarProperty Name="tiposociedad_id" ColumnName="tiposociedad_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_cargarCuotas" FunctionName="vivemas_dbModel.Store.sp_cargarCuotas">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_cargarCuotas_Result">
+          <ScalarProperty Name="cuota_id" ColumnName="cuota_id" />
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="cuota_numeracion" ColumnName="cuota_numeracion" />
+          <ScalarProperty Name="cuota_fechavencimiento" ColumnName="cuota_fechavencimiento" />
+          <ScalarProperty Name="cuota_monto" ColumnName="cuota_monto" />
+          <ScalarProperty Name="cuota_montopagado" ColumnName="cuota_montopagado" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="lote_manzana" ColumnName="lote_manzana" />
+          <ScalarProperty Name="lote_numero" ColumnName="lote_numero" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="configuraciones">
+      <EntityTypeMapping TypeName="vivemas_dbModel.configuraciones">
+        <MappingFragment StoreEntitySet="configuraciones">
+          <ScalarProperty Name="configuracion_passemisor" ColumnName="configuracion_passemisor" />
+          <ScalarProperty Name="configuracion_usuarioemisor" ColumnName="configuracion_usuarioemisor" />
+          <ScalarProperty Name="configuracion_passcredencialfirmadigital" ColumnName="configuracion_passcredencialfirmadigital" />
+          <ScalarProperty Name="configuracion_credencialfirmadigital" ColumnName="configuracion_credencialfirmadigital" />
+          <ScalarProperty Name="configuracion_passfirmadigital" ColumnName="configuracion_passfirmadigital" />
+          <ScalarProperty Name="configuracion_rutafirmadigital" ColumnName="configuracion_rutafirmadigital" />
+          <ScalarProperty Name="configuracion_rutacdrnotacredito" ColumnName="configuracion_rutacdrnotacredito" />
+          <ScalarProperty Name="configuracion_rutacdrboleta" ColumnName="configuracion_rutacdrboleta" />
+          <ScalarProperty Name="configuracion_rutacdrfactura" ColumnName="configuracion_rutacdrfactura" />
+          <ScalarProperty Name="configuracion_rutanotacredito" ColumnName="configuracion_rutanotacredito" />
+          <ScalarProperty Name="configuracion_rutaboleta" ColumnName="configuracion_rutaboleta" />
+          <ScalarProperty Name="configuracion_rutafactura" ColumnName="configuracion_rutafactura" />
+          <ScalarProperty Name="configuracion_empresa_id" ColumnName="configuracion_empresa_id" />
+          <ScalarProperty Name="configuracion_tipocambiointerno" ColumnName="configuracion_tipocambiointerno" />
+          <ScalarProperty Name="configuracion_id" ColumnName="configuracion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="separaciones">
+      <EntityTypeMapping TypeName="vivemas_dbModel.separaciones">
+        <MappingFragment StoreEntitySet="separaciones">
+          <ScalarProperty Name="separacion_usuariomodificacion" ColumnName="separacion_usuariomodificacion" />
+          <ScalarProperty Name="separacion_fechamodificacion" ColumnName="separacion_fechamodificacion" />
+          <ScalarProperty Name="separacion_usuariocreacion" ColumnName="separacion_usuariocreacion" />
+          <ScalarProperty Name="separacion_fechacreacion" ColumnName="separacion_fechacreacion" />
+          <ScalarProperty Name="separacion_monto" ColumnName="separacion_monto" />
+          <ScalarProperty Name="separacion_fechafin" ColumnName="separacion_fechafin" />
+          <ScalarProperty Name="separacion_fechainicio" ColumnName="separacion_fechainicio" />
+          <ScalarProperty Name="separacion_numeroseparacion" ColumnName="separacion_numeroseparacion" />
+          <ScalarProperty Name="separacion_estadoseparacion_id" ColumnName="separacion_estadoseparacion_id" />
+          <ScalarProperty Name="separacion_lote_id" ColumnName="separacion_lote_id" />
+          <ScalarProperty Name="separacion_cliente_id" ColumnName="separacion_cliente_id" />
+          <ScalarProperty Name="separacion_id" ColumnName="separacion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaccionesseparacion">
+      <EntityTypeMapping TypeName="vivemas_dbModel.transaccionesseparacion">
+        <MappingFragment StoreEntitySet="transaccionesseparacion">
+          <ScalarProperty Name="transaccionseparacion_descripcion" ColumnName="transaccionseparacion_descripcion" />
+          <ScalarProperty Name="transaccionseparacion_usuariomodificacion" ColumnName="transaccionseparacion_usuariomodificacion" />
+          <ScalarProperty Name="transaccionseparacion_fechamodificacion" ColumnName="transaccionseparacion_fechamodificacion" />
+          <ScalarProperty Name="transaccionseparacion_usuariocreacion" ColumnName="transaccionseparacion_usuariocreacion" />
+          <ScalarProperty Name="transaccionseparacion_fechacreacion" ColumnName="transaccionseparacion_fechacreacion" />
+          <ScalarProperty Name="transaccionseparacion_transaccion_id" ColumnName="transaccionseparacion_transaccion_id" />
+          <ScalarProperty Name="transaccionseparacion_separacion_id" ColumnName="transaccionseparacion_separacion_id" />
+          <ScalarProperty Name="transaccionseparacion_id" ColumnName="transaccionseparacion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosdocumento">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadosdocumento">
+        <MappingFragment StoreEntitySet="estadosdocumento">
+          <ScalarProperty Name="estadodocumento_descripcion" ColumnName="estadodocumento_descripcion" />
+          <ScalarProperty Name="estadodocumento_id" ColumnName="estadodocumento_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="series">
+      <EntityTypeMapping TypeName="vivemas_dbModel.series">
+        <MappingFragment StoreEntitySet="series">
+          <ScalarProperty Name="serie_numeracion" ColumnName="serie_numeracion" />
+          <ScalarProperty Name="serie_serie" ColumnName="serie_serie" />
+          <ScalarProperty Name="serie_tipodocumentoventa_id" ColumnName="serie_tipodocumentoventa_id" />
+          <ScalarProperty Name="serie_empresa_id" ColumnName="serie_empresa_id" />
+          <ScalarProperty Name="serie_id" ColumnName="serie_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposdocumentoventa">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposdocumentoventa">
+        <MappingFragment StoreEntitySet="tiposdocumentoventa">
+          <ScalarProperty Name="tipodocumentoventa_tipocompra" ColumnName="tipodocumentoventa_tipocompra" />
+          <ScalarProperty Name="tipodocumentoventa_tipo" ColumnName="tipodocumentoventa_tipo" />
+          <ScalarProperty Name="tipodocumentoventa_descripcion" ColumnName="tipodocumentoventa_descripcion" />
+          <ScalarProperty Name="tipodocumentoventa_codigosunat" ColumnName="tipodocumentoventa_codigosunat" />
+          <ScalarProperty Name="tipodocumentoventa_id" ColumnName="tipodocumentoventa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerDatosCliente" FunctionName="vivemas_dbModel.Store.sp_obtenerDatosCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerDatosCliente_Result">
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="cliente_nombre" ColumnName="cliente_nombre" />
+          <ScalarProperty Name="cliente_tipodocumentoIdentidad_codigo" ColumnName="cliente_tipodocumentoIdentidad_codigo" />
+          <ScalarProperty Name="cotizacion_lote_nombre" ColumnName="cotizacion_lote_nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="documentosventa">
+      <EntityTypeMapping TypeName="vivemas_dbModel.documentosventa">
+        <MappingFragment StoreEntitySet="documentosventa">
+          <ScalarProperty Name="documentoventa_nrooperacion" ColumnName="documentoventa_nrooperacion" />
+          <ScalarProperty Name="documentoventa_fechadeposito" ColumnName="documentoventa_fechadeposito" />
+          <ScalarProperty Name="documentoventa_cuenta_cuenta" ColumnName="documentoventa_cuenta_cuenta" />
+          <ScalarProperty Name="documentoventa_banco_nombre" ColumnName="documentoventa_banco_nombre" />
+          <ScalarProperty Name="documentoventa_digestvalue" ColumnName="documentoventa_digestvalue" />
+          <ScalarProperty Name="documentoventa_estadosunat" ColumnName="documentoventa_estadosunat" />
+          <ScalarProperty Name="documentoventa_usuariomodificacion" ColumnName="documentoventa_usuariomodificacion" />
+          <ScalarProperty Name="documentoventa_fechamodificacion" ColumnName="documentoventa_fechamodificacion" />
+          <ScalarProperty Name="documentoventa_usuariocreacion" ColumnName="documentoventa_usuariocreacion" />
+          <ScalarProperty Name="documentoventa_fechacreacion" ColumnName="documentoventa_fechacreacion" />
+          <ScalarProperty Name="documentoventa_totalletras" ColumnName="documentoventa_totalletras" />
+          <ScalarProperty Name="documentoventa_condicioncodigo" ColumnName="documentoventa_condicioncodigo" />
+          <ScalarProperty Name="documentoventa_total" ColumnName="documentoventa_total" />
+          <ScalarProperty Name="documentoventa_igv" ColumnName="documentoventa_igv" />
+          <ScalarProperty Name="documentoventa_subtotal" ColumnName="documentoventa_subtotal" />
+          <ScalarProperty Name="documentoventa_moneda_codigo" ColumnName="documentoventa_moneda_codigo" />
+          <ScalarProperty Name="documentoventa_cliente_tipodocumentoidentidad_codigo" ColumnName="documentoventa_cliente_tipodocumentoidentidad_codigo" />
+          <ScalarProperty Name="documentoventa_cliente_nrodocumento" ColumnName="documentoventa_cliente_nrodocumento" />
+          <ScalarProperty Name="documentoventa_cliente_nombre" ColumnName="documentoventa_cliente_nombre" />
+          <ScalarProperty Name="documentoventa_serie_numeracion" ColumnName="documentoventa_serie_numeracion" />
+          <ScalarProperty Name="documentoventa_serie_serie" ColumnName="documentoventa_serie_serie" />
+          <ScalarProperty Name="documentoventa_tipodocumentoventa_codigo" ColumnName="documentoventa_tipodocumentoventa_codigo" />
+          <ScalarProperty Name="documentoventa_empresa_codigopais" ColumnName="documentoventa_empresa_codigopais" />
+          <ScalarProperty Name="documentoventa_empresa_departamento" ColumnName="documentoventa_empresa_departamento" />
+          <ScalarProperty Name="documentoventa_empresa_provincia" ColumnName="documentoventa_empresa_provincia" />
+          <ScalarProperty Name="documentoventa_empresa_distrito" ColumnName="documentoventa_empresa_distrito" />
+          <ScalarProperty Name="documentoventa_empresa_zona" ColumnName="documentoventa_empresa_zona" />
+          <ScalarProperty Name="documentoventa_empresa_direccion" ColumnName="documentoventa_empresa_direccion" />
+          <ScalarProperty Name="documentoventa_empresa_ubigeo" ColumnName="documentoventa_empresa_ubigeo" />
+          <ScalarProperty Name="documentoventa_empresa_tipodocumentoidentidad_codigo" ColumnName="documentoventa_empresa_tipodocumentoidentidad_codigo" />
+          <ScalarProperty Name="documentoventa_empresa_nrodocumento" ColumnName="documentoventa_empresa_nrodocumento" />
+          <ScalarProperty Name="documentoventa_empresa_razonsocial" ColumnName="documentoventa_empresa_razonsocial" />
+          <ScalarProperty Name="documentoventa_fechavencimiento" ColumnName="documentoventa_fechavencimiento" />
+          <ScalarProperty Name="documentoventa_horaemision" ColumnName="documentoventa_horaemision" />
+          <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
+          <ScalarProperty Name="documentoventa_tipoemision" ColumnName="documentoventa_tipoemision" />
+          <ScalarProperty Name="documentoventa_moneda_id" ColumnName="documentoventa_moneda_id" />
+          <ScalarProperty Name="documentoventa_tipometodopago_id" ColumnName="documentoventa_tipometodopago_id" />
+          <ScalarProperty Name="documentoventa_transaccion_id" ColumnName="documentoventa_transaccion_id" />
+          <ScalarProperty Name="documentoventa_estadodocumento_id" ColumnName="documentoventa_estadodocumento_id" />
+          <ScalarProperty Name="documentoventa_tipodocumentoventa_id" ColumnName="documentoventa_tipodocumentoventa_id" />
+          <ScalarProperty Name="documentoventa_empresa_id" ColumnName="documentoventa_empresa_id" />
+          <ScalarProperty Name="documentoventa_id" ColumnName="documentoventa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documentosventadetalle">
+      <EntityTypeMapping TypeName="vivemas_dbModel.documentosventadetalle">
+        <MappingFragment StoreEntitySet="documentosventadetalle">
+          <ScalarProperty Name="documentoventadetalle_usuariomodificacion" ColumnName="documentoventadetalle_usuariomodificacion" />
+          <ScalarProperty Name="documentoventadetalle_fechamodificacion" ColumnName="documentoventadetalle_fechamodificacion" />
+          <ScalarProperty Name="documentoventadetalle_usuariocreacion" ColumnName="documentoventadetalle_usuariocreacion" />
+          <ScalarProperty Name="documentoventadetalle_fechacreacion" ColumnName="documentoventadetalle_fechacreacion" />
+          <ScalarProperty Name="documentoventadetalle_total" ColumnName="documentoventadetalle_total" />
+          <ScalarProperty Name="documentoventadetalle_igv" ColumnName="documentoventadetalle_igv" />
+          <ScalarProperty Name="documentoventadetalle_subtotal" ColumnName="documentoventadetalle_subtotal" />
+          <ScalarProperty Name="documentoventadetalle_tipoafectacion" ColumnName="documentoventadetalle_tipoafectacion" />
+          <ScalarProperty Name="documentoventadetalle_tipoventasunat" ColumnName="documentoventadetalle_tipoventasunat" />
+          <ScalarProperty Name="documentoventadetalle_codigo" ColumnName="documentoventadetalle_codigo" />
+          <ScalarProperty Name="documentoventadetalle_cantidad" ColumnName="documentoventadetalle_cantidad" />
+          <ScalarProperty Name="documentoventadetalle_unidadmedida_codigo" ColumnName="documentoventadetalle_unidadmedida_codigo" />
+          <ScalarProperty Name="documentoventadetalle_descripcion" ColumnName="documentoventadetalle_descripcion" />
+          <ScalarProperty Name="documentoventadetalle_documentoventa_id" ColumnName="documentoventadetalle_documentoventa_id" />
+          <ScalarProperty Name="documentoventadetalle_id" ColumnName="documentoventadetalle_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_cargarClientesContrato">
+      <EntityTypeMapping TypeName="vivemas_dbModel.vw_cargarClientesContrato">
+        <MappingFragment StoreEntitySet="vw_cargarClientesContrato">
+          <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="contrato_id" ColumnName="contrato_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_busquedaContratosAutocomplete">
+      <EntityTypeMapping TypeName="vivemas_dbModel.vw_busquedaContratosAutocomplete">
+        <MappingFragment StoreEntitySet="vw_busquedaContratosAutocomplete">
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="lote_proyecto_id" ColumnName="lote_proyecto_id" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="contrato_id" ColumnName="contrato_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proformasuif">
+      <EntityTypeMapping TypeName="vivemas_dbModel.proformasuif">
+        <MappingFragment StoreEntitySet="proformasuif">
+          <ScalarProperty Name="proformauif_usuariomodificacion" ColumnName="proformauif_usuariomodificacion" />
+          <ScalarProperty Name="proformauif_fechamodificacion" ColumnName="proformauif_fechamodificacion" />
+          <ScalarProperty Name="proformauif_usuariocreacion" ColumnName="proformauif_usuariocreacion" />
+          <ScalarProperty Name="proformauif_fechacreacion" ColumnName="proformauif_fechacreacion" />
+          <ScalarProperty Name="proformauif_representante_estadocivil_descripcion" ColumnName="proformauif_representante_estadocivil_descripcion" />
+          <ScalarProperty Name="proformauif_representante_nrocontacto" ColumnName="proformauif_representante_nrocontacto" />
+          <ScalarProperty Name="proformauif_representante_razonsocial" ColumnName="proformauif_representante_razonsocial" />
+          <ScalarProperty Name="proformauif_representante_nrodocumento" ColumnName="proformauif_representante_nrodocumento" />
+          <ScalarProperty Name="proformauif_representante_estadocivil_id" ColumnName="proformauif_representante_estadocivil_id" />
+          <ScalarProperty Name="proformauif_empresa_direccion" ColumnName="proformauif_empresa_direccion" />
+          <ScalarProperty Name="proformauif_empresa_documento" ColumnName="proformauif_empresa_documento" />
+          <ScalarProperty Name="proformauif_empresa_nombre" ColumnName="proformauif_empresa_nombre" />
+          <ScalarProperty Name="proformauif_nacionalidad" ColumnName="proformauif_nacionalidad" />
+          <ScalarProperty Name="proformauif_fechanacimiento" ColumnName="proformauif_fechanacimiento" />
+          <ScalarProperty Name="proformauif_cliente_nrocontacto" ColumnName="proformauif_cliente_nrocontacto" />
+          <ScalarProperty Name="proformauif_cliente_referenciadomicilio" ColumnName="proformauif_cliente_referenciadomicilio" />
+          <ScalarProperty Name="proformauif_cliente_direccion" ColumnName="proformauif_cliente_direccion" />
+          <ScalarProperty Name="proformauif_estadocivil_descripcion" ColumnName="proformauif_estadocivil_descripcion" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_tipodocumentoidentidad_descripcion" ColumnName="proformauif_tipodocumentoidentidad_descripcion" />
+          <ScalarProperty Name="proformauif_numeracion" ColumnName="proformauif_numeracion" />
+          <ScalarProperty Name="proformauif_idanterior" ColumnName="proformauif_idanterior" />
+          <ScalarProperty Name="proformauif_tiposociedad_id" ColumnName="proformauif_tiposociedad_id" />
+          <ScalarProperty Name="proformauif_empresa_id" ColumnName="proformauif_empresa_id" />
+          <ScalarProperty Name="proformauif_lote_id" ColumnName="proformauif_lote_id" />
+          <ScalarProperty Name="proformauif_estadocivil_id" ColumnName="proformauif_estadocivil_id" />
+          <ScalarProperty Name="proformauif_tipodocumentoidentidad_id" ColumnName="proformauif_tipodocumentoidentidad_id" />
+          <ScalarProperty Name="proformauif_transaccion_id" ColumnName="proformauif_transaccion_id" />
+          <ScalarProperty Name="proformauif_cliente_id" ColumnName="proformauif_cliente_id" />
+          <ScalarProperty Name="proformauif_estadouif_id" ColumnName="proformauif_estadouif_id" />
+          <ScalarProperty Name="proformauif_id" ColumnName="proformauif_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerDireccionCliente" FunctionName="vivemas_dbModel.Store.sp_obtenerDireccionCliente" />
+    <EntitySetMapping Name="notascredito">
+      <EntityTypeMapping TypeName="vivemas_dbModel.notascredito">
+        <MappingFragment StoreEntitySet="notascredito">
+          <ScalarProperty Name="notacredito_fechamodificacion" ColumnName="notacredito_fechamodificacion" />
+          <ScalarProperty Name="notacredito_usuariomodificacion" ColumnName="notacredito_usuariomodificacion" />
+          <ScalarProperty Name="notacredito_fechacreacion" ColumnName="notacredito_fechacreacion" />
+          <ScalarProperty Name="notacredito_usuariocreacion" ColumnName="notacredito_usuariocreacion" />
+          <ScalarProperty Name="notacredito_digestvalue" ColumnName="notacredito_digestvalue" />
+          <ScalarProperty Name="notacredito_estadosunat" ColumnName="notacredito_estadosunat" />
+          <ScalarProperty Name="notacredito_totalletras" ColumnName="notacredito_totalletras" />
+          <ScalarProperty Name="notacredito_descripcionnota" ColumnName="notacredito_descripcionnota" />
+          <ScalarProperty Name="notacredito_tiponotacredito_codigo" ColumnName="notacredito_tiponotacredito_codigo" />
+          <ScalarProperty Name="notacredito_tipodocumentoventa_codigoreferencia" ColumnName="notacredito_tipodocumentoventa_codigoreferencia" />
+          <ScalarProperty Name="notacredito_numeracionreferencia" ColumnName="notacredito_numeracionreferencia" />
+          <ScalarProperty Name="notacredito_seriereferencia" ColumnName="notacredito_seriereferencia" />
+          <ScalarProperty Name="notacredito_total" ColumnName="notacredito_total" />
+          <ScalarProperty Name="notacredito_igv" ColumnName="notacredito_igv" />
+          <ScalarProperty Name="notacredito_subtotal" ColumnName="notacredito_subtotal" />
+          <ScalarProperty Name="notacredito_moneda_codigo" ColumnName="notacredito_moneda_codigo" />
+          <ScalarProperty Name="notacredito_cliente_tipodocumentoidentidad_codigo" ColumnName="notacredito_cliente_tipodocumentoidentidad_codigo" />
+          <ScalarProperty Name="notacredito_cliente_nrodocumento" ColumnName="notacredito_cliente_nrodocumento" />
+          <ScalarProperty Name="notacredito_cliente_nombre" ColumnName="notacredito_cliente_nombre" />
+          <ScalarProperty Name="notacredito_serie_numeracion" ColumnName="notacredito_serie_numeracion" />
+          <ScalarProperty Name="notacredito_serie_serie" ColumnName="notacredito_serie_serie" />
+          <ScalarProperty Name="notacredito_tipodocumentoventa_codigo" ColumnName="notacredito_tipodocumentoventa_codigo" />
+          <ScalarProperty Name="notacredito_empresa_codigopais" ColumnName="notacredito_empresa_codigopais" />
+          <ScalarProperty Name="notacredito_empresa_departamento" ColumnName="notacredito_empresa_departamento" />
+          <ScalarProperty Name="notacredito_empresa_provincia" ColumnName="notacredito_empresa_provincia" />
+          <ScalarProperty Name="notacredito_empresa_distrito" ColumnName="notacredito_empresa_distrito" />
+          <ScalarProperty Name="notacredito_empresa_zona" ColumnName="notacredito_empresa_zona" />
+          <ScalarProperty Name="notacredito_empresa_direccion" ColumnName="notacredito_empresa_direccion" />
+          <ScalarProperty Name="notacredito_empresa_ubigeo" ColumnName="notacredito_empresa_ubigeo" />
+          <ScalarProperty Name="notacredito_empresa_tipodocumentoideintidad_codigo" ColumnName="notacredito_empresa_tipodocumentoideintidad_codigo" />
+          <ScalarProperty Name="notacredito_empresa_nrodocumento" ColumnName="notacredito_empresa_nrodocumento" />
+          <ScalarProperty Name="notacredito_empresa_razonsocial" ColumnName="notacredito_empresa_razonsocial" />
+          <ScalarProperty Name="notacredito_horaemision" ColumnName="notacredito_horaemision" />
+          <ScalarProperty Name="notacredito_fechaemision" ColumnName="notacredito_fechaemision" />
+          <ScalarProperty Name="notacredito_tipoemision" ColumnName="notacredito_tipoemision" />
+          <ScalarProperty Name="notacredito_tiponotacredito_id" ColumnName="notacredito_tiponotacredito_id" />
+          <ScalarProperty Name="notacredito_moneda_id" ColumnName="notacredito_moneda_id" />
+          <ScalarProperty Name="notacredito_documentoventa_id" ColumnName="notacredito_documentoventa_id" />
+          <ScalarProperty Name="notacredito_estadodocumento_id" ColumnName="notacredito_estadodocumento_id" />
+          <ScalarProperty Name="notacredito_tipodocumentoventa_id" ColumnName="notacredito_tipodocumentoventa_id" />
+          <ScalarProperty Name="notacredito_empresa_id" ColumnName="notacredito_empresa_id" />
+          <ScalarProperty Name="notacredito_id" ColumnName="notacredito_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notascreditodetalle">
+      <EntityTypeMapping TypeName="vivemas_dbModel.notascreditodetalle">
+        <MappingFragment StoreEntitySet="notascreditodetalle">
+          <ScalarProperty Name="notaccrediodetalle_fechamodificacion" ColumnName="notaccrediodetalle_fechamodificacion" />
+          <ScalarProperty Name="notacreditodetalle_usuariomodificacion" ColumnName="notacreditodetalle_usuariomodificacion" />
+          <ScalarProperty Name="notacreditodetalle_fechacreacion" ColumnName="notacreditodetalle_fechacreacion" />
+          <ScalarProperty Name="notacreditodetalle_usuariocreacion" ColumnName="notacreditodetalle_usuariocreacion" />
+          <ScalarProperty Name="notacreditodetalle_total" ColumnName="notacreditodetalle_total" />
+          <ScalarProperty Name="notacreditodetalle_igv" ColumnName="notacreditodetalle_igv" />
+          <ScalarProperty Name="notacreditodetalle_subtotal" ColumnName="notacreditodetalle_subtotal" />
+          <ScalarProperty Name="notacreditodetalle_tipoafectacion" ColumnName="notacreditodetalle_tipoafectacion" />
+          <ScalarProperty Name="notacreditodetalle_tipoventasunat" ColumnName="notacreditodetalle_tipoventasunat" />
+          <ScalarProperty Name="notacreditodetalle_codigo" ColumnName="notacreditodetalle_codigo" />
+          <ScalarProperty Name="notacreditodetalle_cantidad" ColumnName="notacreditodetalle_cantidad" />
+          <ScalarProperty Name="notacreditodetalle_unidadmedida_codigo" ColumnName="notacreditodetalle_unidadmedida_codigo" />
+          <ScalarProperty Name="notacreditodetalle_descripcion" ColumnName="notacreditodetalle_descripcion" />
+          <ScalarProperty Name="notacreditodetalle_notadecredito_id" ColumnName="notacreditodetalle_notadecredito_id" />
+          <ScalarProperty Name="notacreditodetalle_id" ColumnName="notacreditodetalle_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposnotacredito">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposnotacredito">
+        <MappingFragment StoreEntitySet="tiposnotacredito">
+          <ScalarProperty Name="tiponotacredito_codigo" ColumnName="tiponotacredito_codigo" />
+          <ScalarProperty Name="tiponotacredito_descripcion" ColumnName="tiponotacredito_descripcion" />
+          <ScalarProperty Name="tiponotacredito_id" ColumnName="tiponotacredito_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerReportePagosClienteDetalle" FunctionName="vivemas_dbModel.Store.sp_obtenerReportePagosClienteDetalle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerReportePagosClienteDetalle_Result">
+          <ScalarProperty Name="cuota_numeracion" ColumnName="cuota_numeracion" />
+          <ScalarProperty Name="cuota_fechavencimiento" ColumnName="cuota_fechavencimiento" />
+          <ScalarProperty Name="cuota_monto" ColumnName="cuota_monto" />
+          <ScalarProperty Name="transaccion_monto" ColumnName="transaccion_monto" />
+          <ScalarProperty Name="pago_montodescuento" ColumnName="pago_montodescuento" />
+          <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+          <ScalarProperty Name="cuota_estado" ColumnName="cuota_estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerReporteTransacciones" FunctionName="vivemas_dbModel.Store.sp_obtenerReporteTransacciones">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerReporteTransacciones_Result">
+          <ScalarProperty Name="rn" ColumnName="rn" />
+          <ScalarProperty Name="transaccion_numeracion" ColumnName="transaccion_numeracion" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="proyecto_id" ColumnName="proyecto_id" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="lote_id" ColumnName="lote_id" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="tipotransaccion_id" ColumnName="tipotransaccion_id" />
+          <ScalarProperty Name="tipotransaccion_descripcion" ColumnName="tipotransaccion_descripcion" />
+          <ScalarProperty Name="tipometodopago_id" ColumnName="tipometodopago_id" />
+          <ScalarProperty Name="tipometodopago_descripcion" ColumnName="tipometodopago_descripcion" />
+          <ScalarProperty Name="transaccion_fechadeposito" ColumnName="transaccion_fechadeposito" />
+          <ScalarProperty Name="banco_id" ColumnName="banco_id" />
+          <ScalarProperty Name="banco_descripcioncorta" ColumnName="banco_descripcioncorta" />
+          <ScalarProperty Name="cuentabanco_id" ColumnName="cuentabanco_id" />
+          <ScalarProperty Name="cuentabanco_cuenta" ColumnName="cuentabanco_cuenta" />
+          <ScalarProperty Name="moneda_id" ColumnName="moneda_id" />
+          <ScalarProperty Name="moneda_descripcioncorta" ColumnName="moneda_descripcioncorta" />
+          <ScalarProperty Name="transaccion_monto" ColumnName="transaccion_monto" />
+          <ScalarProperty Name="transaccion_montonetototal" ColumnName="transaccion_montonetototal" />
+          <ScalarProperty Name="transaccion_montototaldescuento" ColumnName="transaccion_montototaldescuento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerReportePagosClienteCabecera" FunctionName="vivemas_dbModel.Store.sp_obtenerReportePagosClienteCabecera">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerReportePagosClienteCabecera_Result">
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="proyecto_nombre" ColumnName="proyecto_nombre" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_cliente_nrocontacto" ColumnName="proformauif_cliente_nrocontacto" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="moneda_descripcioncorta" ColumnName="moneda_descripcioncorta" />
+          <ScalarProperty Name="datosusuario_razonsocial" ColumnName="datosusuario_razonsocial" />
+          <ScalarProperty Name="montopendiente" ColumnName="montopendiente" />
+          <ScalarProperty Name="montocancelado" ColumnName="montocancelado" />
+          <ScalarProperty Name="pendientehoy" ColumnName="pendientehoy" />
+          <ScalarProperty Name="porcentaje_pagado" ColumnName="porcentaje_pagado" />
+          <ScalarProperty Name="nro_cuotas" ColumnName="nro_cuotas" />
+          <ScalarProperty Name="fecha_ultimacuota" ColumnName="fecha_ultimacuota" />
+          <ScalarProperty Name="fecha_impresion" ColumnName="fecha_impresion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerReportePagosClienteDetalle_v2" FunctionName="vivemas_dbModel.Store.sp_obtenerReportePagosClienteDetalle_v2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerReportePagosClienteDetalle_v2_Result">
+          <ScalarProperty Name="cuota_numeracion" ColumnName="cuota_numeracion" />
+          <ScalarProperty Name="cuota_fechavencimiento" ColumnName="cuota_fechavencimiento" />
+          <ScalarProperty Name="cuota_monto" ColumnName="cuota_monto" />
+          <ScalarProperty Name="transaccion_monto" ColumnName="transaccion_monto" />
+          <ScalarProperty Name="pago_montodescuento" ColumnName="pago_montodescuento" />
+          <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+          <ScalarProperty Name="cuota_estado" ColumnName="cuota_estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerReportePagosClienteDetalle_v3" FunctionName="vivemas_dbModel.Store.sp_obtenerReportePagosClienteDetalle_v3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerReportePagosClienteDetalle_v3_Result">
+          <ScalarProperty Name="pago_id" ColumnName="pago_id" />
+          <ScalarProperty Name="pago_transaccion_id" ColumnName="pago_transaccion_id" />
+          <ScalarProperty Name="pago_cuota_id" ColumnName="pago_cuota_id" />
+          <ScalarProperty Name="pago_cuota_monto" ColumnName="pago_cuota_monto" />
+          <ScalarProperty Name="pago_montodescuento" ColumnName="pago_montodescuento" />
+          <ScalarProperty Name="pago_montonetopago" ColumnName="pago_montonetopago" />
+          <ScalarProperty Name="pago_usuariomodificacion" ColumnName="pago_usuariomodificacion" />
+          <ScalarProperty Name="pago_descripcion" ColumnName="pago_descripcion" />
+          <ScalarProperty Name="pago_fechacreacion" ColumnName="pago_fechacreacion" />
+          <ScalarProperty Name="pago_usuariocreacion" ColumnName="pago_usuariocreacion" />
+          <ScalarProperty Name="pago_fechamodificacion" ColumnName="pago_fechamodificacion" />
+          <ScalarProperty Name="pago_estado" ColumnName="pago_estado" />
+          <ScalarProperty Name="transaccion_id" ColumnName="transaccion_id" />
+          <ScalarProperty Name="transaccion_empresa_id" ColumnName="transaccion_empresa_id" />
+          <ScalarProperty Name="transaccion_tipotransaccion_id" ColumnName="transaccion_tipotransaccion_id" />
+          <ScalarProperty Name="transaccion_tipomovimiento_id" ColumnName="transaccion_tipomovimiento_id" />
+          <ScalarProperty Name="transaccion_estadotransaccion_id" ColumnName="transaccion_estadotransaccion_id" />
+          <ScalarProperty Name="transaccion_tipometodopago_id" ColumnName="transaccion_tipometodopago_id" />
+          <ScalarProperty Name="transaccion_banco_id" ColumnName="transaccion_banco_id" />
+          <ScalarProperty Name="transaccion_cuentabanco_id" ColumnName="transaccion_cuentabanco_id" />
+          <ScalarProperty Name="transaccion_moneda_id" ColumnName="transaccion_moneda_id" />
+          <ScalarProperty Name="transaccion_tipocambio_id" ColumnName="transaccion_tipocambio_id" />
+          <ScalarProperty Name="transaccion_codigotransaccion_id" ColumnName="transaccion_codigotransaccion_id" />
+          <ScalarProperty Name="transaccion_codigoinicial_id" ColumnName="transaccion_codigoinicial_id" />
+          <ScalarProperty Name="transaccion_numeracion" ColumnName="transaccion_numeracion" />
+          <ScalarProperty Name="transaccion_codigodocumento" ColumnName="transaccion_codigodocumento" />
+          <ScalarProperty Name="transaccion_nrooperacion" ColumnName="transaccion_nrooperacion" />
+          <ScalarProperty Name="transaccion_bancoorigen" ColumnName="transaccion_bancoorigen" />
+          <ScalarProperty Name="transaccion_monto" ColumnName="transaccion_monto" />
+          <ScalarProperty Name="transaccion_montototaldescuento" ColumnName="transaccion_montototaldescuento" />
+          <ScalarProperty Name="transaccion_montonetototal" ColumnName="transaccion_montonetototal" />
+          <ScalarProperty Name="transaccion_porcentajedescuento" ColumnName="transaccion_porcentajedescuento" />
+          <ScalarProperty Name="transaccion_fecha" ColumnName="transaccion_fecha" />
+          <ScalarProperty Name="transaccion_fechadeposito" ColumnName="transaccion_fechadeposito" />
+          <ScalarProperty Name="transaccion_tipocambio_fecha" ColumnName="transaccion_tipocambio_fecha" />
+          <ScalarProperty Name="transaccion_tipocambio_venta" ColumnName="transaccion_tipocambio_venta" />
+          <ScalarProperty Name="transaccion_fechacreacion" ColumnName="transaccion_fechacreacion" />
+          <ScalarProperty Name="transaccion_usuariocreacion" ColumnName="transaccion_usuariocreacion" />
+          <ScalarProperty Name="transaccion_fechamodificacion" ColumnName="transaccion_fechamodificacion" />
+          <ScalarProperty Name="transaccion_usuariomodificacion" ColumnName="transaccion_usuariomodificacion" />
+          <ScalarProperty Name="transaccion_idproformacomodin" ColumnName="transaccion_idproformacomodin" />
+          <ScalarProperty Name="transaccion_estadoemision" ColumnName="transaccion_estadoemision" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tiposcontacto">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposcontacto">
+        <MappingFragment StoreEntitySet="tiposcontacto">
+          <ScalarProperty Name="tipocontacto_descripcion" ColumnName="tipocontacto_descripcion" />
+          <ScalarProperty Name="tipocontacto_id" ColumnName="tipocontacto_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosevento">
+      <EntityTypeMapping TypeName="vivemas_dbModel.estadosevento">
+        <MappingFragment StoreEntitySet="estadosevento">
+          <ScalarProperty Name="estadoevento_descripcion" ColumnName="estadoevento_descripcion" />
+          <ScalarProperty Name="estadoevento_id" ColumnName="estadoevento_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eventostipocontacto">
+      <EntityTypeMapping TypeName="vivemas_dbModel.eventostipocontacto">
+        <MappingFragment StoreEntitySet="eventostipocontacto">
+          <ScalarProperty Name="eventotipocontacto_tipocontacto_id" ColumnName="eventotipocontacto_tipocontacto_id" />
+          <ScalarProperty Name="eventotipocontacto_evento_id" ColumnName="eventotipocontacto_evento_id" />
+          <ScalarProperty Name="eventotipocontacto_id" ColumnName="eventotipocontacto_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eventos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.eventos">
+        <MappingFragment StoreEntitySet="eventos">
+          <ScalarProperty Name="evento_contrato_id" ColumnName="evento_contrato_id" />
+          <ScalarProperty Name="evento_montopropuesto" ColumnName="evento_montopropuesto" />
+          <ScalarProperty Name="evento_estado" ColumnName="evento_estado" />
+          <ScalarProperty Name="evento_fechapropuesta" ColumnName="evento_fechapropuesta" />
+          <ScalarProperty Name="evento_fechacreacion" ColumnName="evento_fechacreacion" />
+          <ScalarProperty Name="evento_descripcion" ColumnName="evento_descripcion" />
+          <ScalarProperty Name="evento_estadoevento_id" ColumnName="evento_estadoevento_id" />
+          <ScalarProperty Name="evento_usuario_id" ColumnName="evento_usuario_id" />
+          <ScalarProperty Name="evento_id" ColumnName="evento_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_obtenerReporteEstadoCobranza" FunctionName="vivemas_dbModel.Store.sp_obtenerReporteEstadoCobranza">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_obtenerReporteEstadoCobranza_Result">
+          <ScalarProperty Name="contrato_id" ColumnName="contrato_id" />
+          <ScalarProperty Name="anexocontratocotizacion_id" ColumnName="anexocontratocotizacion_id" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="anexocontratocotizacion_fechapagoefectivo" ColumnName="anexocontratocotizacion_fechapagoefectivo" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="cotizacion_promotor_nombre" ColumnName="cotizacion_promotor_nombre" />
+          <ScalarProperty Name="cotizacion_preciototal" ColumnName="cotizacion_preciototal" />
+          <ScalarProperty Name="moneda_descripcioncorta" ColumnName="moneda_descripcioncorta" />
+          <ScalarProperty Name="cotizacion_montoinicial" ColumnName="cotizacion_montoinicial" />
+          <ScalarProperty Name="cuota_montopagado" ColumnName="cuota_montopagado" />
+          <ScalarProperty Name="cuota_cuotaspagadas" ColumnName="cuota_cuotaspagadas" />
+          <ScalarProperty Name="cuota_montopagadototal" ColumnName="cuota_montopagadototal" />
+          <ScalarProperty Name="cuota_fechaultimopago" ColumnName="cuota_fechaultimopago" />
+          <ScalarProperty Name="cuota_montopendiente" ColumnName="cuota_montopendiente" />
+          <ScalarProperty Name="cuota_letrapendiente" ColumnName="cuota_letrapendiente" />
+          <ScalarProperty Name="cuota_porcentajepagado" ColumnName="cuota_porcentajepagado" />
+          <ScalarProperty Name="cuota_devolucion" ColumnName="cuota_devolucion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_cargarDataTransaccion" FunctionName="vivemas_dbModel.Store.sp_cargarDataTransaccion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_cargarDataTransaccion_Result">
+          <ScalarProperty Name="transaccion_id" ColumnName="transaccion_id" />
+          <ScalarProperty Name="transaccion_numeracion" ColumnName="transaccion_numeracion" />
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="tipometodopago_descripcion" ColumnName="tipometodopago_descripcion" />
+          <ScalarProperty Name="transaccion_nrooperacion" ColumnName="transaccion_nrooperacion" />
+          <ScalarProperty Name="fechaTransaccion" ColumnName="fechaTransaccion" />
+          <ScalarProperty Name="fechaDeposito" ColumnName="fechaDeposito" />
+          <ScalarProperty Name="banco_descripcioncorta" ColumnName="banco_descripcioncorta" />
+          <ScalarProperty Name="cuentabanco_cuenta" ColumnName="cuentabanco_cuenta" />
+          <ScalarProperty Name="transaccion_bancoorigen" ColumnName="transaccion_bancoorigen" />
+          <ScalarProperty Name="transaccion_monto" ColumnName="transaccion_monto" />
+          <ScalarProperty Name="transaccion_estadoemision" ColumnName="transaccion_estadoemision" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="datosencuesta">
+      <EntityTypeMapping TypeName="vivemas_dbModel.datosencuesta">
+        <MappingFragment StoreEntitySet="datosencuesta">
+          <ScalarProperty Name="datoencuesta_observaciones" ColumnName="datoencuesta_observaciones" />
+          <ScalarProperty Name="datoencuesta_fecha" ColumnName="datoencuesta_fecha" />
+          <ScalarProperty Name="datoencuesta_cliente_nombre" ColumnName="datoencuesta_cliente_nombre" />
+          <ScalarProperty Name="datoencuesta_tipoencuesta_id" ColumnName="datoencuesta_tipoencuesta_id" />
+          <ScalarProperty Name="datoencuesta_id" ColumnName="datoencuesta_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="encuestas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.encuestas">
+        <MappingFragment StoreEntitySet="encuestas">
+          <ScalarProperty Name="encuesta_respuesta_id" ColumnName="encuesta_respuesta_id" />
+          <ScalarProperty Name="encuesta_pregunta_id" ColumnName="encuesta_pregunta_id" />
+          <ScalarProperty Name="encuesta_datoencuesta_id" ColumnName="encuesta_datoencuesta_id" />
+          <ScalarProperty Name="encuesta_id" ColumnName="encuesta_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="preguntas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.preguntas">
+        <MappingFragment StoreEntitySet="preguntas">
+          <ScalarProperty Name="pregunta_descripcion" ColumnName="pregunta_descripcion" />
+          <ScalarProperty Name="pregunta_tipoencuesta_id" ColumnName="pregunta_tipoencuesta_id" />
+          <ScalarProperty Name="pregunta_id" ColumnName="pregunta_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respuestas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.respuestas">
+        <MappingFragment StoreEntitySet="respuestas">
+          <ScalarProperty Name="respuesta_descripcion" ColumnName="respuesta_descripcion" />
+          <ScalarProperty Name="respuesta_pregunta_id" ColumnName="respuesta_pregunta_id" />
+          <ScalarProperty Name="respuesta_id" ColumnName="respuesta_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposencuesta">
+      <EntityTypeMapping TypeName="vivemas_dbModel.tiposencuesta">
+        <MappingFragment StoreEntitySet="tiposencuesta">
+          <ScalarProperty Name="tipoencuesta_nombre" ColumnName="tipoencuesta_nombre" />
+          <ScalarProperty Name="tipoencuesta_empresa_id" ColumnName="tipoencuesta_empresa_id" />
+          <ScalarProperty Name="tipoencuesta_id" ColumnName="tipoencuesta_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_cargarEventos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.vw_cargarEventos">
+        <MappingFragment StoreEntitySet="vw_cargarEventos">
+          <ScalarProperty Name="evento_id" ColumnName="evento_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="evento_estadoevento_id" ColumnName="evento_estadoevento_id" />
+          <ScalarProperty Name="start" ColumnName="start" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_reporteVentas">
+      <EntityTypeMapping TypeName="vivemas_dbModel.vw_reporteVentas">
+        <MappingFragment StoreEntitySet="vw_reporteVentas">
+          <ScalarProperty Name="notacredito_fechaemision" ColumnName="notacredito_fechaemision" />
+          <ScalarProperty Name="anexocontratocotizacion_contrato_id" ColumnName="anexocontratocotizacion_contrato_id" />
+          <ScalarProperty Name="cotizacion_proyecto_id" ColumnName="cotizacion_proyecto_id" />
+          <ScalarProperty Name="documentoventa_transaccion_id" ColumnName="documentoventa_transaccion_id" />
+          <ScalarProperty Name="documentoventa_fechacreacion" ColumnName="documentoventa_fechacreacion" />
+          <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
+          <ScalarProperty Name="documentoventa_moneda_codigo" ColumnName="documentoventa_moneda_codigo" />
+          <ScalarProperty Name="documentoventa_total" ColumnName="documentoventa_total" />
+          <ScalarProperty Name="documentoventa_cliente_nombre" ColumnName="documentoventa_cliente_nombre" />
+          <ScalarProperty Name="documentoventa_cliente_nrodocumento" ColumnName="documentoventa_cliente_nrodocumento" />
+          <ScalarProperty Name="notacreditoanulacion" ColumnName="notacreditoanulacion" />
+          <ScalarProperty Name="documentoEmision" ColumnName="documentoEmision" />
+          <ScalarProperty Name="documentoventa_id" ColumnName="documentoventa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_cargarContratos" FunctionName="vivemas_dbModel.Store.sp_cargarContratos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_cargarContratos_Result">
+          <ScalarProperty Name="contrato_id" ColumnName="contrato_id" />
+          <ScalarProperty Name="contrato_estadocontrato_id" ColumnName="contrato_estadocontrato_id" />
+          <ScalarProperty Name="estadocontrato_descripcion" ColumnName="estadocontrato_descripcion" />
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="proformauif_tipodocumentoidentidad_descripcion" ColumnName="proformauif_tipodocumentoidentidad_descripcion" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="moneda_descripcioncorta" ColumnName="moneda_descripcioncorta" />
+          <ScalarProperty Name="cotizacion_tipocambio_precioventa" ColumnName="cotizacion_tipocambio_precioventa" />
+          <ScalarProperty Name="cuota_fechavencimiento" ColumnName="cuota_fechavencimiento" />
+          <ScalarProperty Name="montocuota" ColumnName="montocuota" />
+          <ScalarProperty Name="cotizacion_preciototal" ColumnName="cotizacion_preciototal" />
+          <ScalarProperty Name="montopendiente" ColumnName="montopendiente" />
+          <ScalarProperty Name="nrocuotas" ColumnName="nrocuotas" />
+          <ScalarProperty Name="estadovencimiento" ColumnName="estadovencimiento" />
+          <ScalarProperty Name="diasvencimiento" ColumnName="diasvencimiento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="contratos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.contratos">
+        <MappingFragment StoreEntitySet="contratos">
+          <ScalarProperty Name="contrato_fecharesolucion" ColumnName="contrato_fecharesolucion" />
+          <ScalarProperty Name="contrato_idanterior" ColumnName="contrato_idanterior" />
+          <ScalarProperty Name="contrato_usuariomodificacion" ColumnName="contrato_usuariomodificacion" />
+          <ScalarProperty Name="contrato_fechamodificacion" ColumnName="contrato_fechamodificacion" />
+          <ScalarProperty Name="contrato_usuariocreacion" ColumnName="contrato_usuariocreacion" />
+          <ScalarProperty Name="contrato_fechacreacion" ColumnName="contrato_fechacreacion" />
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="contrato_estadocontrato_id" ColumnName="contrato_estadocontrato_id" />
+          <ScalarProperty Name="contrato_id" ColumnName="contrato_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_reporteeventos">
+      <EntityTypeMapping TypeName="vivemas_dbModel.vw_reporteeventos">
+        <MappingFragment StoreEntitySet="vw_reporteeventos">
+          <ScalarProperty Name="entrevista" ColumnName="entrevista" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="whatsapp" ColumnName="whatsapp" />
+          <ScalarProperty Name="llamada" ColumnName="llamada" />
+          <ScalarProperty Name="cotizacion_lote_nombre" ColumnName="cotizacion_lote_nombre" />
+          <ScalarProperty Name="proyecto_id" ColumnName="proyecto_id" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="evento_id" ColumnName="evento_id" />
+          <ScalarProperty Name="evento_contrato_id" ColumnName="evento_contrato_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="f_eventos_detalles" FunctionName="vivemas_dbModel.Store.f_eventos_detalles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.f_eventos_detalles_Result">
+          <ScalarProperty Name="evento_id" ColumnName="evento_id" />
+          <ScalarProperty Name="evento_fechacreacion" ColumnName="evento_fechacreacion" />
+          <ScalarProperty Name="evento_fechapropuesta" ColumnName="evento_fechapropuesta" />
+          <ScalarProperty Name="evento_descripcion" ColumnName="evento_descripcion" />
+          <ScalarProperty Name="evento_montopropuesto" ColumnName="evento_montopropuesto" />
+          <ScalarProperty Name="evento_estadoevento_id" ColumnName="evento_estadoevento_id" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="proyecto_id" ColumnName="proyecto_id" />
+          <ScalarProperty Name="cotizacion_proyecto_nombre" ColumnName="cotizacion_proyecto_nombre" />
+          <ScalarProperty Name="cotizacion_lote_nombre" ColumnName="cotizacion_lote_nombre" />
+          <ScalarProperty Name="llamada" ColumnName="llamada" />
+          <ScalarProperty Name="whatsapp" ColumnName="whatsapp" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="entrevista" ColumnName="entrevista" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_evento_detallado" FunctionName="vivemas_dbModel.Store.sp_evento_detallado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_evento_detallado_Result">
+          <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
+          <ScalarProperty Name="cotizacion_lote_nombre" ColumnName="cotizacion_lote_nombre" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="evento_fechacreacion" ColumnName="evento_fechacreacion" />
+          <ScalarProperty Name="evento_fechapropuesta" ColumnName="evento_fechapropuesta" />
+          <ScalarProperty Name="evento_montopropuesto" ColumnName="evento_montopropuesto" />
+          <ScalarProperty Name="evento_descripcion" ColumnName="evento_descripcion" />
+          <ScalarProperty Name="estadoevento_descripcion" ColumnName="estadoevento_descripcion" />
+          <ScalarProperty Name="tipocontacto_descripcion" ColumnName="tipocontacto_descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
