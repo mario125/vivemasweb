@@ -9,7 +9,7 @@ namespace proyecto_vivemas.Controllers
 {
     public class LotesController : Controller
     {
-        JsonResult respuesta;
+        
         vivemas_dbEntities db = new vivemas_dbEntities();
         // GET: Lotes
         public ActionResult Index()
@@ -28,6 +28,7 @@ namespace proyecto_vivemas.Controllers
                     .Where(vw => vw.lote_nombre.Contains(term))
                     .Select(vw => new {
                         id = vw.contrato_id,
+                        loteid = vw.lote_id,
                         label = vw.lote_nombre + "-" + vw.proyecto_nombrecorto,
                         lote = vw.lote_nombre,
                         numeracion = vw.contrato_numeracion,

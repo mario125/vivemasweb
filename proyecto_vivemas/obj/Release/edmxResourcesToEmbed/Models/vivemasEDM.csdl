@@ -540,6 +540,10 @@
       <Parameter Name="PROYECTO" Mode="In" Type="Int32" />
       <Parameter Name="LOTE" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_get_clientes" ReturnType="Collection(vivemas_dbModel.sp_get_clientes_Result)">
+      <Parameter Name="DATA" Mode="In" Type="String" />
+      <Parameter Name="TYPE" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="empresas">
     <Key>
@@ -2019,6 +2023,7 @@
   <EntityType Name="vw_busquedaContratosAutocomplete">
     <Key>
       <PropertyRef Name="contrato_id" />
+      <PropertyRef Name="lote_id" />
     </Key>
     <Property Name="contrato_id" Type="Int64" Nullable="false" />
     <Property Name="contrato_numeracion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -2027,6 +2032,7 @@
     <Property Name="lote_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="lote_proyecto_id" Type="Int64" />
     <Property Name="proyecto_nombrecorto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lote_id" Type="Int64" Nullable="false" />
   </EntityType>
   <EntityType Name="proformasuif">
     <Key>
@@ -2469,6 +2475,8 @@
     <Property Name="estadoevento_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="estadoevento_descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="eventos" Relationship="vivemas_dbModel.FK_eventos_estadosevento" FromRole="estadosevento" ToRole="eventos" />
+    <Property Name="estadoevento_color" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="estadoevento_detalle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="eventostipocontacto">
     <Key>
@@ -2896,5 +2904,9 @@
     <Property Type="String" Name="evento_descripcion" Nullable="true" MaxLength="250" />
     <Property Type="String" Name="estadoevento_descripcion" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="tipocontacto_descripcion" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_get_clientes_Result">
+    <Property Type="String" Name="cliente_nrodocumento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cliente_razonsocial" Nullable="true" MaxLength="150" />
   </ComplexType>
 </Schema>

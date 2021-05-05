@@ -399,6 +399,9 @@
     <Compile Include="Models\sp_evento_detallado_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_get_clientes_Result.cs">
+      <DependentUpon>vivemasEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_obtenerDatosCliente_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
@@ -6094,7 +6097,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;scrollPosition&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;i-tab-container-selected-tab-index&quot; valuetype=&quot;integer&quot;&gt;1&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" content_4toastr_4toastr_1js_1map__JsonSchema="" />
+      <UserProperties content_4toastr_4toastr_1js_1map__JsonSchema="" DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;scrollPosition&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;i-tab-container-selected-tab-index&quot; valuetype=&quot;integer&quot;&gt;1&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

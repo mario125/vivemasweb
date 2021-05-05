@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Publicaciones\proyecto_vivemas</_PublishTargetUrl>
-    <History>True|2021-04-29T19:35:23.0322047Z;True|2021-04-15T14:18:10.9866982-05:00;True|2021-04-12T18:30:58.1155455-05:00;True|2021-04-06T14:42:38.6273117-05:00;False|2021-03-16T08:10:36.4124556-06:00;True|2021-03-11T16:48:16.1675891-06:00;True|2021-03-11T16:16:14.2665493-06:00;True|2021-03-08T13:48:55.2676535-06:00;True|2021-03-05T08:44:49.6105462-06:00;</History>
+    <History>True|2021-05-05T21:25:43.3272121Z;True|2021-04-29T14:35:23.0322047-05:00;True|2021-04-15T14:18:10.9866982-05:00;True|2021-04-12T18:30:58.1155455-05:00;True|2021-04-06T14:42:38.6273117-05:00;False|2021-03-16T08:10:36.4124556-06:00;True|2021-03-11T16:48:16.1675891-06:00;True|2021-03-11T16:16:14.2665493-06:00;True|2021-03-08T13:48:55.2676535-06:00;True|2021-03-05T08:44:49.6105462-06:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -78,7 +78,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/22/2019 01:06:16</publishTime>
     </File>
     <File Include="bin/proyecto_vivemas.dll">
-      <publishTime>05/04/2021 08:56:40</publishTime>
+      <publishTime>05/05/2021 16:28:06</publishTime>
     </File>
     <File Include="bin/proyecto_vivemas.pdb">
       <publishTime>11/18/2020 09:29:13</publishTime>
@@ -11718,7 +11718,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/13/2021 09:55:36</publishTime>
     </File>
     <File Include="Scripts/Reportes/reporteClientesMin.js">
-      <publishTime>03/25/2021 09:45:16</publishTime>
+      <publishTime>05/04/2021 16:57:14</publishTime>
     </File>
     <File Include="Scripts/Reportes/reporteClientesPagos.js">
       <publishTime>03/05/2021 08:10:56</publishTime>
@@ -11730,7 +11730,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/22/2021 17:31:38</publishTime>
     </File>
     <File Include="Scripts/Reportes/reporteEventosDetalle.js">
-      <publishTime>05/03/2021 17:21:24</publishTime>
+      <publishTime>05/05/2021 16:24:23</publishTime>
     </File>
     <File Include="Scripts/Reportes/reporteTransacciones.js">
       <publishTime>03/04/2021 08:16:28</publishTime>
@@ -11820,7 +11820,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/22/2021 16:39:08</publishTime>
     </File>
     <File Include="Views/Reportes/ReporteEventosDetalle.cshtml">
-      <publishTime>05/03/2021 17:21:24</publishTime>
+      <publishTime>05/05/2021 15:58:15</publishTime>
     </File>
     <File Include="Views/Reportes/ReporteTransacciones.cshtml">
       <publishTime>03/03/2021 16:41:32</publishTime>
@@ -11838,7 +11838,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/19/2021 09:31:00</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutMenu.cshtml">
-      <publishTime>04/30/2021 09:37:20</publishTime>
+      <publishTime>05/04/2021 14:57:55</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutReportes.cshtml">
       <publishTime>02/23/2021 09:35:54</publishTime>
@@ -11853,7 +11853,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/01/2020 12:52:46</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/28/2021 18:06:28</publishTime>
+      <publishTime>05/05/2021 16:25:38</publishTime>
     </File>
   </ItemGroup>
 </Project>

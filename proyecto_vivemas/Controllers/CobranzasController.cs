@@ -43,7 +43,7 @@ namespace proyecto_vivemas.Controllers
         /// <value>
         /// <c>MySqlCommand</c> command de la base de datos 
         /// </value>
-        MySqlCommand command;
+       
         /// <value>
         /// <c>Utilities</c> <typeparamref name="Utilities"/> variable para usar las funciones de Utilities
         /// </value>

@@ -204,19 +204,19 @@ namespace proyecto_vivemas.Models
             var dOCUMENTOParameter = dOCUMENTO != null ?
                 new ObjectParameter("DOCUMENTO", dOCUMENTO) :
                 new ObjectParameter("DOCUMENTO", typeof(string));
-    
-            var pROYECTOParameter = pROYECTO.HasValue ?
-                new ObjectParameter("PROYECTO", pROYECTO) :
-                new ObjectParameter("PROYECTO", typeof(int));
-    
-            var lOTEParameter = lOTE.HasValue ?
-                new ObjectParameter("LOTE", lOTE) :
-                new ObjectParameter("LOTE", typeof(int));
+
+            var pROYECTOParameter = pROYECTO.Equals(0) ?
+                new ObjectParameter("PROYECTO", typeof(int)) :
+                new ObjectParameter("PROYECTO", pROYECTO);
+
+            var lOTEParameter = lOTE.Equals(0) ?
+                new ObjectParameter("LOTE", typeof(int)) :
+                new ObjectParameter("LOTE", lOTE);
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_evento_detallado_Result>("sp_evento_detallado", dOCUMENTOParameter, pROYECTOParameter, lOTEParameter);
         }
     
-        public virtual ObjectResult<string> sp_get_clientes(string dATA, Nullable<int> tYPE)
+        public virtual ObjectResult<sp_get_clientes_Result> sp_get_clientes(string dATA, Nullable<int> tYPE)
         {
             var dATAParameter = dATA != null ?
                 new ObjectParameter("DATA", dATA) :
@@ -226,7 +226,7 @@ namespace proyecto_vivemas.Models
                 new ObjectParameter("TYPE", tYPE) :
                 new ObjectParameter("TYPE", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_get_clientes", dATAParameter, tYPEParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_clientes_Result>("sp_get_clientes", dATAParameter, tYPEParameter);
         }
     }
 }

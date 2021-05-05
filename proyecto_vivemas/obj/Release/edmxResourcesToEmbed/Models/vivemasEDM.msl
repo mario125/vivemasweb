@@ -761,6 +761,7 @@
     <EntitySetMapping Name="vw_busquedaContratosAutocomplete">
       <EntityTypeMapping TypeName="vivemas_dbModel.vw_busquedaContratosAutocomplete">
         <MappingFragment StoreEntitySet="vw_busquedaContratosAutocomplete">
+          <ScalarProperty Name="lote_id" ColumnName="lote_id" />
           <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
           <ScalarProperty Name="lote_proyecto_id" ColumnName="lote_proyecto_id" />
           <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
@@ -1023,6 +1024,8 @@
     <EntitySetMapping Name="estadosevento">
       <EntityTypeMapping TypeName="vivemas_dbModel.estadosevento">
         <MappingFragment StoreEntitySet="estadosevento">
+          <ScalarProperty Name="estadoevento_detalle" ColumnName="estadoevento_detalle" />
+          <ScalarProperty Name="estadoevento_color" ColumnName="estadoevento_color" />
           <ScalarProperty Name="estadoevento_descripcion" ColumnName="estadoevento_descripcion" />
           <ScalarProperty Name="estadoevento_id" ColumnName="estadoevento_id" />
         </MappingFragment>
@@ -1266,6 +1269,14 @@
           <ScalarProperty Name="evento_descripcion" ColumnName="evento_descripcion" />
           <ScalarProperty Name="estadoevento_descripcion" ColumnName="estadoevento_descripcion" />
           <ScalarProperty Name="tipocontacto_descripcion" ColumnName="tipocontacto_descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_clientes" FunctionName="vivemas_dbModel.Store.sp_get_clientes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_clientes_Result">
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

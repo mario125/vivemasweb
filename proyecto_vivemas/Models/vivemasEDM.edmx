@@ -887,8 +887,10 @@
 advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_busquedaContratosAutocomplete' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="vw_busquedaContratosAutocomplete">
           <Key>
+            <PropertyRef Name="lote_id" />
             <PropertyRef Name="contrato_id" />
           </Key>
+          <Property Name="lote_id" Type="bigint" Nullable="false" />
           <Property Name="contrato_id" Type="bigint" Nullable="false" />
           <Property Name="contrato_numeracion" Type="varchar" MaxLength="50" />
           <Property Name="cliente_nrodocumento" Type="varchar" MaxLength="150" />
@@ -2169,6 +2171,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vw_busquedaContratosAutocomplete" EntityType="Self.vw_busquedaContratosAutocomplete" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vw_busquedaContratosAutocomplete].[lote_id] AS [lote_id], 
     [vw_busquedaContratosAutocomplete].[contrato_id] AS [contrato_id], 
     [vw_busquedaContratosAutocomplete].[contrato_numeracion] AS [contrato_numeracion], 
     [vw_busquedaContratosAutocomplete].[cliente_nrodocumento] AS [cliente_nrodocumento], 
@@ -3131,7 +3134,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
             <Parameter Name="PROYECTO" Mode="In" Type="Int32" />
             <Parameter Name="LOTE" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_get_clientes" ReturnType="Collection(String)">
+          <FunctionImport Name="sp_get_clientes" ReturnType="Collection(vivemas_dbModel.sp_get_clientes_Result)">
             <Parameter Name="DATA" Mode="In" Type="String" />
             <Parameter Name="TYPE" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -4614,6 +4617,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
         <EntityType Name="vw_busquedaContratosAutocomplete">
           <Key>
             <PropertyRef Name="contrato_id" />
+            <PropertyRef Name="lote_id" />
           </Key>
           <Property Name="contrato_id" Type="Int64" Nullable="false" />
           <Property Name="contrato_numeracion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -4622,6 +4626,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <Property Name="lote_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="lote_proyecto_id" Type="Int64" />
           <Property Name="proyecto_nombrecorto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lote_id" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="proformasuif">
           <Key>
@@ -5494,6 +5499,10 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <Property Type="String" Name="estadoevento_descripcion" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="tipocontacto_descripcion" Nullable="true" MaxLength="150" />
         </ComplexType>
+        <ComplexType Name="sp_get_clientes_Result">
+          <Property Type="String" Name="cliente_nrodocumento" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="cliente_razonsocial" Nullable="true" MaxLength="150" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6260,6 +6269,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <EntitySetMapping Name="vw_busquedaContratosAutocomplete">
             <EntityTypeMapping TypeName="vivemas_dbModel.vw_busquedaContratosAutocomplete">
               <MappingFragment StoreEntitySet="vw_busquedaContratosAutocomplete">
+                <ScalarProperty Name="lote_id" ColumnName="lote_id" />
                 <ScalarProperty Name="proyecto_nombrecorto" ColumnName="proyecto_nombrecorto" />
                 <ScalarProperty Name="lote_proyecto_id" ColumnName="lote_proyecto_id" />
                 <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
@@ -6770,7 +6780,14 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_get_clientes" FunctionName="vivemas_dbModel.Store.sp_get_clientes" />
+          <FunctionImportMapping FunctionImportName="sp_get_clientes" FunctionName="vivemas_dbModel.Store.sp_get_clientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_clientes_Result">
+                <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+                <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

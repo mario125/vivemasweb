@@ -361,6 +361,8 @@
     </Key>
     <Property Name="estadoevento_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="estadoevento_descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="estadoevento_color" Type="varchar" MaxLength="100" />
+    <Property Name="estadoevento_detalle" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="estadosinterescliente">
     <Key>
@@ -880,8 +882,10 @@
 advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_busquedaContratosAutocomplete' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_busquedaContratosAutocomplete">
     <Key>
+      <PropertyRef Name="lote_id" />
       <PropertyRef Name="contrato_id" />
     </Key>
+    <Property Name="lote_id" Type="bigint" Nullable="false" />
     <Property Name="contrato_id" Type="bigint" Nullable="false" />
     <Property Name="contrato_numeracion" Type="varchar" MaxLength="50" />
     <Property Name="cliente_nrodocumento" Type="varchar" MaxLength="150" />
@@ -2068,6 +2072,10 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
     <Parameter Name="PROYECTO" Type="int" Mode="In" />
     <Parameter Name="LOTE" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_get_clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DATA" Type="varchar" Mode="In" />
+    <Parameter Name="TYPE" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_obtenerDatosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="transaccionId" Type="bigint" Mode="In" />
   </Function>
@@ -2158,6 +2166,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
     <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vw_busquedaContratosAutocomplete" EntityType="Self.vw_busquedaContratosAutocomplete" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
+    [vw_busquedaContratosAutocomplete].[lote_id] AS [lote_id], 
     [vw_busquedaContratosAutocomplete].[contrato_id] AS [contrato_id], 
     [vw_busquedaContratosAutocomplete].[contrato_numeracion] AS [contrato_numeracion], 
     [vw_busquedaContratosAutocomplete].[cliente_nrodocumento] AS [cliente_nrodocumento], 

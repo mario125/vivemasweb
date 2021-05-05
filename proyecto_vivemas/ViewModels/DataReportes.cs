@@ -33,4 +33,11 @@ namespace proyecto_vivemas.ViewModels
         public string fecha_pago { get; set; }
         public string cuota_estado { get; set; }
     }
+
+    public class DataGetClientes
+    {
+        public string documento { get; set; }
+        public int proyecto { get; set; }
+        public int lote { get; set; }
+    }
 }

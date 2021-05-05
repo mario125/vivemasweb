@@ -22,7 +22,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-1">
                                 <label for="inputDocumentoCliente">Cliente:</label>
                                 <input type="text" class="form-control" id="inputDocumentoCliente" placeholder="Nro documento">
-                                <input type="hidden" id="inputIdContrato">
+                                
                             </div>
                             <!--NOMBRE DE PROYECTO-->
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12 mb-1">
@@ -33,19 +33,21 @@
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12 mb-1">
                                 <label for="inputLote">Lote:</label>
                                 <input type="text" class="form-control" id="inputLote" placeholder="Lote">
+                                
+                                <input type="hidden" class="form-control" id="idlote" placeholder="Nro documento">
                             </div>
 
 
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 mb-1">
-                                <label for="selectProyecto">N° DE DOCUMENTO DE CLIENTE:</label>
-                                <input type="text" class="form-control ui-autocomplete-input" id="inpucode" placeholder="N° DOCUMENTO" autocomplete="off">
-                            </div>
+
+
 
 
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12 mb-1">
                                 <label style="color:white">-----------:</label>
                                 <button type="submit" class="btn btn-primary">Obtener Reporte</button>
                             </div>
+
+
                         </div>
                         <div class="row mt-4">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-1">
@@ -78,5 +80,40 @@
     <script src="~/Content/reporting/tableToExcel.js"></script>
     <script src="~/Content/reporting/FileSaver.min.js"></script>
     <script type="text/javascript" src="~/Scripts/Reportes/reporteEventosDetalle.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            SearchText();
+        });
+        function SearchText() {
+
+            $("#inputDocumentoCliente").autocomplete({
+                
+                source: function (request, response) {
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "getClientes125",
+                        data: "{'documento':'" + document.getElementById('inputDocumentoCliente').value + "'}",
+                        dataType: "json",
+                        success: function (data) {
+
+                            response($.map(data.Data.dataReporte, function (item) {
+                              
+                                return {
+                                    label: item.label,
+                                    value: item.label
+                                }
+                            }));
+
+                        },
+                        error: function (result) {
+                            alert("No Match");
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 }
 

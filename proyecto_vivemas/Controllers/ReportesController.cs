@@ -905,19 +905,74 @@ namespace proyecto_vivemas.Controllers
             return respuesta;
         }
 
-
-        public ActionResult obtenerReporteEventosDetalle(String codigo)//mario
+        public ActionResult getClientes125(DataGetClientes data)
         {
+           respuesta = new JsonResult();
+
+            respuesta.Data = new
+            {
+                flag = 1,
+
+                dataReporte = db.sp_get_clientes(data.documento + "%", 1).ToList().ToList().Select(rpt => new {
+                    id= rpt.cliente_nrodocumento,
+                    label = rpt.cliente_nrodocumento+"-"+ rpt.cliente_razonsocial
+                })
+            };
+
+            Console.Write(respuesta);
+
+            return Json(respuesta);
+        }
+
+        public ActionResult buscarClientesContrato(string term, string param1)
+        {
+            respuesta = new JsonResult();
             try
             {
+                long proyectoId = long.Parse(param1);
+                if (proyectoId == 0)
+                {
+                    return Json(db.vw_busquedaContratosAutocomplete
+                    .Where(vw => vw.cliente_nrodocumento.Contains(term) || vw.cliente_razonsocial.Contains(term))
+                    .Select(vw => new {
+                        id = vw.contrato_id,
+                        label = vw.cliente_nrodocumento + "-" + vw.cliente_razonsocial,
+                        numeracion = vw.contrato_numeracion,
+                        lote = vw.lote_nombre + "-" + vw.proyecto_nombrecorto
+                    }).Take(10), JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(db.vw_busquedaContratosAutocomplete
+                    .Where(vw => (vw.cliente_nrodocumento.Contains(term) || vw.cliente_razonsocial.Contains(term)) && vw.lote_proyecto_id == proyectoId)
+                    .Select(vw => new {
+                        id = vw.contrato_id,
+                        label = vw.cliente_nrodocumento + "-" + vw.cliente_razonsocial,
+                        numeracion = vw.contrato_numeracion,
+                        lote = vw.lote_nombre + "-" + vw.proyecto_nombrecorto
+                    }).Take(10), JsonRequestBehavior.AllowGet);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public ActionResult obtenerReporteEventosDetalle(DataGetClientes data)//mario
+        {
+            try
+            {       
                 
                 respuesta = new JsonResult();
-                if (codigo !="")
+                if (data.documento !="")
                 {
                     respuesta.Data = new
                     {
                         flag = 1,
-                        dataReporte = db.sp_evento_detallado(codigo==""?null:codigo,null,null).ToList().Select(rpt => new {
+                        dataReporte = db.sp_evento_detallado(data.documento,data.proyecto,data.lote).ToList().Select(rpt => new {
                             rpt.proyecto_nombrecorto,
                             rpt.cotizacion_lote_nombre,
                             rpt.proformauif_cliente_nrodocumento,

@@ -1,43 +1,88 @@
-﻿document.getElementById('formReporteEventosDetalle').addEventListener('submit', (event) => {
+﻿$(document).ready(() => {
+
+    cargarProyectos();
+    $("#inputLote").autocomplete({
+        source: function (request, response) {
+            $.getJSON("../Lotes/buscarLotesAutocomplete",
+                {
+                    term: request.term,
+                    param1: $('#selectProyecto').select2('data')[0].id
+                },
+                response
+            );
+        },
+        select: function (event, ui) {
+           
+           
+            document.getElementById("idlote").value = ui.item.loteid;
+      
+        },
+        delay: 300
+    });
+    
+});
+
+
+const cargarProyectos = async () => {
+    var response = await axios.post('../Proyectos/cargarProyectos');
+    $('#selectProyecto').select2({
+        theme: 'bootstrap4',
+        data: response.data.results
+    });
+}
+
+
+
+
+
+
+
+
+document.getElementById('formReporteEventosDetalle').addEventListener('submit', (event) => {
     event.preventDefault();
     obtenerReporte();
 
     
 });
 
-$("#inputDocumentoCliente").autocomplete({
-    source: function (request, response) {
-        $.getJSON("../Clientes/buscarClientesContrato",
-            {
-                term: request.term,
-                param1: $('#selectProyecto').select2('data')[0].id
-            },
-            response
-        );
-    },
-    delay: 300,
-    select: (event, ui) => {
-        document.querySelector("#inputNroContrato").value = ui.item.numeracion;
-        document.querySelector("#inputIdContrato").value = ui.item.id;
-        document.querySelector("#inputLote").value = ui.item.lote;
-    }
-});
 
 
 
 
-const obtenerReporte = async () => {
-
-    alert(document.querySelector("#inpucode").value);
 
 
-    if (document.querySelector("#inpucode").value == "") {
+
+
+const obtenerReporte = async () => {  
+
+
+    if (document.querySelector("#inputDocumentoCliente").value == "---") {
         toastr["warning"]("Debe buscar un cliente primero");
     } else {
-        const response = await axios.post('obtenerReporteEventosDetalle?codigo=' + document.querySelector("#inpucode").value);
-        console.log("--------------------------");
-        console.log(response);
-        console.log("--------------------------");
+
+        var miCadena = document.querySelector("#inputDocumentoCliente").value;
+      
+        var divisiones = miCadena.split("-");
+
+       
+
+        //alert(divisiones[0]);
+        //alert(document.querySelector("#selectProyecto").value);
+        //alert(document.querySelector("#idlote").value);
+
+
+        var data = new Object();
+
+        data.documento = divisiones[0];
+        data.proyecto = document.querySelector("#selectProyecto").value ;
+        data.lote = document.querySelector("#idlote").value ;
+
+        const response = await axios.post('obtenerReporteEventosDetalle', JSON.stringify(data), {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }); 
+
 
         if (response.data.flag == 1) {
             document.getElementById('buttonEmitirReportePDF').disabled = false;
