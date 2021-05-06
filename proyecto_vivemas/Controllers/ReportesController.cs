@@ -76,6 +76,11 @@ namespace proyecto_vivemas.Controllers
             return View();
         }
 
+        public ActionResult ReporteComprobantesElectronicos()
+        {
+            return View();
+        }
+
         public ActionResult EmitirDocumentoElectronico(long transaccionId)
         {
             DocumentoVentaModelo modelo = GenerarDocumentoVenta(transaccionId);
