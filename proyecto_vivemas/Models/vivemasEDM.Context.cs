@@ -228,5 +228,44 @@ namespace proyecto_vivemas.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_clientes_Result>("sp_get_clientes", dATAParameter, tYPEParameter);
         }
+    
+        public virtual ObjectResult<sp_documento_series_Result> sp_documento_series()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_documento_series_Result>("sp_documento_series");
+        }
+    
+        public virtual ObjectResult<sp_get_documentos_electronicos_Result> sp_get_documentos_electronicos(string sERIE, string fECHA_INICIAL, string fECHA_FIN)
+        {
+            var sERIEParameter = sERIE != null ?
+                new ObjectParameter("SERIE", sERIE) :
+                new ObjectParameter("SERIE", typeof(string));
+    
+            var fECHA_INICIALParameter = fECHA_INICIAL != null ?
+                new ObjectParameter("FECHA_INICIAL", fECHA_INICIAL) :
+                new ObjectParameter("FECHA_INICIAL", typeof(string));
+    
+            var fECHA_FINParameter = fECHA_FIN != null ?
+                new ObjectParameter("FECHA_FIN", fECHA_FIN) :
+                new ObjectParameter("FECHA_FIN", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_documentos_electronicos_Result>("sp_get_documentos_electronicos", sERIEParameter, fECHA_INICIALParameter, fECHA_FINParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_notas_credito_Result> sp_get_notas_credito(string sERIE, string fECHA_INICIAL, string fECHA_FIN)
+        {
+            var sERIEParameter = sERIE != null ?
+                new ObjectParameter("SERIE", sERIE) :
+                new ObjectParameter("SERIE", typeof(string));
+    
+            var fECHA_INICIALParameter = fECHA_INICIAL != null ?
+                new ObjectParameter("FECHA_INICIAL", fECHA_INICIAL) :
+                new ObjectParameter("FECHA_INICIAL", typeof(string));
+    
+            var fECHA_FINParameter = fECHA_FIN != null ?
+                new ObjectParameter("FECHA_FIN", fECHA_FIN) :
+                new ObjectParameter("FECHA_FIN", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_notas_credito_Result>("sp_get_notas_credito", sERIEParameter, fECHA_INICIALParameter, fECHA_FINParameter);
+        }
     }
 }

@@ -396,10 +396,19 @@
     <Compile Include="Models\sp_cargarDataTransaccion_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_documento_series_Result.cs">
+      <DependentUpon>vivemasEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_evento_detallado_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_get_clientes_Result.cs">
+      <DependentUpon>vivemasEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_get_documentos_electronicos_Result.cs">
+      <DependentUpon>vivemasEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_get_notas_credito_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_obtenerDatosCliente_Result.cs">

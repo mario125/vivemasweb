@@ -928,6 +928,52 @@ namespace proyecto_vivemas.Controllers
 
             return Json(respuesta);
         }
+        
+        public ActionResult getSeries()
+        {
+            try
+            {
+                return Json(db.sp_documento_series().ToList().Select(r => new {id= r.id, text=r.serie }));
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
+
+
+        }
+        public ActionResult getdDocumentosElectronicos(DataDocumentoElectronico data)
+        {
+            respuesta = new JsonResult();
+
+            respuesta.Data = new
+            {
+                flag = 1,
+
+                dataReporte = db.sp_get_documentos_electronicos(data.serie,data.fechaInicio,data.fechaFin).ToList()
+            };
+
+            Console.Write(respuesta);
+
+            return Json(respuesta);
+        }
+
+        public ActionResult getdNotaCredito(DataDocumentoElectronico data)
+        {
+            respuesta = new JsonResult();
+
+            respuesta.Data = new
+            {
+                flag = 1,
+
+                dataReporte = db.sp_get_notas_credito(data.serie, data.fechaInicio, data.fechaFin).ToList()
+            };
+
+            Console.Write(respuesta);
+
+            return Json(respuesta);
+        }
 
         public ActionResult buscarClientesContrato(string term, string param1)
         {

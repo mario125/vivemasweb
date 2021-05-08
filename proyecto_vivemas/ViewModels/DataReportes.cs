@@ -40,4 +40,30 @@ namespace proyecto_vivemas.ViewModels
         public int proyecto { get; set; }
         public int lote { get; set; }
     }
+    public class DataGetClientesEventoDetail
+    {
+        public string documento { get; set; }
+        public int proyecto { get; set; }
+        public int lote { get; set; }
+    }
+
+    public class DataDocumentoElectronico
+    {
+        
+        public string serie { get; set; }
+        public string fechaInicio { get; set; }
+        public string fechaFin { get; set; }
+
+
+    }
+
+    //class Person
+    //{
+    //    private string _name;  // the name field
+    //    public string Name    // the Name property
+    //    {
+    //        get => _name;
+    //        set => _name = value;
+    //    }
+    //}
 }

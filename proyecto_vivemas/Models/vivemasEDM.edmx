@@ -2072,6 +2072,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
         <Function Name="sp_cargarDataTransaccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="transaccionId" Type="bigint" Mode="In" />
         </Function>
+        <Function Name="sp_documento_series" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_evento_detallado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="DOCUMENTO" Type="varchar" Mode="In" />
           <Parameter Name="PROYECTO" Type="int" Mode="In" />
@@ -2080,6 +2081,16 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
         <Function Name="sp_get_clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="DATA" Type="varchar" Mode="In" />
           <Parameter Name="TYPE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_get_documentos_electronicos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SERIE" Type="varchar" Mode="In" />
+          <Parameter Name="FECHA_INICIAL" Type="varchar" Mode="In" />
+          <Parameter Name="FECHA_FIN" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_get_notas_credito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SERIE" Type="varchar" Mode="In" />
+          <Parameter Name="FECHA_INICIAL" Type="varchar" Mode="In" />
+          <Parameter Name="FECHA_FIN" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_obtenerDatosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="transaccionId" Type="bigint" Mode="In" />
@@ -3137,6 +3148,17 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <FunctionImport Name="sp_get_clientes" ReturnType="Collection(vivemas_dbModel.sp_get_clientes_Result)">
             <Parameter Name="DATA" Mode="In" Type="String" />
             <Parameter Name="TYPE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_documento_series" ReturnType="Collection(vivemas_dbModel.sp_documento_series_Result)" />
+          <FunctionImport Name="sp_get_documentos_electronicos" ReturnType="Collection(vivemas_dbModel.sp_get_documentos_electronicos_Result)">
+            <Parameter Name="SERIE" Mode="In" Type="String" />
+            <Parameter Name="FECHA_INICIAL" Mode="In" Type="String" />
+            <Parameter Name="FECHA_FIN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_get_notas_credito" ReturnType="Collection(vivemas_dbModel.sp_get_notas_credito_Result)">
+            <Parameter Name="SERIE" Mode="In" Type="String" />
+            <Parameter Name="FECHA_INICIAL" Mode="In" Type="String" />
+            <Parameter Name="FECHA_FIN" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="empresas">
@@ -5503,6 +5525,31 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <Property Type="String" Name="cliente_nrodocumento" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="cliente_razonsocial" Nullable="true" MaxLength="150" />
         </ComplexType>
+        <ComplexType Name="sp_documento_series_Result">
+          <Property Type="Int64" Name="id" Nullable="false" />
+          <Property Type="String" Name="serie" Nullable="false" MaxLength="63" />
+        </ComplexType>
+        <ComplexType Name="sp_get_documentos_electronicos_Result">
+          <Property Type="Int64" Name="documentoventa_id" Nullable="false" />
+          <Property Type="String" Name="documentoEmision" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="documentoventa_cliente_nrodocumento" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="documentoventa_cliente_nombre" Nullable="true" MaxLength="250" />
+          <Property Type="Decimal" Name="documentoventa_total" Nullable="true" Precision="16" Scale="2" />
+          <Property Type="String" Name="documentoventa_moneda_codigo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="documentoventa_fechaemision" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="notacreditoanulacion" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="notacredito_fechaemision" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_get_notas_credito_Result">
+          <Property Type="String" Name="nota" Nullable="false" MaxLength="101" />
+          <Property Type="String" Name="notacredito_cliente_nombre" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="notacredito_cliente_nrodocumento" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="notacredito_fechaemision" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="notacredito_moneda_codigo" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="notacredito_total" Nullable="true" Precision="16" Scale="2" />
+          <Property Type="String" Name="referencia" Nullable="false" MaxLength="101" />
+          <Property Type="String" Name="notacredito_descripcionnota" Nullable="true" MaxLength="250" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6785,6 +6832,43 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
               <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_clientes_Result">
                 <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
                 <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_documento_series" FunctionName="vivemas_dbModel.Store.sp_documento_series">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="vivemas_dbModel.sp_documento_series_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_documentos_electronicos" FunctionName="vivemas_dbModel.Store.sp_get_documentos_electronicos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_documentos_electronicos_Result">
+                <ScalarProperty Name="documentoventa_id" ColumnName="documentoventa_id" />
+                <ScalarProperty Name="documentoEmision" ColumnName="documentoEmision" />
+                <ScalarProperty Name="documentoventa_cliente_nrodocumento" ColumnName="documentoventa_cliente_nrodocumento" />
+                <ScalarProperty Name="documentoventa_cliente_nombre" ColumnName="documentoventa_cliente_nombre" />
+                <ScalarProperty Name="documentoventa_total" ColumnName="documentoventa_total" />
+                <ScalarProperty Name="documentoventa_moneda_codigo" ColumnName="documentoventa_moneda_codigo" />
+                <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
+                <ScalarProperty Name="notacreditoanulacion" ColumnName="notacreditoanulacion" />
+                <ScalarProperty Name="notacredito_fechaemision" ColumnName="notacredito_fechaemision" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_notas_credito" FunctionName="vivemas_dbModel.Store.sp_get_notas_credito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_notas_credito_Result">
+                <ScalarProperty Name="nota" ColumnName="nota" />
+                <ScalarProperty Name="notacredito_cliente_nombre" ColumnName="notacredito_cliente_nombre" />
+                <ScalarProperty Name="notacredito_cliente_nrodocumento" ColumnName="notacredito_cliente_nrodocumento" />
+                <ScalarProperty Name="notacredito_fechaemision" ColumnName="notacredito_fechaemision" />
+                <ScalarProperty Name="notacredito_moneda_codigo" ColumnName="notacredito_moneda_codigo" />
+                <ScalarProperty Name="notacredito_total" ColumnName="notacredito_total" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="notacredito_descripcionnota" ColumnName="notacredito_descripcionnota" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

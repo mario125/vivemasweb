@@ -544,6 +544,17 @@
       <Parameter Name="DATA" Mode="In" Type="String" />
       <Parameter Name="TYPE" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_documento_series" ReturnType="Collection(vivemas_dbModel.sp_documento_series_Result)" />
+    <FunctionImport Name="sp_get_documentos_electronicos" ReturnType="Collection(vivemas_dbModel.sp_get_documentos_electronicos_Result)">
+      <Parameter Name="SERIE" Mode="In" Type="String" />
+      <Parameter Name="FECHA_INICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHA_FIN" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_get_notas_credito" ReturnType="Collection(vivemas_dbModel.sp_get_notas_credito_Result)">
+      <Parameter Name="SERIE" Mode="In" Type="String" />
+      <Parameter Name="FECHA_INICIAL" Mode="In" Type="String" />
+      <Parameter Name="FECHA_FIN" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="empresas">
     <Key>
@@ -2908,5 +2919,30 @@
   <ComplexType Name="sp_get_clientes_Result">
     <Property Type="String" Name="cliente_nrodocumento" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="cliente_razonsocial" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="sp_documento_series_Result">
+    <Property Type="Int64" Name="id" Nullable="false" />
+    <Property Type="String" Name="serie" Nullable="false" MaxLength="63" />
+  </ComplexType>
+  <ComplexType Name="sp_get_documentos_electronicos_Result">
+    <Property Type="Int64" Name="documentoventa_id" Nullable="false" />
+    <Property Type="String" Name="documentoEmision" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="documentoventa_cliente_nrodocumento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="documentoventa_cliente_nombre" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="documentoventa_total" Nullable="true" Precision="16" Scale="2" />
+    <Property Type="String" Name="documentoventa_moneda_codigo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="documentoventa_fechaemision" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="notacreditoanulacion" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="notacredito_fechaemision" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_get_notas_credito_Result">
+    <Property Type="String" Name="nota" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="notacredito_cliente_nombre" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="notacredito_cliente_nrodocumento" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="notacredito_fechaemision" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="notacredito_moneda_codigo" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="notacredito_total" Nullable="true" Precision="16" Scale="2" />
+    <Property Type="String" Name="referencia" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="notacredito_descripcionnota" Nullable="true" MaxLength="250" />
   </ComplexType>
 </Schema>
