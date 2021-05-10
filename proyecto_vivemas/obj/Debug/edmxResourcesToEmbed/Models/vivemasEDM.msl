@@ -1313,6 +1313,7 @@
           <ScalarProperty Name="notacredito_moneda_codigo" ColumnName="notacredito_moneda_codigo" />
           <ScalarProperty Name="notacredito_total" ColumnName="notacredito_total" />
           <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
           <ScalarProperty Name="notacredito_descripcionnota" ColumnName="notacredito_descripcionnota" />
         </ComplexTypeMapping>
       </ResultMapping>

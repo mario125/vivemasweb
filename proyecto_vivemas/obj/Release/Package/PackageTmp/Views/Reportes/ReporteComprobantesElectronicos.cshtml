@@ -168,6 +168,7 @@
                         '<th data-fill-color="3399ff" data-f-color="ebedef" class="bg-info">MONEDA</th>' +
                         '<th data-fill-color="3399ff" data-f-color="ebedef" class="bg-info">MONTO TOTAL</th>' +
                         '<th data-fill-color="3399ff" data-f-color="ebedef" class="bg-info">DOC. REFERENCIA</th>' +
+                        '<th data-fill-color="3399ff" data-f-color="ebedef" class="bg-info">F. REFERENCIA</th>' +
                         '<th data-fill-color="3399ff" data-f-color="ebedef" class="bg-info">MOTIVO</th>' +
                         '</tr>';
                     $("#theadReporte").html('').append(reporteCabecera);
@@ -180,6 +181,7 @@
                             '<td>' + item.notacredito_moneda_codigo + '</td>' +
                             '<td>' + item.notacredito_total + '</td>' +
                             '<td>' + item.referencia + '</td>' +
+                            '<td>' + item.documentoventa_fechaemision + '</td>' +
                             '<td>' + item.notacredito_descripcionnota + '</td>' +
                             '</tr>'
                     });

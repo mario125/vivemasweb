@@ -1,4 +1,5 @@
 ﻿$('#printInvoice').click(function () {
+    asyncCall();
     Popup($('.invoice')[0].outerHTML);
     function Popup(data) {
         $(".toolbar").hide();
@@ -15,6 +16,21 @@
         return true;
     }
 });
+
+async function asyncCall() {
+    
+    
+
+
+    var d = document.querySelectorAll('#invoice');
+    console.log(d);
+    console.log(d[0]);
+
+
+    // expected output: "resolved"
+}
+
+
 
 var qr;
 (function () {

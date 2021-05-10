@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Publicaciones\proyecto_vivemas</_PublishTargetUrl>
-    <History>True|2021-05-08T16:47:46.2014284Z;True|2021-05-05T16:25:43.3272121-05:00;True|2021-04-29T14:35:23.0322047-05:00;True|2021-04-15T14:18:10.9866982-05:00;True|2021-04-12T18:30:58.1155455-05:00;True|2021-04-06T14:42:38.6273117-05:00;False|2021-03-16T08:10:36.4124556-06:00;True|2021-03-11T16:48:16.1675891-06:00;True|2021-03-11T16:16:14.2665493-06:00;True|2021-03-08T13:48:55.2676535-06:00;True|2021-03-05T08:44:49.6105462-06:00;</History>
+    <History>True|2021-05-10T14:55:22.5362352Z;True|2021-05-08T11:47:46.2014284-05:00;True|2021-05-05T16:25:43.3272121-05:00;True|2021-04-29T14:35:23.0322047-05:00;True|2021-04-15T14:18:10.9866982-05:00;True|2021-04-12T18:30:58.1155455-05:00;True|2021-04-06T14:42:38.6273117-05:00;False|2021-03-16T08:10:36.4124556-06:00;True|2021-03-11T16:48:16.1675891-06:00;True|2021-03-11T16:16:14.2665493-06:00;True|2021-03-08T13:48:55.2676535-06:00;True|2021-03-05T08:44:49.6105462-06:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -78,7 +78,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/22/2019 01:06:16</publishTime>
     </File>
     <File Include="bin/proyecto_vivemas.dll">
-      <publishTime>05/08/2021 11:47:40</publishTime>
+      <publishTime>05/10/2021 10:02:43</publishTime>
     </File>
     <File Include="bin/proyecto_vivemas.pdb">
       <publishTime>11/18/2020 09:29:13</publishTime>
@@ -11814,7 +11814,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/08/2021 13:21:14</publishTime>
     </File>
     <File Include="Views/Reportes/ReporteComprobantesElectronicos.cshtml">
-      <publishTime>05/08/2021 11:38:23</publishTime>
+      <publishTime>05/10/2021 09:51:30</publishTime>
     </File>
     <File Include="Views/Reportes/ReporteEstadoCobranza.cshtml">
       <publishTime>03/25/2021 10:06:28</publishTime>

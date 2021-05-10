@@ -2943,6 +2943,7 @@
     <Property Type="String" Name="notacredito_moneda_codigo" Nullable="true" MaxLength="50" />
     <Property Type="Decimal" Name="notacredito_total" Nullable="true" Precision="16" Scale="2" />
     <Property Type="String" Name="referencia" Nullable="false" MaxLength="101" />
+    <Property Type="String" Name="documentoventa_fechaemision" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="notacredito_descripcionnota" Nullable="true" MaxLength="250" />
   </ComplexType>
 </Schema>

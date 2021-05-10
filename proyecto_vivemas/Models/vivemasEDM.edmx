@@ -5548,6 +5548,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
           <Property Type="String" Name="notacredito_moneda_codigo" Nullable="true" MaxLength="50" />
           <Property Type="Decimal" Name="notacredito_total" Nullable="true" Precision="16" Scale="2" />
           <Property Type="String" Name="referencia" Nullable="false" MaxLength="101" />
+          <Property Type="String" Name="documentoventa_fechaemision" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="notacredito_descripcionnota" Nullable="true" MaxLength="250" />
         </ComplexType>
       </Schema>
@@ -6868,6 +6869,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
                 <ScalarProperty Name="notacredito_moneda_codigo" ColumnName="notacredito_moneda_codigo" />
                 <ScalarProperty Name="notacredito_total" ColumnName="notacredito_total" />
                 <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
                 <ScalarProperty Name="notacredito_descripcionnota" ColumnName="notacredito_descripcionnota" />
               </ComplexTypeMapping>
             </ResultMapping>

@@ -12,6 +12,10 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 
+using PdfSharp;
+using TheArtOfDev.HtmlRenderer.PdfSharp;
+using PdfSharp.Pdf;
+
 namespace proyecto_vivemas.Controllers
 {
     /// <summary>
@@ -92,7 +96,7 @@ namespace proyecto_vivemas.Controllers
             DocumentoVentaModelo modelo = GenerarDocumentoVentaFechaEmision(transaccionId, fechaEmisionDet);
             return View(modelo);
         }
-        
+
         public ActionResult EmitirDocumentoElectronico2(long transaccionId)
         {
             JsonResult resultado = GenerarDocumentoVenta2(transaccionId);
@@ -225,7 +229,7 @@ namespace proyecto_vivemas.Controllers
                     bancos banco = db.bancos.Find(transaccion.transaccion_banco_id);
                     cuentasbanco cuenta = db.cuentasbanco.Find(transaccion.transaccion_cuentabanco_id);
                     transaccion_fechadeposito = transaccion.transaccion_fechadeposito.Value.ToString("dd/MM/yyyy");
-                    if (banco==null)
+                    if (banco == null)
                     {
 
                     }
@@ -865,12 +869,12 @@ namespace proyecto_vivemas.Controllers
             try
             {
                 respuesta = new JsonResult();
-                if(reporte.idProyecto == 0)
+                if (reporte.idProyecto == 0)
                 {
                     respuesta.Data = new
                     {
                         flag = 1,
-                        dataReporte = db.vw_reporteeventos.ToList().Select(rpt => new { 
+                        dataReporte = db.vw_reporteeventos.ToList().Select(rpt => new {
                             rpt.proformauif_cliente_nrodocumento,
                             rpt.proformauif_cliente_razonsocial,
                             rpt.proyecto_nombrecorto,
@@ -900,7 +904,7 @@ namespace proyecto_vivemas.Controllers
                     };
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 respuesta.Data = new
                 {
@@ -912,15 +916,15 @@ namespace proyecto_vivemas.Controllers
 
         public ActionResult getClientes125(DataGetClientes data)
         {
-           respuesta = new JsonResult();
+            respuesta = new JsonResult();
 
             respuesta.Data = new
             {
                 flag = 1,
 
                 dataReporte = db.sp_get_clientes(data.documento + "%", 1).ToList().ToList().Select(rpt => new {
-                    id= rpt.cliente_nrodocumento,
-                    label = rpt.cliente_nrodocumento+"-"+ rpt.cliente_razonsocial
+                    id = rpt.cliente_nrodocumento,
+                    label = rpt.cliente_nrodocumento + "-" + rpt.cliente_razonsocial
                 })
             };
 
@@ -928,12 +932,12 @@ namespace proyecto_vivemas.Controllers
 
             return Json(respuesta);
         }
-        
+
         public ActionResult getSeries()
         {
             try
             {
-                return Json(db.sp_documento_series().ToList().Select(r => new {id= r.id, text=r.serie }));
+                return Json(db.sp_documento_series().ToList().Select(r => new { id = r.id, text = r.serie }));
             }
             catch (Exception e)
             {
@@ -951,7 +955,7 @@ namespace proyecto_vivemas.Controllers
             {
                 flag = 1,
 
-                dataReporte = db.sp_get_documentos_electronicos(data.serie,data.fechaInicio,data.fechaFin).ToList()
+                dataReporte = db.sp_get_documentos_electronicos(data.serie, data.fechaInicio, data.fechaFin).ToList()
             };
 
             Console.Write(respuesta);
@@ -1015,15 +1019,15 @@ namespace proyecto_vivemas.Controllers
         public ActionResult obtenerReporteEventosDetalle(DataGetClientes data)//mario
         {
             try
-            {       
-                
+            {
+
                 respuesta = new JsonResult();
-                if (data.documento !="")
+                if (data.documento != "")
                 {
                     respuesta.Data = new
                     {
                         flag = 1,
-                        dataReporte = db.sp_evento_detallado(data.documento,data.proyecto,data.lote).ToList().Select(rpt => new {
+                        dataReporte = db.sp_evento_detallado(data.documento, data.proyecto, data.lote).ToList().Select(rpt => new {
                             rpt.proyecto_nombrecorto,
                             rpt.cotizacion_lote_nombre,
                             rpt.proformauif_cliente_nrodocumento,
@@ -1039,7 +1043,7 @@ namespace proyecto_vivemas.Controllers
                 }
                 else
                 {
-                  //---
+                    //---
                 }
             }
             catch (Exception ex)
@@ -1645,7 +1649,7 @@ namespace proyecto_vivemas.Controllers
                         documento_descripcion = "FACTURA DE VENTA ELECTRONICA";
                     }
 
-                    transaction.Complete();
+                    // transaction.Complete();
 
                     //CARGANDO DATOS DEL DOCUMENTO PARA IMPRIMIR
 
@@ -1692,6 +1696,9 @@ namespace proyecto_vivemas.Controllers
                     }
                     documentoModelo.detalleVenta = detalleModelo;
                 }
+
+                InvoiceTemplate(documentoModelo);
+
                 //FIN CARGADO
                 return documentoModelo;
             }
@@ -1704,6 +1711,239 @@ namespace proyecto_vivemas.Controllers
                 };
                 return null;
             }
+        }
+
+        public static Byte[] PdfSharpConvert(String html)
+        {
+            Byte[] res = null;
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    var pdf = TheArtOfDev.HtmlRenderer.PdfSharp.PdfGenerator.GeneratePdf(html, PdfSharp.PageSize.A4);
+            //    pdf.Save(ms);
+            //    res = ms.ToArray();
+            //}
+
+            PdfDocument pdf = PdfGenerator.GeneratePdf("<p><h1>Hello World</h1>This is html rendered text</p>", PageSize.A4);
+            pdf.Save("document125.pdf");
+
+            return res;
+        }
+
+        public String InvoiceTemplate(DocumentoVentaModelo model)
+        {
+
+            String html = @"<div id='invoice'>
+                    <div class='invoice overflow-auto'>
+                        <div style='min-width: 600px;'>
+                            <header>
+                                <div class='row'>
+                                    <div class='col-3'>
+                                        <div class='text-center'>
+                                            <img src='/Img/Vivemas-logo-v2.svg' data-holder-rendered='true' class='img-fluid'>
+                                        </div>
+                                    </div>
+                                    <div class='col-6 company-details'>
+                                        <h2 class='name' style='text-align:center'>
+                                            <b id='documento_empresa_nombre'>VIVEINCO S.A.C.</b>
+                                        </h2>
+                                        <div style='text-align:center' id='documento_empresa_direccion'><b>Domicilio Fiscal:</b>AV. VICTOR ANDRES BELAUNDE MZA. C LOTE. 4 URB. URBANIZACION CIUDAD MAGISTERIAL - AREQUIPA - AREQUIPA - AREQUIPA</div>
+                                        <div style='text-align:center' id='documento_empresa_numeroContacto'><b>Telefono:</b>054-627969, +51 933063251</div>
+                                        <div style='text-align:center' id='documento_empresa_correo'><b>Correo:</b>cobranza@vivemasinmobiliaria.com</div>
+                                    </div>
+                                    <div class='col-3' style='border:solid 1px;'>
+                                        <div class='font-xl text-center' id='documento_empresa_documento'>RUC: 20603192517</div>
+                                        <div class='font-xl text-center font-weight-bold' id='documento_descripcion'></div>
+                                        <div class='text-center font-lg' id='documento_serie'>B001-00000722</div>
+                                    </div>
+                                </div>
+                            </header>
+                            <main>
+                                <div class='row'>
+                                    <div class=' col-12' style='border:solid 1px;'>
+                                        <div class='row'>
+                                            <div class='col-2'>
+                                                <b>Cliente</b>
+                                            </div>
+                                            <div class='col-10' id='documento_cliente_nombre'>: JOSE LUIS NEYRA PORTUGAL</div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-2'>
+                                                <b>Nro. Documento</b>
+                                            </div>
+                                            <div class='col-10' id='documento_cliente_nroDocumento'>: 43281086</div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-2'>
+                                                <b>Direccion</b>
+                                            </div>
+                                            <div class='col-10' id='documento_cliente_direccion'>: URB. BARTOLOME HERRERA MZ. B LT. 06</div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-2'>
+                                                <b>Fecha de Emision</b>
+                                            </div>
+                                            <div class='col-5' id='documento_fechaEmision'>: 2021-05-10</div>
+                                            <div class='col-2'>
+                                                <b>Moneda</b>
+                                            </div>
+                                            <div class='col-3' id='documento_moneda_descripcion'>: SOLES</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class='row mt-1'>
+                                    <table border='1' style='width:100%'>
+                                        <thead>
+                                            <tr>
+                                                <th style='padding:5px;'>CANTIDAD</th>
+                                                <th class='text-center' style='padding:5px;'>CODIGO</th>
+                                                <th class='text-center' style='padding:5px;'>DESCRIPCION</th>
+                                                <th class='text-center' style='padding:5px;'>U. M.</th>
+                                                <th class='text-center'>VALOR UNITARIO</th>
+                                                <th class='text-center' style='width:100px'>IMPORTE DE VENTA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id='tbodyDetalles'>
+                                         <tr><td class='text-right'>1</td><td class='text-center'>AC-09</td><td class='text-left'>POR EL PAGO DE LA LETRA NRO 6 SEGUN PROFORMA NRO 00000879 POR LA COMPRA DEL LOTE 09 DE LA MANZANA AC DEL PROYECTO SUNSET BAY BEACH CONDO - PAGO ANTICIPADO</td><td class='text-center'>UNIDAD</td><td class='text-right'>100</td><td class='text-right'>100</td></tr></tbody>
+                                    </table>
+                                </div>
+
+                                <!--<div class='thanks'>Sin impuestos</div>-->
+                                <div class='row'>
+                                    <div class='col-6'>
+                                        <div class='text-center'>
+                                            <div class='row ml-1 mt-2 mb-2' id='documento_montoletras'>SON: CIEN CON 00/100 SOLES</div>
+                                            <div class='thanks mt-1 mt-2 mb-2'>
+                                                <canvas id='qr-code' height='100' width='100'></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='col-6' style='padding:0;'>
+                                        <table width='100%' border='1'>
+                                            <tbody><tr>
+                                                <td class='text-right'><b>OP. GRAVADA:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left' id='moneda_simbolo'>S/</div>
+                                                    <div class='text-right' style='float:right'>0.00</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>OP. EXONERADA:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left' id='moneda_simbolo2'>S/</div>
+                                                    <div class='text-right' style='float:right'>0.00</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>OP. INAFECTA:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right' style='float:right' id='documento_subtotal'>100</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>ISC:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right' style='float:right'>0.00</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>IGV:</b></td>
+                                                <td class='text-right'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right' style='float:right' id='documento_igv'>0</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>ICBPER:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right' style='float:right'>0.00</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>OTROS CARGOS:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right' style='float:right'>0.00</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>OTROS TRIBUTOS:</b></td>
+                                                <td style='width:100px'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right' style='float:right'>0.00</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class='text-right'><b>TOTAL:</b></td>
+                                                <td class='text-right'>
+                                                    <div class='ml-1 text-left monedaSimbolo' style='float:left'>S/</div>
+                                                    <div class='text-right documentoTotal' style='float:right'>100</div>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                    <div class='col-12 mt-2'>
+                                        <div style='border-bottom:solid 2px'><b>Informacion Adicional</b></div>
+
+                                        <div class='col-6'>
+                                            <div class='row'>
+                                                <div class='col-6'>
+                                                    Fecha Deposito:
+                                                </div>
+                                                <div class='col-6' id='transaccion_fechadeposito'>10/05/2021</div>
+                                            </div>
+                                            <div class='row'>
+                                                <div class='col-6'>
+                                                    Total:
+                                                </div>
+                                                <div class='col-6 documentoTotal'>100</div>
+                                            </div>
+                                            <div class='row'>
+                                                <div class='col-6'>
+                                                    Nro de Operacion:
+                                                </div>
+                                                <div class='col-6' id='transaccion_nrooperacion'></div>
+                                            </div>
+                                            <div class='row'>
+                                                <div class='col-6'>
+                                                    Banco:
+                                                </div>
+                                                <div class='col-6' id='transaccion_banco'>-</div>
+                                            </div>
+                                            <div class='row'>
+                                                <div class='col-6'>
+                                                    Cuenta:
+                                                </div>
+                                                <div class='col-6' id='transaccion_cuenta'>-</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='notices mt-2'>
+                                        <div>Aviso:</div>
+                                        <div class='notice'>
+                                            Este documento es una representacion impresa de un documento emitido en la sunat desde el sistema del contribuyente.
+                                            El emisor electronico puede verificarla utilizando su clave SOL, el adquiriente o Usuario puede consultar su validez en SUNAT virtual: www.sunat.gob.pe, en Opciones sin clave SOL/Consulta de validez CPE.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </main>
+                            <footer id='documento_digestValue'>ESTO ES UNA PREVISUALIZACION</footer>
+                        </div>
+                        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+                        <div></div>
+                    </div>
+
+                </div>";
+            PdfDocument pdf = PdfGenerator.GeneratePdf(html, PageSize.A4);
+            pdf.Save("D:\\DOC\\document125.pdf");
+
+
+
+            return null;
         }
 
         private DocumentoVentaModelo GenerarDocumentoVentaFechaEmision(long transaccionId, string fechaEmisionDet)

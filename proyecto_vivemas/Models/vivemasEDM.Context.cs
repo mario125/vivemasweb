@@ -202,8 +202,8 @@ namespace proyecto_vivemas.Models
         public virtual ObjectResult<sp_evento_detallado_Result> sp_evento_detallado(string dOCUMENTO, Nullable<int> pROYECTO, Nullable<int> lOTE)
         {
             var dOCUMENTOParameter = dOCUMENTO != null ?
-                new ObjectParameter("DOCUMENTO", dOCUMENTO) :
-                new ObjectParameter("DOCUMENTO", typeof(string));
+               new ObjectParameter("DOCUMENTO", dOCUMENTO) :
+               new ObjectParameter("DOCUMENTO", typeof(string));
 
             var pROYECTOParameter = pROYECTO.Equals(0) ?
                 new ObjectParameter("PROYECTO", typeof(int)) :
@@ -212,7 +212,8 @@ namespace proyecto_vivemas.Models
             var lOTEParameter = lOTE.Equals(0) ?
                 new ObjectParameter("LOTE", typeof(int)) :
                 new ObjectParameter("LOTE", lOTE);
-    
+
+
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_evento_detallado_Result>("sp_evento_detallado", dOCUMENTOParameter, pROYECTOParameter, lOTEParameter);
         }
     

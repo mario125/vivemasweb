@@ -20,6 +20,7 @@ namespace proyecto_vivemas.Models
         public string notacredito_moneda_codigo { get; set; }
         public Nullable<decimal> notacredito_total { get; set; }
         public string referencia { get; set; }
+        public string documentoventa_fechaemision { get; set; }
         public string notacredito_descripcionnota { get; set; }
     }
 }
