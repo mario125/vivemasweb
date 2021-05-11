@@ -17,18 +17,6 @@
     }
 });
 
-async function asyncCall() {
-    
-    
-
-
-    var d = document.querySelectorAll('#invoice');
-    console.log(d);
-    console.log(d[0]);
-
-
-    // expected output: "resolved"
-}
 
 
 
