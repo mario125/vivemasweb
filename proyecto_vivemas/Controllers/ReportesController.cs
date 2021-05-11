@@ -15,6 +15,10 @@ using System.Web.Mvc;
 using PdfSharp;
 using TheArtOfDev.HtmlRenderer.PdfSharp;
 using PdfSharp.Pdf;
+using System.IO;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
 
 namespace proyecto_vivemas.Controllers
 {
@@ -100,6 +104,78 @@ namespace proyecto_vivemas.Controllers
         public ActionResult EmitirDocumentoElectronico2(long transaccionId)
         {
             JsonResult resultado = GenerarDocumentoVenta2(transaccionId);
+            return resultado;
+        }
+
+
+        public ActionResult SendEmail(sendMail base64)
+        {
+
+            int mod4 = base64.archivo.Length % 4;
+
+
+            if (mod4 > 0)
+            {
+                base64.archivo += new string('=', 4 - mod4);
+            }
+
+
+            byte[] bytes = Convert.FromBase64String(base64.archivo);
+
+
+
+            try
+            {
+
+                Attachment data = new Attachment(new MemoryStream(bytes), "COMPROBANTE" + ".pdf");
+
+
+                SmtpClient client = new SmtpClient();
+                client.Port = 587;
+
+                client.Host = "smtp.gmail.com";
+
+                client.EnableSsl = true;
+
+                client.Timeout = 10000;
+
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                client.UseDefaultCredentials = false;
+
+                client.Credentials = new NetworkCredential("sistemas@vivemasinmobiliaria.com", "s1st3m45*159");
+
+                MailMessage mail = new MailMessage("jmuspeed@gmail.com", "bladimircueva@gmail.com", "sistemas@vivemasinmobiliaria.com", "");
+
+                mail.BodyEncoding = UTF8Encoding.UTF8;
+
+                mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+
+                mail.Body = " ";
+
+
+                mail.Attachments.Add(data);
+
+                client.Send(mail);
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+
+
+
+            JsonResult resultado = new JsonResult();
+            resultado.Data = new
+            {
+                flag = 1,
+                data = "mario"
+            };
             return resultado;
         }
 

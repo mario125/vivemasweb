@@ -470,7 +470,6 @@ D:\SISTEMAS\vivemas\proyecto_vivemas_repo\sistema_web\proyecto_vivemas\proyecto_
 D:\SISTEMAS\vivemas\proyecto_vivemas_repo\sistema_web\proyecto_vivemas\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CopyComplete
 D:\SISTEMAS\vivemas\proyecto_vivemas_repo\sistema_web\proyecto_vivemas\proyecto_vivemas\obj\Debug\proyecto_vivemas.dll
 D:\SISTEMAS\vivemas\proyecto_vivemas_repo\sistema_web\proyecto_vivemas\proyecto_vivemas\obj\Debug\proyecto_vivemas.pdb
-D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.dll
 D:\vivemasweb\proyecto_vivemas\bin\proyecto_vivemas.dll.config
 D:\vivemasweb\proyecto_vivemas\bin\proyecto_vivemas.dll
 D:\vivemasweb\proyecto_vivemas\bin\proyecto_vivemas.pdb
@@ -604,4 +603,5 @@ D:\vivemasweb\proyecto_vivemas\bin\es\System.Web.WebPages.Deployment.resources.d
 D:\vivemasweb\proyecto_vivemas\bin\es\System.Web.WebPages.Razor.resources.dll
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CoreCompileInputs.cache
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CopyComplete
+D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.dll
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.pdb

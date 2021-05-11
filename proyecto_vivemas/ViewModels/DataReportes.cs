@@ -5,6 +5,10 @@ using System.Web;
 
 namespace proyecto_vivemas.ViewModels
 {
+
+    public class sendMail { 
+        public string archivo { get; set; }
+    }
     public class DataReportes
     {
         public long? idProyecto { get; set; }
