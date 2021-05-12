@@ -8,6 +8,10 @@ namespace proyecto_vivemas.ViewModels
 
     public class sendMail { 
         public string archivo { get; set; }
+        public string serie { get; set; }
+        public string monto { get; set; }
+        public string correo { get; set; }
+        public string usuario { get; set; }
     }
     public class DataReportes
     {

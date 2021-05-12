@@ -12,7 +12,8 @@
 <div id="invoice" class="invoice">
     <div class="toolbar hidden-print">
         <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimir @Model.documento_cliente_correo </button>
+            <button id="correobtn" class="btn btn-info"><i class="fa fa-print"></i> Enviar por correo </button>
+            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimir </button>
         </div>
         <hr>
     </div>
@@ -77,6 +78,14 @@
                             </div>
                             <div class="col-10">
                                 : @Model.documento_cliente_direccion
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <b>Correo Electrónico</b>
+                            </div>
+                            <div class="col-10">
+                                : @Model.documento_cliente_correo
                             </div>
                         </div>
                         <div class="row">
@@ -275,6 +284,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            //pdf 다운로드 	
+            $("#correobtn").click(function () {
+
+                html2canvas(document.getElementById("invoice"), {
+                    onrendered: function (canvas) {
+
+                        var imgData = canvas.toDataURL('image/png');
+                        console.log('Report Image URL: ' + imgData);
+                        var doc = new jsPDF('p', 'mm', [297, 210]); //210mm wide and 297mm high
+
+                        doc.addImage(imgData, 'PNG', 10, 10);
+                        var out = doc.output();
+                        //data:application/pdf;base64,
+                        uploadFile(btoa(out));
+                        doc.save('sample.pdf');
+
+                    }
+                });
+
+
+
+                const uploadFile = async (datafile) => {
+
+
+                    var data = new FormData();
+                    console.log("data:application/pdf;base64," + datafile);
+
+                    //data.append("archivo", datafile);
+
+                    //$.ajax({
+                    //    url: "../Reportes/SendEmail",
+                    //    type: "POST",
+                    //    data: data,
+                    //    dataType: "json",   //Indicamos que el resultado venga en json
+                    //    contentType: false, //Tienen que estar en false para que pase
+                    //    processData: false, //el objeto sin procesar
+                    //    cache: false        //Indicamos que no guarde cache
+                    //}).done(function (data) {
+                    //    alert(data);
+
+                    //});
+
+
+
+                }
+
+            });
+
+
+        })
+    </script>
 
     <script> var qrText = "@Model.documento_qrcodeValue" </script>
     <script src="~/Scripts/Reportes/emitirDocumentoElectronico.js"></script>

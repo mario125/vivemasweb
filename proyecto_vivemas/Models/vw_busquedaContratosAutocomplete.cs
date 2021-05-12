@@ -21,6 +21,6 @@ namespace proyecto_vivemas.Models
         public string lote_nombre { get; set; }
         public Nullable<long> lote_proyecto_id { get; set; }
         public string proyecto_nombrecorto { get; set; }
-        public long lote_id { get; set; }
+        public string lote_id { get; set; }
     }
 }
