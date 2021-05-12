@@ -8,6 +8,7 @@ namespace proyecto_vivemas.ViewModels
     public class DocumentoVentaModelo
     {
         public long? documento_cliente_id { get; set; }
+        public string documento_cliente_correo { get; set; }
         public long documento_moneda_id { get; set; }
         public long documento_banco_id { get; set; }
         public long documento_cuenta_id { get; set; }

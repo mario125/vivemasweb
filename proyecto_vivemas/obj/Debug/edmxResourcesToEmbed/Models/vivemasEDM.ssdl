@@ -879,7 +879,7 @@
     <Property Name="usuario_idanterior" Type="bigint" />
   </EntityType>
   <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_busquedaContratosAutocomplete' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_busquedaContratosAutocomplete' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_busquedaContratosAutocomplete">
     <Key>
       <PropertyRef Name="lote_id" />
@@ -895,7 +895,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_busquedaContratosAutocompl
     <Property Name="proyecto_nombrecorto" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_cargarClientesContrato' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_cargarClientesContrato' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_cargarClientesContrato">
     <Key>
       <PropertyRef Name="contrato_id" />
@@ -906,7 +906,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_cargarClientesContrato' no
     <Property Name="cliente_razonsocial" Type="varchar" MaxLength="150" />
   </EntityType>
   <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_cargarEventos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_cargarEventos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_cargarEventos">
     <Key>
       <PropertyRef Name="evento_id" />
@@ -918,7 +918,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_cargarEventos' no tiene de
     <Property Name="title" Type="varchar" MaxLength="97" Nullable="false" />
   </EntityType>
   <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteeventos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_reporteeventos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_reporteeventos">
     <Key>
       <PropertyRef Name="evento_id" />
@@ -936,7 +936,7 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteeventos' no tiene d
     <Property Name="entrevista" Type="int" />
   </EntityType>
   <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_reporteVentas' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="vw_reporteVentas">
     <Key>
       <PropertyRef Name="documentoventa_id" />
@@ -2067,25 +2067,13 @@ advertencia 6002: La tabla o vista 'vivemas_db.dbo.vw_reporteVentas' no tiene de
   <Function Name="sp_cargarDataTransaccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="transaccionId" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="sp_documento_series" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_evento_detallado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="DOCUMENTO" Type="varchar" Mode="In" />
     <Parameter Name="PROYECTO" Type="int" Mode="In" />
     <Parameter Name="LOTE" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_get_clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="DATA" Type="varchar" Mode="In" />
-    <Parameter Name="TYPE" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_get_documentos_electronicos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SERIE" Type="varchar" Mode="In" />
-    <Parameter Name="FECHA_INICIAL" Type="varchar" Mode="In" />
-    <Parameter Name="FECHA_FIN" Type="varchar" Mode="In" />
-  </Function>
-  <Function Name="sp_get_notas_credito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SERIE" Type="varchar" Mode="In" />
-    <Parameter Name="FECHA_INICIAL" Type="varchar" Mode="In" />
-    <Parameter Name="FECHA_FIN" Type="varchar" Mode="In" />
+  <Function Name="sp_get_cliente_email" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_TRASAC" Type="bigint" Mode="In" />
   </Function>
   <Function Name="sp_obtenerDatosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="transaccionId" Type="bigint" Mode="In" />

@@ -202,18 +202,17 @@ namespace proyecto_vivemas.Models
         public virtual ObjectResult<sp_evento_detallado_Result> sp_evento_detallado(string dOCUMENTO, Nullable<int> pROYECTO, Nullable<int> lOTE)
         {
             var dOCUMENTOParameter = dOCUMENTO != null ?
-               new ObjectParameter("DOCUMENTO", dOCUMENTO) :
-               new ObjectParameter("DOCUMENTO", typeof(string));
-
-            var pROYECTOParameter = pROYECTO.Equals(0) ?
-                new ObjectParameter("PROYECTO", typeof(int)) :
-                new ObjectParameter("PROYECTO", pROYECTO);
-
-            var lOTEParameter = lOTE.Equals(0) ?
-                new ObjectParameter("LOTE", typeof(int)) :
-                new ObjectParameter("LOTE", lOTE);
-
-
+                new ObjectParameter("DOCUMENTO", dOCUMENTO) :
+                new ObjectParameter("DOCUMENTO", typeof(string));
+    
+            var pROYECTOParameter = pROYECTO.HasValue ?
+                new ObjectParameter("PROYECTO", pROYECTO) :
+                new ObjectParameter("PROYECTO", typeof(int));
+    
+            var lOTEParameter = lOTE.HasValue ?
+                new ObjectParameter("LOTE", lOTE) :
+                new ObjectParameter("LOTE", typeof(int));
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_evento_detallado_Result>("sp_evento_detallado", dOCUMENTOParameter, pROYECTOParameter, lOTEParameter);
         }
     
@@ -267,6 +266,15 @@ namespace proyecto_vivemas.Models
                 new ObjectParameter("FECHA_FIN", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_notas_credito_Result>("sp_get_notas_credito", sERIEParameter, fECHA_INICIALParameter, fECHA_FINParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_cliente_email_Result> sp_get_cliente_email(Nullable<long> iD_TRASAC)
+        {
+            var iD_TRASACParameter = iD_TRASAC.HasValue ?
+                new ObjectParameter("ID_TRASAC", iD_TRASAC) :
+                new ObjectParameter("ID_TRASAC", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_cliente_email_Result>("sp_get_cliente_email", iD_TRASACParameter);
         }
     }
 }

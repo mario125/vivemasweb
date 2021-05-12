@@ -1700,6 +1700,7 @@ namespace proyecto_vivemas.Controllers
                     bancos banco = db.bancos.Find(transaccion.transaccion_banco_id);
                     cuentasbanco cuenta = db.cuentasbanco.Find(transaccion.transaccion_cuentabanco_id);
                     string clienteDireccion = "-";
+                    sp_get_cliente_email_Result spEmail;
                     if (transaccion.transaccion_tipotransaccion_id == 1)//SEPARACIONES
                     {
                         transaccionesseparacion transaccionseparacion = db.transaccionesseparacion.Where(tse => tse.transaccionseparacion_transaccion_id == transaccion.transaccion_id).FirstOrDefault();
@@ -1707,10 +1708,11 @@ namespace proyecto_vivemas.Controllers
 
                         clientes cliente = db.clientes.Find(separacion.separacion_cliente_id);
                         clienteDireccion = cliente.cliente_direccion;
+                        spEmail = null;
                     }
                     else
                     {
-                        clienteDireccion = db.sp_obtenerDireccionCliente(transaccion.transaccion_id).FirstOrDefault();
+                      spEmail=  db.sp_get_cliente_email(transaccion.transaccion_id).FirstOrDefault();
                     }
 
                     string documento_descripcion = "";
@@ -1733,8 +1735,9 @@ namespace proyecto_vivemas.Controllers
                     documentoModelo = new DocumentoVentaModelo
                     {
                         documento_cliente_nombre = ventaCabecera.documentoventa_cliente_nombre,
+                        documento_cliente_correo = spEmail.cliente_email==""?"cliente sin correo": spEmail.cliente_email,
                         documento_cliente_nroDocumento = ventaCabecera.documentoventa_cliente_nrodocumento,
-                        documento_cliente_direccion = clienteDireccion,
+                        documento_cliente_direccion = spEmail.proformauif_cliente_direccion=="" || spEmail.proformauif_cliente_direccion ==null? clienteDireccion : spEmail.proformauif_cliente_direccion,
                         documento_empresa_correo = empresa.empresa_correo,
                         documento_empresa_direccion = empresa.empresa_direccion + " - " + empresa.empresa_departamento + " - " + empresa.empresa_provincia + " - " + empresa.empresa_distrito,
                         documento_empresa_nombre = empresa.empresa_nombrecomercial,
@@ -1788,8 +1791,13 @@ namespace proyecto_vivemas.Controllers
                 return null;
             }
         }
+        public class GetDataClientes
+        {
+            public string proformauif_cliente_direccion { get; set; }
+            public string cliente_email { get; set; }
+        }
 
-   
+
         private DocumentoVentaModelo GenerarDocumentoVentaFechaEmision(long transaccionId, string fechaEmisionDet)
         {
             try

@@ -555,6 +555,9 @@
       <Parameter Name="FECHA_INICIAL" Mode="In" Type="String" />
       <Parameter Name="FECHA_FIN" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_get_cliente_email" ReturnType="Collection(vivemas_dbModel.sp_get_cliente_email_Result)">
+      <Parameter Name="ID_TRASAC" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="empresas">
     <Key>
@@ -2945,5 +2948,10 @@
     <Property Type="String" Name="referencia" Nullable="false" MaxLength="101" />
     <Property Type="String" Name="documentoventa_fechaemision" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="notacredito_descripcionnota" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="sp_get_cliente_email_Result">
+    <Property Type="String" Name="proformauif_cliente_direccion" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="cliente_email" Nullable="true" MaxLength="150" />
+    <Property Type="Int64" Name="cliente_id" Nullable="false" />
   </ComplexType>
 </Schema>
