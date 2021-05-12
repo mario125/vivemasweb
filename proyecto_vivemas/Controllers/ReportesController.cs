@@ -1791,11 +1791,7 @@ namespace proyecto_vivemas.Controllers
                 return null;
             }
         }
-        public class GetDataClientes
-        {
-            public string proformauif_cliente_direccion { get; set; }
-            public string cliente_email { get; set; }
-        }
+     
 
 
         private DocumentoVentaModelo GenerarDocumentoVentaFechaEmision(long transaccionId, string fechaEmisionDet)

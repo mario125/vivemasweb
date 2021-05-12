@@ -12,7 +12,7 @@
 <div id="invoice" class="invoice">
     <div class="toolbar hidden-print">
         <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimir</button>
+            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimir @Model.documento_cliente_correo </button>
         </div>
         <hr>
     </div>
@@ -273,10 +273,9 @@
 
 @section scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
     <script> var qrText = "@Model.documento_qrcodeValue" </script>
     <script src="~/Scripts/Reportes/emitirDocumentoElectronico.js"></script>
 }
