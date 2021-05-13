@@ -287,16 +287,16 @@
     <script>
         $(document).ready(function () {
 
-            //pdf 다운로드 	
+
             $("#correobtn").click(function () {
 
                 html2canvas(document.getElementById("invoice"), {
 
                     onrendered: function (canvas) {
 
-                        var imgData = canvas.toDataURL('image/png');       
-                        
-                        var doc = new jsPDF('p', 'mm', 'A4'); 
+                        var imgData = canvas.toDataURL('image/png');
+
+                        var doc = new jsPDF('p', 'mm', 'A4');
 
                         this.imageHeight = canvas.height * 208 / canvas.width;
 
@@ -316,22 +316,27 @@
 
 
                     var data = new FormData();
-                    console.log(datafile);
 
-                    //data.append("archivo", datafile);
 
-                    //$.ajax({
-                    //    url: "../Reportes/SendEmail",
-                    //    type: "POST",
-                    //    data: data,
-                    //    dataType: "json",   //Indicamos que el resultado venga en json
-                    //    contentType: false, //Tienen que estar en false para que pase
-                    //    processData: false, //el objeto sin procesar
-                    //    cache: false        //Indicamos que no guarde cache
-                    //}).done(function (data) {
-                    //    alert(data);
+                    data.append("archivo", datafile);
+                    data.append("serie","@Model.documento_serie");
+                    data.append("monto", "@Model.moneda_simbolo" +"@Model.documento_total");
+                    data.append("correo", "@Model.documento_cliente_correo");
+                    data.append("usuario", "@Model.documento_cliente_nombre");
+                    data.append("fecha", "@Model.transaccion_fechadeposito");
 
-                    //});
+                    $.ajax({
+                        url: "../Reportes/SendEmail",
+                        type: "POST",
+                        data: data,
+                        dataType: "json",   //Indicamos que el resultado venga en json
+                        contentType: false, //Tienen que estar en false para que pase
+                        processData: false, //el objeto sin procesar
+                        cache: false        //Indicamos que no guarde cache
+                    }).done(function (data) {
+                        alert(data);
+
+                    });
 
 
 

@@ -12,6 +12,7 @@ namespace proyecto_vivemas.ViewModels
         public string monto { get; set; }
         public string correo { get; set; }
         public string usuario { get; set; }
+        public string fecha { get; set; }
     }
     public class DataReportes
     {

@@ -108,36 +108,37 @@ namespace proyecto_vivemas.Controllers
         }
 
 
-        public ActionResult SendEmail(sendMail base64)
+        public ActionResult SendEmail(sendMail data)
         {
 
-            int mod4 = base64.archivo.Length % 4;
+            int mod4 = data.archivo.Length % 4;
 
 
             if (mod4 > 0)
             {
-                base64.archivo += new string('=', 4 - mod4);
+                data.archivo += new string('=', 4 - mod4);
             }
 
 
-            byte[] bytes = Convert.FromBase64String(base64.archivo);
+            byte[] bytes = Convert.FromBase64String(data.archivo);
 
 
 
             try
             {
 
-                Attachment data = new Attachment(new MemoryStream(bytes), "COMPROBANTE" + ".pdf");
+                Attachment dataBit = new Attachment(new MemoryStream(bytes), data.serie + ".pdf");
 
 
                 SmtpClient client = new SmtpClient();
+
                 client.Port = 587;
 
                 client.Host = "smtp.gmail.com";
 
                 client.EnableSsl = true;
 
-                client.Timeout = 10000;
+                client.Timeout = 90000;
 
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
@@ -145,16 +146,15 @@ namespace proyecto_vivemas.Controllers
 
                 client.Credentials = new NetworkCredential("sistemas@vivemasinmobiliaria.com", "s1st3m45*159");
 
-                MailMessage mail = new MailMessage("jmuspeed@gmail.com", "bladimircueva@gmail.com", "sistemas@vivemasinmobiliaria.com", "");
+                MailMessage mail = new MailMessage("sistemas@vivemasinmobiliaria.com","jmuspeed@gmail.com", "VIVEMAS-COMPROBANTE", TemplateMail(data));
 
                 mail.BodyEncoding = UTF8Encoding.UTF8;
 
                 mail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
 
-                mail.Body = " ";
+                mail.IsBodyHtml = true;
 
-
-                mail.Attachments.Add(data);
+                mail.Attachments.Add(dataBit);
 
                 client.Send(mail);
 
@@ -164,11 +164,6 @@ namespace proyecto_vivemas.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-
-
-
-
-
 
             JsonResult resultado = new JsonResult();
             resultado.Data = new
@@ -2641,6 +2636,127 @@ namespace proyecto_vivemas.Controllers
                 };
             }
             return respuesta;
+        }
+
+        public string TemplateMail(sendMail data)
+        {
+            string html = @"
+                <html>
+                    <head>
+                        <meta name='viewport' content='width=device-width' />
+                        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+                        <title></title>
+      
+                    </head>    
+                    <body class='mainVivemas'>
+                        <div class=''>
+                            <div class='aHl'></div>
+                            <div id=':sh' tabindex='-1'></div>
+                            <div id=':ss' class='ii gt'>
+                                <div id=':st' class='a3s aiL '><u></u>
+                                    <div
+                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;background-color:#86D991;color:#74787e;height:100%;line-height:1.4;margin:0;width:100%!important;word-break:break-word'>
+                                        <table width='100%' cellpadding='0' cellspacing='0' role='presentation'
+                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;background-color:#86D991;margin:0;padding:0;width:100%'>
+                                            <tbody>
+                                                <tr>
+                                                    <td align='center'
+                                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;border:1px solid #86D991'>
+                                                        <table width='100%' cellpadding='0' cellspacing='0' role='presentation'
+                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;margin:0;padding:0;width:100%'>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td
+                                                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;border:1px solid #86D991;padding:25px 0;text-align:center'>
+                                                                        <img src='http://vivemasinmobiliaria.com/wp-content/uploads/2021/logoVivemas.png' width='306px' height='122px' alt='vivemas'>
+                                                                    </td>
+                                                                </tr>
+    
+                                                                <tr>
+                                                                    <td width='100%' cellpadding='0' cellspacing='0'
+                                                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;border:1px solid #ffffff;background-color:#f9f3f3;border-bottom:1px solid #ffffff;border-top:1px solid #ffffff;margin:0;padding:0;width:100%'>
+                                                                        <table align='center' width='570' cellpadding='0' cellspacing='0'
+                                                                            role='presentation'
+                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;background-color:#f9f9f9;margin:0 auto;padding:0;width:570px'>
+    
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td
+                                                                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;border:1px solid #ffffff;padding:35px'>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:16px;line-height:1.5em;margin-top:0;text-align:left'>
+                                                                                            Hola Sr.@ <strong
+                                                                                                style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box'>"+data.usuario+ @" </strong></p>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:16px;line-height:1.5em;margin-top:0;text-align:left'>
+                                                                                            Se adjunta en este mensaje el comprobante electrónico <b>" + data.serie + @"</b> por el pago de la fecha <b>" + data.fecha + @"</b>.
+                                                                                            La representación PDF tiene la misma validez que el formato tradicional. </p>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:16px;line-height:1.5em;margin-top:0;text-align:left'>
+                                                                                            <strong
+                                                                                                style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box'>Comprobante:</strong>
+                                                                                            <a href='#'
+                                                                                                target='_blank'>" + data.serie + @"</a>
+                                                                                        </p>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:16px;line-height:1.5em;margin-top:0;text-align:left'>
+                                                                                            <strong
+                                                                                                style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box'>Monto Total:</strong>
+                                                                                            " + data.monto + @"
+                                                                                        </p>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:16px;line-height:1.5em;margin-top:0;text-align:left'>
+                                                                                            Recuerda pagar con puntualidad .</p>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:16px;line-height:1.5em;margin-top:0;text-align:left'>
+                                                                                            Saludos,<br>
+                                                                                            <small
+                                                                                                style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box'>
+                                                                                                <span class='il'></span> Vivemas
+                                                                                            </small>
+                                                                                        </p>    
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+    
+                                                                <tr>
+                                                                    <td
+                                                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;border:1px solid #ffffff'>
+                                                                        <table align='center' width='570' cellpadding='0' cellspacing='0'
+                                                                            role='presentation'
+                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;margin:0 auto;padding:0;text-align:center;width:570px'>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td align='center'
+                                                                                        style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;border:1px solid #86D991;padding:35px'>
+                                                                                        <p
+                                                                                            style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;line-height:1.5em;margin-top:0;color:#e8eef5;font-size:12px;text-align:center'>
+                                                                                            © 2021 <span class='il'>Vivemas</span>.
+                                                                                            Todos los derechos reservados.</p>    
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>                    
+                                    </div>                   
+                                </div>
+                            </div>          
+                        </div>
+                    </body>    
+                    </html>";
+
+            return html;
+
         }
         
         private string cargarColor(long? estadoevento)
