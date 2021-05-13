@@ -1756,7 +1756,7 @@ namespace proyecto_vivemas.Controllers
 
                 client.Credentials = new NetworkCredential("sistemas@vivemasinmobiliaria.com", "s1st3m45*159");
 
-                MailMessage mail = new MailMessage("sistemas@vivemasinmobiliaria.com", "jmuspeed@gmail.com", "VIVEMAS-COMPROBANTE", TemplateMail(data));
+                MailMessage mail = new MailMessage("sistemas@vivemasinmobiliaria.com", data.correo, "VIVEMAS-COMPROBANTE", TemplateMail(data));
 
                 mail.BodyEncoding = UTF8Encoding.UTF8;
 
