@@ -12,7 +12,7 @@
 <div id="invoice" class="invoice">
     <div class="toolbar hidden-print">
         <div class="text-right">
-            <button id="sendCorreo" class="btn btn-info"><i class="fa fa-print"></i> Enviar al correo</button>
+            <button id="correobtn" class="btn btn-info"><i class="fa fa-print"></i> Enviar al correo</button>
             <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimir</button>
         </div>
         <hr>
@@ -285,5 +285,63 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script> var qrText = "@Model.documento_qrcodeValue" </script>
+    <script>
+        $(document).ready(function () {
+
+
+            $("#correobtn").click(function () {
+
+                html2canvas(document.getElementById("invoice"), {
+
+                    onrendered: function (canvas) {
+
+                        var imgData = canvas.toDataURL('image/png');
+
+                        var doc = new jsPDF('p', 'mm', 'A4');
+
+                        this.imageHeight = canvas.height * 208 / canvas.width;
+
+                        doc.addImage(imgData, 'PNG', 0, 0, 208, this.imageHeight);
+
+                        var out = doc.output();
+
+                        uploadFile(btoa(out));
+
+                        doc.save('sample.pdf');
+                    }
+                });
+
+                const uploadFile = async (datafile) => {
+
+                    var data = new FormData();
+
+                    data.append("archivo", datafile);
+
+                    data.append("serie", "@Model.documento_serie");
+
+                    data.append("monto", "@Model.moneda_simbolo" + "@Model.documento_total");
+
+                    data.append("correo", "@Model.documento_cliente_correo");
+
+                    data.append("usuario", "@Model.documento_cliente_nombre");
+
+                    data.append("fecha", "@Model.transaccion_fechadeposito");
+
+                    $.ajax({
+                        url: "../Reportes/SendEmail",
+                        type: "POST",
+                        data: data,
+                        dataType: "json",   //Indicamos que el resultado venga en json
+                        contentType: false, //Tienen que estar en false para que pase
+                        processData: false, //el objeto sin procesar
+                        cache: false        //Indicamos que no guarde cache
+                    }).done(function (data) {
+                        alert(data);
+                    });
+                }
+
+            });
+        })
+    </script>
     <script src="~/Scripts/Reportes/emitirDocumentoElectronico.js"></script>
 }

@@ -34,6 +34,18 @@ namespace proyecto_vivemas.ViewModels
         public string cuota_estado { get; set; }
     }
 
+    public class DataEmail
+    {
+        public string usuario { get; set; }
+        public string serie{ get; set; }
+        public string fecha { get; set; }
+        public string monto{ get; set; }
+        public string archivo{ get; set; }
+        public string correo { get; set; }
+    }
+
+
+
     public class DataGetClientes
     {
         public string documento { get; set; }
