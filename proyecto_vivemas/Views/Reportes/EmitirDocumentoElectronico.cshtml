@@ -134,7 +134,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <!--<div class="thanks">Sin impuestos</div>-->
                 <div class="row">
                     <div class="col-6">
@@ -306,8 +305,6 @@
                         var out = doc.output();
 
                         uploadFile(btoa(out));
-
-                        doc.save('sample.pdf');
                     }
                 });
 
@@ -327,17 +324,30 @@
 
                     data.append("fecha", "@Model.transaccion_fechadeposito");
 
-                    $.ajax({
-                        url: "../Reportes/SendEmail",
-                        type: "POST",
-                        data: data,
-                        dataType: "json",   //Indicamos que el resultado venga en json
-                        contentType: false, //Tienen que estar en false para que pase
-                        processData: false, //el objeto sin procesar
-                        cache: false        //Indicamos que no guarde cache
-                    }).done(function (data) {
-                        alert(data);
-                    });
+                    if ("@Model.documento_cliente_correo" != "Sin correo") {
+
+                        $.ajax({
+                            url: "../Reportes/SendEmail",
+                            type: "POST",
+                            data: data,
+                            dataType: "json",   //Indicamos que el resultado venga en json
+                            contentType: false, //Tienen que estar en false para que pase
+                            processData: false, //el objeto sin procesar
+                            cache: false        //Indicamos que no guarde cache
+                        }).done(function (data) {
+                            console.log(data);
+                            if (data.flag == 1) {
+                                toastr["success"](data.data);
+                            } else {
+                                toastr["warning"](data.data);
+                            }
+
+                        });
+                    } else {
+                        toastr["error"]("El cliente no tiene correo");                      
+                    }
+
+                    
                 }
 
             });
