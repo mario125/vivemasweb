@@ -1272,6 +1272,52 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_clientes" FunctionName="vivemas_dbModel.Store.sp_get_clientes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_clientes_Result">
+          <ScalarProperty Name="cliente_nrodocumento" ColumnName="cliente_nrodocumento" />
+          <ScalarProperty Name="cliente_razonsocial" ColumnName="cliente_razonsocial" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_documento_series" FunctionName="vivemas_dbModel.Store.sp_documento_series">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_documento_series_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serie" ColumnName="serie" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_documentos_electronicos" FunctionName="vivemas_dbModel.Store.sp_get_documentos_electronicos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_documentos_electronicos_Result">
+          <ScalarProperty Name="documentoventa_id" ColumnName="documentoventa_id" />
+          <ScalarProperty Name="documentoEmision" ColumnName="documentoEmision" />
+          <ScalarProperty Name="documentoventa_cliente_nrodocumento" ColumnName="documentoventa_cliente_nrodocumento" />
+          <ScalarProperty Name="documentoventa_cliente_nombre" ColumnName="documentoventa_cliente_nombre" />
+          <ScalarProperty Name="documentoventa_total" ColumnName="documentoventa_total" />
+          <ScalarProperty Name="documentoventa_moneda_codigo" ColumnName="documentoventa_moneda_codigo" />
+          <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
+          <ScalarProperty Name="notacreditoanulacion" ColumnName="notacreditoanulacion" />
+          <ScalarProperty Name="notacredito_fechaemision" ColumnName="notacredito_fechaemision" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_notas_credito" FunctionName="vivemas_dbModel.Store.sp_get_notas_credito">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_notas_credito_Result">
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="notacredito_cliente_nombre" ColumnName="notacredito_cliente_nombre" />
+          <ScalarProperty Name="notacredito_cliente_nrodocumento" ColumnName="notacredito_cliente_nrodocumento" />
+          <ScalarProperty Name="notacredito_fechaemision" ColumnName="notacredito_fechaemision" />
+          <ScalarProperty Name="notacredito_moneda_codigo" ColumnName="notacredito_moneda_codigo" />
+          <ScalarProperty Name="notacredito_total" ColumnName="notacredito_total" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="documentoventa_fechaemision" ColumnName="documentoventa_fechaemision" />
+          <ScalarProperty Name="notacredito_descripcionnota" ColumnName="notacredito_descripcionnota" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_get_cliente_email" FunctionName="vivemas_dbModel.Store.sp_get_cliente_email">
       <ResultMapping>
         <ComplexTypeMapping TypeName="vivemas_dbModel.sp_get_cliente_email_Result">

@@ -86,7 +86,7 @@ namespace proyecto_vivemas.Controllers
             respuesta = new JsonResult();
             try
             {
-                //string hashpassword = BCrypt.Net.BCrypt.EnhancedHashPassword(usuarioModelo.password);
+                string hashpassword = BCrypt.Net.BCrypt.EnhancedHashPassword(usuarioModelo.password);
                 List<usuarios> usuarios = db.usuarios.Where(usu => usu.usuario_usuario == usuarioModelo.usuario && usu.usuario_estado == true).ToList();
                 if(usuarios.Count == 0)
                 {

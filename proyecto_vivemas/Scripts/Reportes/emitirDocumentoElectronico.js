@@ -1,28 +1,23 @@
 ﻿$('#printInvoice').click(function () {
-
-      
-
+    asyncCall();
     Popup($('.invoice')[0].outerHTML);
-
     function Popup(data) {
         $(".toolbar").hide();
         $("footer").css({
             "position": "fixed",
             "bottom": "0"
         });
-
-
         window.print();
         $(".toolbar").show();
         $("footer").css({
             "position": "",
             "bottom": ""
         });
-
-
         return true;
     }
 });
+
+
 
 
 var qr;

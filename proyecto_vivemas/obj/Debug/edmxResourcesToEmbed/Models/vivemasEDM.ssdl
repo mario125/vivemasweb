@@ -2067,6 +2067,7 @@ advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_reporteVentas' no tiene d
   <Function Name="sp_cargarDataTransaccion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="transaccionId" Type="bigint" Mode="In" />
   </Function>
+  <Function Name="sp_documento_series" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_evento_detallado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="DOCUMENTO" Type="varchar" Mode="In" />
     <Parameter Name="PROYECTO" Type="int" Mode="In" />
@@ -2074,6 +2075,20 @@ advertencia 6002: La tabla o vista 'vivemas_db2.dbo.vw_reporteVentas' no tiene d
   </Function>
   <Function Name="sp_get_cliente_email" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID_TRASAC" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_get_clientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DATA" Type="varchar" Mode="In" />
+    <Parameter Name="TYPE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_get_documentos_electronicos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SERIE" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA_INICIAL" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA_FIN" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_get_notas_credito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SERIE" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA_INICIAL" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA_FIN" Type="varchar" Mode="In" />
   </Function>
   <Function Name="sp_obtenerDatosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="transaccionId" Type="bigint" Mode="In" />
