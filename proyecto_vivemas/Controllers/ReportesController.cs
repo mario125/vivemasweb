@@ -1661,9 +1661,9 @@ namespace proyecto_vivemas.Controllers
                     documentoModelo = new DocumentoVentaModelo
                     {
                         documento_cliente_nombre = ventaCabecera.documentoventa_cliente_nombre,
-                        documento_cliente_correo = clienteE==null?"Sin correo": clienteE.cliente_email.ToString(),
+                        documento_cliente_correo = clienteE.cliente_email=="" || clienteE.cliente_email ==null ? "Sin correo": clienteE.cliente_email.ToString(),
                         documento_cliente_nroDocumento = ventaCabecera.documentoventa_cliente_nrodocumento,
-                        documento_cliente_direccion = clienteE == null? clienteDireccion:clienteE.proformauif_cliente_direccion,
+                        documento_cliente_direccion = clienteE.proformauif_cliente_direccion == null|| clienteE.proformauif_cliente_direccion == "" ? clienteDireccion:clienteE.proformauif_cliente_direccion,
                         documento_empresa_correo = empresa.empresa_correo,
                         documento_empresa_direccion = empresa.empresa_direccion + " - " + empresa.empresa_departamento + " - " + empresa.empresa_provincia + " - " + empresa.empresa_distrito,
                         documento_empresa_nombre = empresa.empresa_nombrecomercial,
