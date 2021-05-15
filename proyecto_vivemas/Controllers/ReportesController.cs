@@ -1754,9 +1754,9 @@ namespace proyecto_vivemas.Controllers
 
                 client.UseDefaultCredentials = false;
 
-                client.Credentials = new NetworkCredential("sistemas@vivemasinmobiliaria.com", "s1st3m45*159");
+                client.Credentials = new NetworkCredential("cobranza@vivemasinmobiliaria.com", "1nf0*65317");
 
-                MailMessage mail = new MailMessage("sistemas@vivemasinmobiliaria.com", data.correo, "VIVEMAS-COMPROBANTE", TemplateMail(data));
+                MailMessage mail = new MailMessage("cobranza@vivemasinmobiliaria.com", data.correo, "VIVEMAS-COMPROBANTE", TemplateMail(data));
 
                 mail.BodyEncoding = UTF8Encoding.UTF8;
 
@@ -1792,7 +1792,8 @@ namespace proyecto_vivemas.Controllers
         }
         public string TemplateMail(DataEmail data)
         {
-            string html = @"
+            string html = @"                                                                                        
+
                 <html>
                     <head>
                         <meta name='viewport' content='width=device-width' />
@@ -1866,7 +1867,9 @@ namespace proyecto_vivemas.Controllers
                                                                                                 style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box'>
                                                                                                 <span class='il'></span> Vivemas
                                                                                             </small>
-                                                                                        </p>    
+                                                                                        </p>
+                                                                                        <p style='font-family:Avenir,Helvetica,sans-serif;box-sizing:border-box;color:#74787e;font-size:13px;line-height:1.5em;margin-top:0;text-align:left; text-align: center;'>
+                                                                                            Para asegurarte de recibir nuestros correos agrega <b style='color: black;'>info@vivemasinmobiliaria.com</b> a tu lista de direcciones. Por favor, no respondas este correo, si necesitas más información llámanos al<b style='color: black;'> +51 946 347 707.</b></p>   
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>

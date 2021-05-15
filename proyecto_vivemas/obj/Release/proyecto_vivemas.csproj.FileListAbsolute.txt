@@ -378,3 +378,13 @@ D:\vivemasweb\proyecto_vivemas\obj\Release\proyecto_vivemas.csproj.CoreCompileIn
 D:\vivemasweb\proyecto_vivemas\obj\Release\proyecto_vivemas.csproj.CopyComplete
 D:\vivemasweb\proyecto_vivemas\obj\Release\proyecto_vivemas.dll
 D:\vivemasweb\proyecto_vivemas\obj\Release\proyecto_vivemas.pdb
+D:\vivemasweb\proyecto_vivemas\bin\HtmlRenderer.dll
+D:\vivemasweb\proyecto_vivemas\bin\HtmlRenderer.PdfSharp.dll
+D:\vivemasweb\proyecto_vivemas\bin\PdfSharp.Charting.dll
+D:\vivemasweb\proyecto_vivemas\bin\PdfSharp.dll
+D:\vivemasweb\proyecto_vivemas\bin\HtmlRenderer.pdb
+D:\vivemasweb\proyecto_vivemas\bin\HtmlRenderer.PdfSharp.pdb
+D:\vivemasweb\proyecto_vivemas\bin\PdfSharp.xml
+D:\vivemasweb\proyecto_vivemas\bin\PdfSharp.Charting.xml
+D:\vivemasweb\proyecto_vivemas\bin\de\PdfSharp.resources.dll
+D:\vivemasweb\proyecto_vivemas\bin\de\PdfSharp.Charting.resources.dll

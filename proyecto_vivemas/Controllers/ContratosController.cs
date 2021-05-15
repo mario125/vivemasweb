@@ -57,6 +57,7 @@ namespace proyecto_vivemas.Controllers
         /// <returns><c>string</c> con un estado de respuesta</returns>
         public string migrarContratoIndividual(long contratoId)
         {
+      
             JsonResult resultado = new JsonResult();
             try
             {
@@ -192,6 +193,7 @@ namespace proyecto_vivemas.Controllers
                         }
 
                         //FIN CREACION COTIZACION
+
                         //CREACION CUOTAS
                         query = "sp_obtenerDataContratoCuotas";
                         command = new MySqlCommand(query, connection);
