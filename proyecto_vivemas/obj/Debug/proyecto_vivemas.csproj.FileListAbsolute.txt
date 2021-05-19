@@ -741,3 +741,4 @@ D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CoreCompileInpu
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CopyComplete
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.dll
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.pdb
+D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csprojAssemblyReference.cache

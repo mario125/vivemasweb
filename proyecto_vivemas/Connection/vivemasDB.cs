@@ -10,9 +10,8 @@ namespace proyecto_vivemas.Connection
     {
         public MySqlConnection iniciarConexion()
         {
-            MySqlConnection connection = new MySqlConnection("Database=vivemas;Data Source=localhost;User Id=root;Password=root;Allow User Variables=True");
-            // MySqlConnection connection = new MySqlConnection("Database=sistema;Data Source=localhost;User Id=root;Password=Killmebaby123;Allow User Variables=True");
-            //MySqlConnection connection = new MySqlConnection("Database=sistema;Data Source=192.168.0.100;User Id=root;Password=$VIVEINCO159753$;Allow User Variables=True");
+            //MySqlConnection connection = new MySqlConnection("Database=vivemas;Data Source=localhost;User Id=root;Password=root;Allow User Variables=True");
+            MySqlConnection connection = new MySqlConnection("Database=sistema;Data Source=192.168.0.100;User Id=root;Password=$VIVEINCO159753$;Allow User Variables=True");
            connection.Open();
             return connection;
         }
