@@ -116,6 +116,9 @@ namespace proyecto_vivemas.Controllers
                 string transaccion_banco = "-";
                 string transaccion_cuenta = "-";
                 string clienteDireccion = "-";
+                string clienteCorreo = "Sin correo";
+                sp_get_cliente_email_Result clienteEmail;
+
                 if (transaccion != null)
                 {
                     bancos banco = db.bancos.Find(transaccion.transaccion_banco_id);
@@ -131,16 +134,22 @@ namespace proyecto_vivemas.Controllers
 
                         clientes cliente = db.clientes.Find(separacion.separacion_cliente_id);
                         clienteDireccion = cliente.cliente_direccion;
+                        clienteCorreo = cliente.cliente_email;
                     }
                     else
                     {
                         clienteDireccion = db.sp_obtenerDireccionCliente(transaccion.transaccion_id).FirstOrDefault();
+
+                        clienteEmail = db.sp_get_cliente_email(transaccion.transaccion_id).FirstOrDefault();
+
+                        clienteCorreo = (clienteEmail.cliente_email==""||clienteEmail.cliente_email==null)?clienteCorreo:clienteEmail.cliente_email;
                     }
                 }
                 else
                 {
                     clientes cliente = db.clientes.Where(cli => cli.cliente_nrodocumento == ventaCabecera.documentoventa_cliente_nrodocumento).FirstOrDefault();
                     clienteDireccion = cliente.cliente_direccion;
+                    clienteCorreo = cliente.cliente_email;
                     transaccion_fechadeposito = ventaCabecera.documentoventa_fechadeposito == null ? "-" : ventaCabecera.documentoventa_fechadeposito.Value.ToString("dd/MM/yyyy");
                     transaccion_nrooperacion = ventaCabecera.documentoventa_nrooperacion == null ? "-" : ventaCabecera.documentoventa_nrooperacion;
                     transaccion_banco = ventaCabecera.documentoventa_banco_nombre == null ? "-" : ventaCabecera.documentoventa_banco_nombre;
@@ -158,6 +167,7 @@ namespace proyecto_vivemas.Controllers
                 DocumentoVentaModelo documentoModelo = new DocumentoVentaModelo
                 {
                     documento_cliente_nombre = ventaCabecera.documentoventa_cliente_nombre,
+                    documento_cliente_correo = (clienteCorreo==""||clienteCorreo==null)? "Sin correo":clienteCorreo,
                     documento_cliente_nroDocumento = ventaCabecera.documentoventa_cliente_nrodocumento,
                     documento_cliente_direccion = clienteDireccion,
                     documento_empresa_correo = empresa.empresa_correo,
@@ -1754,7 +1764,7 @@ namespace proyecto_vivemas.Controllers
 
                 client.UseDefaultCredentials = false;
 
-                client.Credentials = new NetworkCredential("cobranza@vivemasinmobiliaria.com", "1nf0*65317");
+                client.Credentials = new NetworkCredential("info@vivemasinmobiliaria.com", "1nf0*65317");
 
                 MailMessage mail = new MailMessage("cobranza@vivemasinmobiliaria.com", data.correo, "VIVEMAS-COMPROBANTE", TemplateMail(data));
 

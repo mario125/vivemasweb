@@ -20,6 +20,12 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/BouncyCastle.Crypto.dll">
       <publishTime>08/11/2018 10:03:48</publishTime>
     </File>
+    <File Include="bin/de/PdfSharp.Charting.resources.dll">
+      <publishTime>05/16/2013 17:13:08</publishTime>
+    </File>
+    <File Include="bin/de/PdfSharp.resources.dll">
+      <publishTime>05/16/2013 17:13:08</publishTime>
+    </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
     </File>
@@ -30,28 +36,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/12/2021 07:15:08</publishTime>
     </File>
     <File Include="bin/es/System.Web.Helpers.resources.dll">
-      <publishTime>11/28/2018 12:04:36</publishTime>
+      <publishTime>11/28/2018 13:04:36</publishTime>
     </File>
     <File Include="bin/es/System.Web.Mvc.resources.dll">
-      <publishTime>11/28/2018 12:00:00</publishTime>
+      <publishTime>11/28/2018 13:00:00</publishTime>
     </File>
     <File Include="bin/es/System.Web.Optimization.resources.dll">
-      <publishTime>02/11/2014 14:28:40</publishTime>
+      <publishTime>02/11/2014 15:28:40</publishTime>
     </File>
     <File Include="bin/es/System.Web.Razor.resources.dll">
-      <publishTime>11/28/2018 12:00:22</publishTime>
+      <publishTime>11/28/2018 13:00:22</publishTime>
     </File>
     <File Include="bin/es/System.Web.WebPages.Deployment.resources.dll">
-      <publishTime>11/28/2018 12:04:36</publishTime>
+      <publishTime>11/28/2018 13:04:36</publishTime>
     </File>
     <File Include="bin/es/System.Web.WebPages.Razor.resources.dll">
-      <publishTime>11/28/2018 12:04:36</publishTime>
+      <publishTime>11/28/2018 13:04:36</publishTime>
     </File>
     <File Include="bin/es/System.Web.WebPages.resources.dll">
-      <publishTime>11/28/2018 12:04:36</publishTime>
+      <publishTime>11/28/2018 13:04:36</publishTime>
     </File>
     <File Include="bin/Google.Protobuf.dll">
       <publishTime>08/10/2018 18:51:54</publishTime>
+    </File>
+    <File Include="bin/HtmlRenderer.dll">
+      <publishTime>10/09/2014 18:41:18</publishTime>
+    </File>
+    <File Include="bin/HtmlRenderer.PdfSharp.dll">
+      <publishTime>05/06/2015 10:39:04</publishTime>
     </File>
     <File Include="bin/K4os.Compression.LZ4.dll">
       <publishTime>07/03/2019 22:59:30</publishTime>
@@ -77,8 +89,14 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>04/22/2019 01:06:16</publishTime>
     </File>
+    <File Include="bin/PdfSharp.Charting.dll">
+      <publishTime>05/16/2013 17:13:08</publishTime>
+    </File>
+    <File Include="bin/PdfSharp.dll">
+      <publishTime>05/16/2013 17:13:08</publishTime>
+    </File>
     <File Include="bin/proyecto_vivemas.dll">
-      <publishTime>05/10/2021 10:02:43</publishTime>
+      <publishTime>05/19/2021 10:15:05</publishTime>
     </File>
     <File Include="bin/proyecto_vivemas.pdb">
       <publishTime>11/18/2020 09:29:13</publishTime>
@@ -11637,7 +11655,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/16/2021 08:36:32</publishTime>
     </File>
     <File Include="Models/vivemasEDM.edmx.diagram">
-      <publishTime>05/07/2021 14:54:58</publishTime>
+      <publishTime>05/12/2021 16:20:15</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/01/2020 12:52:48</publishTime>
@@ -11712,7 +11730,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/01/2020 12:52:50</publishTime>
     </File>
     <File Include="Scripts/Reportes/emitirDocumentoElectronico.js">
-      <publishTime>03/10/2021 09:43:02</publishTime>
+      <publishTime>05/18/2021 17:12:37</publishTime>
     </File>
     <File Include="Scripts/Reportes/RegistroEventos.js">
       <publishTime>04/13/2021 09:55:36</publishTime>
@@ -11793,7 +11811,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/23/2021 09:36:34</publishTime>
     </File>
     <File Include="Views/Reportes/EmitirDocumentoElectronico.cshtml">
-      <publishTime>02/20/2021 11:41:54</publishTime>
+      <publishTime>05/17/2021 11:30:30</publishTime>
     </File>
     <File Include="Views/Reportes/EmitirDocumentoElectronicoFechaEmision.cshtml">
       <publishTime>04/28/2021 09:47:16</publishTime>
@@ -11805,7 +11823,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/12/2021 16:16:00</publishTime>
     </File>
     <File Include="Views/Reportes/ReimprimirDocumentoElectronico.cshtml">
-      <publishTime>02/19/2021 15:22:12</publishTime>
+      <publishTime>05/19/2021 09:46:55</publishTime>
     </File>
     <File Include="Views/Reportes/ReporteClientesMin.cshtml">
       <publishTime>03/25/2021 08:37:26</publishTime>
@@ -11847,7 +11865,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/23/2021 09:35:54</publishTime>
     </File>
     <File Include="Views/Transacciones/Transacciones.cshtml">
-      <publishTime>04/27/2021 10:52:46</publishTime>
+      <publishTime>05/10/2021 12:34:36</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/01/2020 12:52:46</publishTime>
@@ -11856,7 +11874,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/01/2020 12:52:46</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/05/2021 16:25:38</publishTime>
+      <publishTime>05/19/2021 10:15:07</publishTime>
     </File>
   </ItemGroup>
 </Project>

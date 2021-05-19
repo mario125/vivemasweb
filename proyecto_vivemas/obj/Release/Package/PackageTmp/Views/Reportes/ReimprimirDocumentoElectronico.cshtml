@@ -12,6 +12,7 @@
 <div id="invoice">
     <div class="toolbar hidden-print">
         <div class="text-right">
+            <button id="correobtn" class="btn btn-info"><i class="fa fa-print"></i> Enviar al correo</button>
             <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Imprimir</button>
         </div>
         <hr>
@@ -69,6 +70,14 @@
                             </div>
                             <div class="col-10">
                                 : @Model.documento_cliente_nroDocumento
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <b>Correo</b>
+                            </div>
+                            <div class="col-10">
+                                : @Model.documento_cliente_correo
                             </div>
                         </div>
                         <div class="row">
@@ -207,7 +216,7 @@
                     </div>
                     <div class="col-12 mt-2">
                         <div style="border-bottom:solid 2px"><b>Informacion Adicional</b></div>
-                        
+
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-6">
@@ -273,6 +282,77 @@
 
 @section scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script> var qrText = "@Model.documento_qrcodeValue" </script>
+    <script>
+        $(document).ready(function () {
+
+
+            $("#correobtn").click(function () {
+
+                html2canvas(document.getElementById("invoice"), {
+
+                    onrendered: function (canvas) {
+
+                        var imgData = canvas.toDataURL('image/png');
+
+                        var doc = new jsPDF('p', 'mm', 'A4');
+
+                        this.imageHeight = canvas.height * 208 / canvas.width;
+
+                        doc.addImage(imgData, 'PNG', 0, 0, 208, this.imageHeight);
+
+                        var out = doc.output();
+
+                        uploadFile(btoa(out));
+                    }
+                });
+
+                const uploadFile = async (datafile) => {
+
+                    var data = new FormData();
+
+                    data.append("archivo", datafile);
+
+                    data.append("serie", "@Model.documento_serie");
+
+                    data.append("monto", "@Model.moneda_simbolo" + "@Model.documento_total");
+
+                    data.append("correo", "@Model.documento_cliente_correo");
+
+                    data.append("usuario", "@Model.documento_cliente_nombre");
+
+                    data.append("fecha", "@Model.transaccion_fechadeposito");
+
+                    if ("@Model.documento_cliente_correo" != "Sin correo") {
+
+                        $.ajax({
+                            url: "../Reportes/SendEmail",
+                            type: "POST",
+                            data: data,
+                            dataType: "json",   //Indicamos que el resultado venga en json
+                            contentType: false, //Tienen que estar en false para que pase
+                            processData: false, //el objeto sin procesar
+                            cache: false        //Indicamos que no guarde cache
+                        }).done(function (data) {
+                            console.log(data);
+                            if (data.flag == 1) {
+                                toastr["success"](data.data);
+                            } else {
+                                toastr["warning"](data.data);
+                            }
+
+                        });
+                    } else {
+                        toastr["error"]("El cliente no tiene correo");
+                    }
+
+
+                }
+
+            });
+        })
+    </script>
     <script src="~/Scripts/Reportes/emitirDocumentoElectronico.js"></script>
 }
