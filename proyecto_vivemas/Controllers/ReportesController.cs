@@ -79,6 +79,11 @@ namespace proyecto_vivemas.Controllers
             return View();
         }
 
+        public ActionResult ReporteCartaNotificacion()//mario
+        {
+            return View();
+        }
+
         public ActionResult ReporteComprobantesElectronicos()
         {
             return View();
@@ -1808,8 +1813,7 @@ namespace proyecto_vivemas.Controllers
                     <head>
                         <meta name='viewport' content='width=device-width' />
                         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-                        <title></title>
-      
+                        <title></title>      
                     </head>    
                     <body class='mainVivemas'>
                         <div class=''>

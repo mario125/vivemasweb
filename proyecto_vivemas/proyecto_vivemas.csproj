@@ -4472,6 +4472,7 @@
     <Content Include="Views\Reportes\EmitirDocumentoElectronicoFechaEmision.cshtml" />
     <Content Include="Views\Reportes\ReporteEventosDetalle.cshtml" />
     <Content Include="Views\Reportes\ReporteComprobantesElectronicos.cshtml" />
+    <Content Include="Views\Reportes\ReporteCartaNotificacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6123,7 +6124,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;scrollPosition&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;i-tab-container-selected-tab-index&quot; valuetype=&quot;integer&quot;&gt;1&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" content_4toastr_4toastr_1js_1map__JsonSchema="" />
+      <UserProperties content_4toastr_4toastr_1js_1map__JsonSchema="" DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;scrollPosition&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;i-tab-container-selected-tab-index&quot; valuetype=&quot;integer&quot;&gt;1&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

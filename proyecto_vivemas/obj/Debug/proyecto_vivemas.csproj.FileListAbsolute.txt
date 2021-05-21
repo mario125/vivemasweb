@@ -737,8 +737,8 @@ D:\vivemasweb\proyecto_vivemas\bin\es\System.Web.Razor.resources.dll
 D:\vivemasweb\proyecto_vivemas\bin\es\System.Web.WebPages.resources.dll
 D:\vivemasweb\proyecto_vivemas\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\vivemasweb\proyecto_vivemas\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csprojAssemblyReference.cache
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CoreCompileInputs.cache
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csproj.CopyComplete
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.dll
 D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.pdb
-D:\vivemasweb\proyecto_vivemas\obj\Debug\proyecto_vivemas.csprojAssemblyReference.cache
