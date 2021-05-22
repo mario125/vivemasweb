@@ -55,6 +55,7 @@ namespace proyecto_vivemas.Controllers
         /// </summary>
         /// <param name="contratoId">id del contrato que esta en la base de datos MySql</param>
         /// <returns><c>string</c> con un estado de respuesta</returns>
+        /// 
         public string migrarContratoIndividual(long contratoId)
         {
       
@@ -457,6 +458,7 @@ namespace proyecto_vivemas.Controllers
 
         }
 
+      
         /// <summary>
         /// Funcion encargada de migrar un grupo de contratos
         /// </summary>
