@@ -1327,5 +1327,20 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getContratosVencidos" FunctionName="vivemas_dbModel.Store.sp_getContratosVencidos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="vivemas_dbModel.sp_getContratosVencidos_Result">
+          <ScalarProperty Name="contrato_numeracion" ColumnName="contrato_numeracion" />
+          <ScalarProperty Name="cuota_anexocontratocotizacion_id" ColumnName="cuota_anexocontratocotizacion_id" />
+          <ScalarProperty Name="proyecto_nombre" ColumnName="proyecto_nombre" />
+          <ScalarProperty Name="lote_nombre" ColumnName="lote_nombre" />
+          <ScalarProperty Name="proformauif_cliente_razonsocial" ColumnName="proformauif_cliente_razonsocial" />
+          <ScalarProperty Name="proformauif_cliente_nrodocumento" ColumnName="proformauif_cliente_nrodocumento" />
+          <ScalarProperty Name="montopendiente" ColumnName="montopendiente" />
+          <ScalarProperty Name="montocancelado" ColumnName="montocancelado" />
+          <ScalarProperty Name="cuotas_vencidas" ColumnName="cuotas_vencidas" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

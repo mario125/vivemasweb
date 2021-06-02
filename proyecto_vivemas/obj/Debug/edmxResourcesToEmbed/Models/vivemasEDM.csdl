@@ -558,6 +558,7 @@
     <FunctionImport Name="sp_get_cliente_email" ReturnType="Collection(vivemas_dbModel.sp_get_cliente_email_Result)">
       <Parameter Name="ID_TRASAC" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="sp_getContratosVencidos" ReturnType="Collection(vivemas_dbModel.sp_getContratosVencidos_Result)" />
   </EntityContainer>
   <EntityType Name="empresas">
     <Key>
@@ -2953,5 +2954,15 @@
     <Property Type="String" Name="proformauif_cliente_direccion" Nullable="true" MaxLength="150" />
     <Property Type="String" Name="cliente_email" Nullable="true" MaxLength="150" />
     <Property Type="Int64" Name="cliente_id" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getContratosVencidos_Result">
+    <Property Type="String" Name="contrato_numeracion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="proyecto_nombre" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="lote_nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="proformauif_cliente_razonsocial" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="proformauif_cliente_nrodocumento" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="montopendiente" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="montocancelado" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="cuotas_vencidas" Nullable="true" />
   </ComplexType>
 </Schema>

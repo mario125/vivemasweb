@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using proyecto_vivemas.Models;
 //using proyecto_vivemas.servicio_local_emision;
 using proyecto_vivemas.servicio_servidor_emision;
@@ -945,6 +946,42 @@ namespace proyecto_vivemas.Controllers
             Console.Write(respuesta);
 
             return Json(respuesta);
+        }
+
+        public class lisJSON
+        {
+            public int draw { get; set; }
+            public int recordsTota { get; set; }
+            public int recordsFiltered { get; set; }
+            public List<sp_getContratosVencidos_Result> data { get; set; }
+        } 
+
+        public string getCuotasVencidas()
+        {   string respuesta = "";
+            try
+            {
+                List<string> AuthorList = new List<string>();
+
+                
+                lisJSON j = new lisJSON();
+                j.draw = 5;
+                j.recordsTota = 5;
+                j.recordsFiltered = 5;                
+
+                List<sp_getContratosVencidos_Result> listaContratos = db.sp_getContratosVencidos().ToList();
+
+                j.data=(listaContratos);
+
+                respuesta = JsonConvert.SerializeObject(j);
+
+                return respuesta;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                return respuesta;
+            }
+        
         }
 
         public ActionResult getSeries()

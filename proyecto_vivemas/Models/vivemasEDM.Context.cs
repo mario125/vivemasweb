@@ -276,5 +276,10 @@ namespace proyecto_vivemas.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_cliente_email_Result>("sp_get_cliente_email", iD_TRASACParameter);
         }
+    
+        public virtual ObjectResult<sp_getContratosVencidos_Result> sp_getContratosVencidos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getContratosVencidos_Result>("sp_getContratosVencidos");
+        }
     }
 }

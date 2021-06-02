@@ -214,6 +214,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WordToPDF">
+      <HintPath>..\..\marioDB\X\convert-word-documents-to-pdf-master\ConvertFromWordToPDF\WordToPDF.dll</HintPath>
+    </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
@@ -413,6 +416,9 @@
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_evento_detallado_Result.cs">
+      <DependentUpon>vivemasEDM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_getContratosVencidos_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sp_get_clientes_Result.cs">
@@ -4419,6 +4425,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Reportes\emitirDocumentoElectronico.js" />
     <Content Include="Scripts\Reportes\RegistroEventos.js" />
+    <Content Include="Scripts\Reportes\reporteCartaNotificacion.js" />
     <Content Include="Scripts\Reportes\reporteClientesMin.js" />
     <Content Include="Scripts\Reportes\reporteClientesPagos.js" />
     <Content Include="Scripts\Reportes\reporteEstadoCobranza.js" />
