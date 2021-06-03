@@ -651,6 +651,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css1\bootstrap-grid.css" />
+    <Content Include="Content\css1\bootstrap-grid.min.css" />
+    <Content Include="Content\css1\bootstrap-reboot.css" />
+    <Content Include="Content\css1\bootstrap-reboot.min.css" />
+    <Content Include="Content\css1\bootstrap.css" />
+    <Content Include="Content\css1\bootstrap.min.css" />
+    <Content Include="Content\css1\buttons.dataTables.min.css" />
+    <Content Include="Content\css1\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css1\jquery.dataTables.min.css" />
+    <Content Include="Content\css1\style.css" />
     <Content Include="Content\fullcalendar\css\main.css" />
     <Content Include="Content\fullcalendar\css\main.min.css" />
     <Content Include="Content\fullcalendar\js\locales-all.js" />
@@ -4145,6 +4155,20 @@
     <Content Include="Content\jquery\dist\jquery.js" />
     <Content Include="Content\jquery\dist\jquery.min.js" />
     <Content Include="Content\jquery\LICENSE.txt" />
+    <Content Include="Content\js1\app.js" />
+    <Content Include="Content\js1\bootstrap.js" />
+    <Content Include="Content\js1\bootstrap.min.js" />
+    <Content Include="Content\js1\buttons.colVis.min.js" />
+    <Content Include="Content\js1\buttons.html5.min.js" />
+    <Content Include="Content\js1\buttons.print.min.js" />
+    <Content Include="Content\js1\dataTables.buttons.min.js" />
+    <Content Include="Content\js1\datatables.mark.js" />
+    <Content Include="Content\js1\jquery-2.2.4.min.js" />
+    <Content Include="Content\js1\jquery.dataTables.min.js" />
+    <Content Include="Content\js1\jquery.mark.min.js" />
+    <Content Include="Content\js1\jszip.min.js" />
+    <Content Include="Content\js1\pdfmake.min.js" />
+    <Content Include="Content\js1\vfs_fonts.js" />
     <Content Include="Content\moment\moment.min.js" />
     <Content Include="Content\reporting\FileSaver.min.js" />
     <Content Include="Content\reporting\jspdf.min.js" />
@@ -4311,6 +4335,8 @@
     <Content Include="Content\tabulator\dist\js\tabulator_core.min.js" />
     <Content Include="Content\toastr\toastr.min.css" />
     <Content Include="Content\toastr\toastr.min.js" />
+    <Content Include="Content\word1\jquery.googoose.js" />
+    <Content Include="Content\word1\jquery.min.js" />
     <Content Include="Content\xls\xlsx.full.min.js" />
     <Content Include="Css\Clientes\Index.css" />
     <Content Include="Css\Clientes\Planificador.css" />
@@ -4404,6 +4430,12 @@
     <None Include="Connected Services\servicio_servidor_emision\wsemision.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Content\css1\bootstrap-grid.css.map" />
+    <Content Include="Content\css1\bootstrap-grid.min.css.map" />
+    <Content Include="Content\css1\bootstrap-reboot.css.map" />
+    <Content Include="Content\css1\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\css1\bootstrap.css.map" />
+    <Content Include="Content\css1\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\publicacion_vivemas.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\Clientes\Index.js" />
@@ -4488,7 +4520,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\word\" />
     <Folder Include="Views\Lotes\" />
     <Folder Include="Views\Proyectos\" />
     <Folder Include="Views\Usuarios\" />

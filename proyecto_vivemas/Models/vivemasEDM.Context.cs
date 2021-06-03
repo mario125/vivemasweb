@@ -205,11 +205,11 @@ namespace proyecto_vivemas.Models
                 new ObjectParameter("DOCUMENTO", dOCUMENTO) :
                 new ObjectParameter("DOCUMENTO", typeof(string));
     
-            var pROYECTOParameter = pROYECTO.HasValue ?
+            var pROYECTOParameter = pROYECTO!=0 ?
                 new ObjectParameter("PROYECTO", pROYECTO) :
                 new ObjectParameter("PROYECTO", typeof(int));
     
-            var lOTEParameter = lOTE.HasValue ?
+            var lOTEParameter = lOTE!=0 ?
                 new ObjectParameter("LOTE", lOTE) :
                 new ObjectParameter("LOTE", typeof(int));
     
