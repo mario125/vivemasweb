@@ -651,6 +651,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\buttons.dataTables.min.css" />
+    <Content Include="Content\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\css\jquery.dataTables.min.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\fullcalendar\css\main.css" />
     <Content Include="Content\fullcalendar\css\main.min.css" />
     <Content Include="Content\fullcalendar\js\locales-all.js" />
@@ -4145,6 +4150,20 @@
     <Content Include="Content\jquery\dist\jquery.js" />
     <Content Include="Content\jquery\dist\jquery.min.js" />
     <Content Include="Content\jquery\LICENSE.txt" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\buttons.colVis.min.js" />
+    <Content Include="Content\js\buttons.html5.min.js" />
+    <Content Include="Content\js\buttons.print.min.js" />
+    <Content Include="Content\js\dataTables.buttons.min.js" />
+    <Content Include="Content\js\datatables.mark.js" />
+    <Content Include="Content\js\jquery-2.2.4.min.js" />
+    <Content Include="Content\js\jquery.dataTables.min.js" />
+    <Content Include="Content\js\jquery.mark.min.js" />
+    <Content Include="Content\js\jszip.min.js" />
+    <Content Include="Content\js\pdfmake.min.js" />
+    <Content Include="Content\js\vfs_fonts.js" />
     <Content Include="Content\moment\moment.min.js" />
     <Content Include="Content\reporting\FileSaver.min.js" />
     <Content Include="Content\reporting\jspdf.min.js" />
@@ -4311,6 +4330,8 @@
     <Content Include="Content\tabulator\dist\js\tabulator_core.min.js" />
     <Content Include="Content\toastr\toastr.min.css" />
     <Content Include="Content\toastr\toastr.min.js" />
+    <Content Include="Content\word\jquery.googoose.js" />
+    <Content Include="Content\word\jquery.min.js" />
     <Content Include="Content\xls\xlsx.full.min.js" />
     <Content Include="Css\Clientes\Index.css" />
     <Content Include="Css\Clientes\Planificador.css" />
@@ -4488,7 +4509,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\word\" />
     <Folder Include="Views\Lotes\" />
     <Folder Include="Views\Proyectos\" />
     <Folder Include="Views\Usuarios\" />

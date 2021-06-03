@@ -1,5 +1,4 @@
 ﻿$('#printInvoice').click(function () {
-
     Popup($('.invoice')[0].outerHTML);
     function Popup(data) {
         $(".toolbar").hide();
