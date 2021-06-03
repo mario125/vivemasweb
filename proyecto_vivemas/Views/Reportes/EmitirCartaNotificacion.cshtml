@@ -1,0 +1,154 @@
+﻿@using proyecto_vivemas.ViewModels;
+@model CartaModelo
+@{
+    Layout = "~/Views/Shared/_LayoutReportes.cshtml";
+    ViewBag.Title = "";
+}
+
+@section styles{
+    <link rel="stylesheet" href="~/Css/Reportes/EmitirDocumentoElectronico.css" />
+
+}
+
+<div >
+    <div class="toolbar hidden-print">
+        <div class="text-right">
+            <button id="correobtn" class="btn btn-info" onclick="exportDoc()"><i class="fa fa-print"></i>Word</button>
+            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i>Pdf</button>
+        </div>
+        <hr>
+    </div>
+    <div class="overflow-auto">
+        <div style="min-width: 600px;">          
+            <main id="invoice" class="invoice ">
+                <div  class="googoose-wrapper" style=" margin-left: 10%; margin-right: 10%; margin-top: 0px; margin-bottom: 10px;">
+
+                    <div class='googoose' id="invoice">
+
+                        <div style="width: 100%; height: 80px;">
+                            <div class="logo">
+                                <img src="http://vivemasinmobiliaria.com/wp-content/uploads/2021/logoVivemas.png" alt="" width="180"
+                                     height="80">
+                            </div>
+                        </div>
+
+                        <div class='header'>
+                            <p style="font-size:15px;text-align:center; font-family: 'Gill Sans Extrabold', Arial, sans-serif">
+                                <u>CARTA DE PRE-AVISO DE RESOLUCIÓN </u>
+                            </p>
+                            <p style="font-size:13px; text-align: right;font-family: 'Gill Sans Extrabold', Arial, sans-serif">Arequipa, @Model.carta_fecha</p>
+                            <p style="font-size:13px;text-align: left;font-family: 'Gill Sans Extrabold', Arial, sans-serif">
+                                Señor(a):<b>@Model.carta_cliente_nombres</b>
+                            </p>
+                            <p style="font-size:13px;text-align: left;font-family: 'Gill Sans Extrabold', Arial, sans-serif">
+                                Dirección:<b>
+                                    @Model.carta_cliente_direccion
+                                </b>
+                            </p>
+
+                            <p style="font-size:13px;font-family: 'Gill Sans Extrabold', Arial, sans-serif">Asunto: Carta de cobranza bajo apercibimiento de resolución.</p>
+                            <p style="font-size:13px;font-family: 'Gill Sans Extrabold', Arial, sans-serif">De nuestra consideración:</p>
+                            <p style=" text-align: justify; font-size: 13px;   font-family: 'Gill Sans Extrabold', Arial, sans-serif">
+                                Estando a lo señalado en el contrato de compraventa de bien inmueble futuro con financiamiento del
+                                lote <b>@Model.carta_lote</b> (en adelante <b>EL CONTRATO</b>), del Proyecto <b>"@Model.carta_proyecto"</b> ubicado en el distrito
+                                de <b>PUNTA DE BOMBON</b> provincia de <b>ISLAY</b> y departamento de Arequipa, de fecha @Model.carta_fecha_creacion, suscrito con
+                                nuestra empresa; tenemos a bien señalar que hemos verificado el nuestro sistema de cobranza, que a
+                                la fecha adeuda las siguientes cuotas del cronograma de pagos descrito en <b>EL CONTRATO</b>.
+                            </p>
+
+                            <table style="font-size: 13px; border: solid 1px #aaa999; border-collapse: collapse; border-spacing: 0;font-family: 'Gill Sans Extrabold', Arial, sans-serif">
+                                <thead>
+                                    <tr>
+                                        <th  style="border: solid 1px #aaa999;text-align:center">Moneda</th>
+                                        <th  style="border: solid 1px #aaa999;text-align:center">Letra</th>
+                                        <th  style="border: solid 1px #aaa999;text-align:center">F.vencimiento</th>
+                                        <th  style="border: solid 1px #aaa999;text-align:center">Cuota</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var itemDetalle in Model.carta_detalle)
+                                    {
+                                        <tr>
+                                            <td style="border: solid 1px #aaa999;font-family: 'Gill Sans Extrabold', Arial, sans-serif">@itemDetalle.carta_detalleMoneda</td>
+                                            <td style="border: solid 1px #aaa999;font-family: 'Gill Sans Extrabold', Arial, sans-serif">@itemDetalle.carta_detalleLetra</td>
+                                            <td style="border: solid 1px #aaa999;font-family: 'Gill Sans Extrabold', Arial, sans-serif">@itemDetalle.carta_detalleFecha </td>
+                                            <td style="border: solid 1px #aaa999;font-family: 'Gill Sans Extrabold', Arial, sans-serif">@itemDetalle.carta_detalleCuota</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                            <p style="font-size:13px;font-family: 'Gill Sans Extrabold', Arial, sans-serif">En dicho contrato se estableció una cláusula de penalidad y resolución por falta de pago.</p>
+
+
+                            <p style="text-align:justify; font-size:13px;font-family: 'Gill Sans Extrabold', Arial, sans-serif">
+                                Teniendo en cuenta el plazo transcurrido, a fin de no poner en ejecución las cláusulas antes mencionadas, excepcionalmente le
+                                otorgamos el plazo de tres <b>(03) días hábiles</b> de recibida la presente,
+                                para regularizar la deuda mencionada y/o, en caso de duda o consulta, comunicarse con nuestra Área de Cobranza, al correo
+                                <b>sflores@vivemasinmobiliaria.com</b>, dirigida a la encargada del área, Sandra Flores, con copia a <b>cobranza@vivemasinmobiliaria.com</b>,
+                                o al número de celular <b>933063251</b> para las coordinaciones respectivas, bajo apercibimiento de proceder a <b>RESOLVER EL CONTRATO POR FALTA DE PAGO</b>,
+                                según lo dispuesto en el artículo 1430° del Código Civil, y conforme a lo estipulado en la
+                                cláusula novena de <b>EL CONTRATO</b>, devengándonos de forma automática el @Model.carta_penalidad % del precio de venta y la penalidad correspondiente,
+                                los cuales serán descontados del precio cancelado a la fecha.
+                            </p>
+                            <p style="font-size:13px;font-family: 'Gill Sans Extrabold', Arial, sans-serif">Sin otro particular, quedamos de ustedes.</p>
+                            <p style="font-size:13px;font-family: 'Gill Sans Extrabold', Arial, sans-serif">Atentamente.</p>
+
+
+                            <center style="font-size:13px;text-align:center; font-family: 'Gill Sans Extrabold', Arial, sans-serif; margin-top: -10px;"><b></b>.......................................</center>
+
+
+                            <center style="font-size:13px;text-align:center; font-family: 'Gill Sans Extrabold', Arial, sans-serif; margin-top: -10px;">SANDRA FLORES P. </center>
+
+
+                            <center>CREDITO Y COBRANZAS </center>
+
+
+                            <center>VIVEINCO S.A.C. </center>
+                        </div>
+
+                        <canvas id='hello-canvas'></canvas>
+                    </div>
+                </div>
+            </main>
+        </div>
+       
+    </div>
+
+</div>
+
+@section scripts{
+    <script type="text/javascript" language="JavaScript" src="~/Content/word/jquery.min.js"></script>
+    <script type="text/javascript" language="JavaScript" src="~/Content/word/jquery.googoose.js"></script>
+    <script>
+        function exportDoc() {
+            var canvas = document.getElementById("hello-canvas");
+            var ctx = canvas.getContext("2d");
+            var o = {
+                filename: 'carta.doc'
+            };
+            $(document).googoose(o);
+        };
+
+
+        $('#printInvoice').click(function () {
+    asyncCall();
+    Popup($('.invoice')[0].outerHTML);
+    function Popup(data) {
+        $(".toolbar").hide();
+        $("footer").css({
+            "position": "fixed",
+            "bottom": "0"
+        });
+        window.print();
+        $(".toolbar").show();
+        $("footer").css({
+            "position": "",
+            "bottom": ""
+        });
+        return true;
+    }
+});
+    </script>
+
+}

@@ -281,5 +281,14 @@ namespace proyecto_vivemas.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getContratosVencidos_Result>("sp_getContratosVencidos");
         }
+    
+        public virtual ObjectResult<sp_get_notificacion_template_Result> sp_get_notificacion_template(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_notificacion_template_Result>("sp_get_notificacion_template", idParameter);
+        }
     }
 }

@@ -8,6 +8,7 @@ using proyecto_vivemas.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -93,6 +94,13 @@ namespace proyecto_vivemas.Controllers
         public ActionResult EmitirDocumentoElectronico(long transaccionId)
         {
             DocumentoVentaModelo modelo = GenerarDocumentoVenta(transaccionId);
+            return View(modelo);
+        }
+
+        public ActionResult EmitirCartaNotificacion(long penalidad, int id)
+        {
+            CartaModelo modelo = GenerarCartaNotificacion(penalidad,id);
+
             return View(modelo);
         }
 
@@ -984,6 +992,7 @@ namespace proyecto_vivemas.Controllers
         
         }
 
+
         public ActionResult getSeries()
         {
             try
@@ -1757,6 +1766,50 @@ namespace proyecto_vivemas.Controllers
 
                 //FIN CARGADO
                 return documentoModelo;
+            }
+            catch (Exception ex)
+            {
+                JsonResult resultado = new JsonResult();
+                resultado.Data = new
+                {
+                    flag = 0
+                };
+                return null;
+            }
+        }
+
+        private CartaModelo GenerarCartaNotificacion(long penalidad, int id)
+        {
+
+            try
+            {
+               
+
+                CartaModelo model = new CartaModelo();
+                DateTime fechaActual = DateTime.Today;
+
+                List<sp_get_notificacion_template_Result> data = db.sp_get_notificacion_template(id).ToList();
+                
+                model.carta_fecha = fechaActual.ToString("dd MMMM", CultureInfo.CreateSpecificCulture("es-ES")) + " del " + fechaActual.Year.ToString();
+                model.carta_cliente_nombres = data[0].proformauif_cliente_razonsocial;
+                model.carta_cliente_direccion = data[0].proformauif_empresa_direccion;
+                model.carta_lote = data[0].lote_nombre;
+                model.carta_proyecto = data[0].proyecto_nombre;
+                model.carta_fecha_creacion = data[0].contrato_fechacreacion.ToString();
+                model.carta_penalidad = penalidad.ToString();
+                List<CartaDetalleModelo> detalle = new List<CartaDetalleModelo>();
+                foreach (var detalleItem in data)
+                {
+                    CartaDetalleModelo modelDetalle = new CartaDetalleModelo();
+                    modelDetalle.carta_detalleMoneda = detalleItem.moneda_caracter;
+                    modelDetalle.carta_detalleLetra = detalleItem.cuota_numeracion;
+                    modelDetalle.carta_detalleFecha = detalleItem.cuota_fechavencimiento?.ToString("dd/MM/yyyy");
+                    modelDetalle.carta_detalleCuota = detalleItem.cuota_monto.ToString();
+                    detalle.Add(modelDetalle);
+                }
+                model.carta_detalle = detalle;                
+
+                return model;
             }
             catch (Exception ex)
             {

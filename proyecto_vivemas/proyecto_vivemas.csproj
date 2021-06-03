@@ -433,6 +433,9 @@
     <Compile Include="Models\sp_get_notas_credito_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_get_notificacion_template_Result.cs">
+      <DependentUpon>vivemasEDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_obtenerDatosCliente_Result.cs">
       <DependentUpon>vivemasEDM.tt</DependentUpon>
     </Compile>
@@ -546,6 +549,7 @@
     <Compile Include="ViewModels\DataReportes.cs" />
     <Compile Include="ViewModels\DataSeparaciones.cs" />
     <Compile Include="ViewModels\DataTransacciones.cs" />
+    <Compile Include="ViewModels\CartaModelo.cs" />
     <Compile Include="ViewModels\DocumentoVentaModelo.cs" />
     <Compile Include="ViewModels\FormPagosData.cs" />
   </ItemGroup>
@@ -4480,9 +4484,11 @@
     <Content Include="Views\Reportes\ReporteEventosDetalle.cshtml" />
     <Content Include="Views\Reportes\ReporteComprobantesElectronicos.cshtml" />
     <Content Include="Views\Reportes\ReporteCartaNotificacion.cshtml" />
+    <Content Include="Views\Reportes\EmitirCartaNotificacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\word\" />
     <Folder Include="Views\Lotes\" />
     <Folder Include="Views\Proyectos\" />
     <Folder Include="Views\Usuarios\" />
@@ -6131,7 +6137,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties content_4toastr_4toastr_1js_1map__JsonSchema="" DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;scrollPosition&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;i-tab-container-selected-tab-index&quot; valuetype=&quot;integer&quot;&gt;1&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" />
+      <UserProperties DocumentXCommentEditorState="&lt;HtmlEditState&gt;&#xA;  &lt;Attributes&gt;&#xA;    &lt;Attribute key=&quot;scrollPosition&quot; valuetype=&quot;integer&quot;&gt;0&lt;/Attribute&gt;&#xA;    &lt;Attribute key=&quot;i-tab-container-selected-tab-index&quot; valuetype=&quot;integer&quot;&gt;1&lt;/Attribute&gt;&#xA;  &lt;/Attributes&gt;&#xA;&lt;/HtmlEditState&gt;" content_4toastr_4toastr_1js_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
