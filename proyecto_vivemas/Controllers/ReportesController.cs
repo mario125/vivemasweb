@@ -992,7 +992,6 @@ namespace proyecto_vivemas.Controllers
         
         }
 
-
         public ActionResult getSeries()
         {
             try
@@ -1075,7 +1074,6 @@ namespace proyecto_vivemas.Controllers
             }
         }
 
-
         public ActionResult obtenerReporteEventosDetalle(DataGetClientes data)//mario
         {
             try
@@ -1115,7 +1113,6 @@ namespace proyecto_vivemas.Controllers
             }
             return respuesta;
         }
-
 
         private JsonResult GenerarDocumentoVenta2(long transaccionId)
         {
@@ -1713,7 +1710,7 @@ namespace proyecto_vivemas.Controllers
                         documento_descripcion = "FACTURA DE VENTA ELECTRONICA";
                     }
 
-                    // transaction.Complete();
+                    transaction.Complete();
 
                     //CARGANDO DATOS DEL DOCUMENTO PARA IMPRIMIR
 
@@ -2017,7 +2014,6 @@ namespace proyecto_vivemas.Controllers
             return html;
 
         }
-
 
         private DocumentoVentaModelo GenerarDocumentoVentaFechaEmision(long transaccionId, string fechaEmisionDet)
         {

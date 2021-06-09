@@ -559,6 +559,9 @@
       <Parameter Name="ID_TRASAC" Mode="In" Type="Int64" />
     </FunctionImport>
     <FunctionImport Name="sp_getContratosVencidos" ReturnType="Collection(vivemas_dbModel.sp_getContratosVencidos_Result)" />
+    <FunctionImport Name="sp_get_notificacion_template" ReturnType="Collection(vivemas_dbModel.sp_get_notificacion_template_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="empresas">
     <Key>
@@ -2957,6 +2960,7 @@
   </ComplexType>
   <ComplexType Name="sp_getContratosVencidos_Result">
     <Property Type="String" Name="contrato_numeracion" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="cuota_anexocontratocotizacion_id" Nullable="true" />
     <Property Type="String" Name="proyecto_nombre" Nullable="true" MaxLength="150" />
     <Property Type="String" Name="lote_nombre" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="proformauif_cliente_razonsocial" Nullable="true" MaxLength="150" />
@@ -2964,5 +2968,17 @@
     <Property Type="Decimal" Name="montopendiente" Nullable="true" Precision="38" Scale="2" />
     <Property Type="Decimal" Name="montocancelado" Nullable="true" Precision="38" Scale="2" />
     <Property Type="Int32" Name="cuotas_vencidas" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_get_notificacion_template_Result">
+    <Property Type="DateTime" Name="contrato_fechacreacion" Nullable="true" Precision="23" />
+    <Property Type="String" Name="cuota_numeracion" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="cuota_fechavencimiento" Nullable="true" />
+    <Property Type="Decimal" Name="cuota_monto" Nullable="true" Precision="16" Scale="2" />
+    <Property Type="String" Name="moneda_caracter" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="proyecto_nombre" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="lote_nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="proformauif_cliente_razonsocial" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="proformauif_cliente_nrodocumento" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="proformauif_empresa_direccion" Nullable="true" MaxLength="250" />
   </ComplexType>
 </Schema>
